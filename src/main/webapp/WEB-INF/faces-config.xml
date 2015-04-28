@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+               http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule> 
+        
+        <navigation-case>
+            <from-outcome>addPessoa</from-outcome> 
+            <to-view-id>../multiMarcas/administrador/cadastra-pessoa.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>updatePessoa</from-outcome> 
+            <to-view-id>/administrador/altera-pessoa.xhtml</to-view-id> 
+        </navigation-case>
+      
+        <navigation-case>
+            <from-outcome>listaPessoas</from-outcome> 
+            <to-view-id>../multiMarcas/administrador/lista-pessoas.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>listaMarcas</from-outcome> 
+            <to-view-id>../multiMarcas/administrador/lista-marcas.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addMarca</from-outcome> 
+            <to-view-id>../multiMarcas/administrador/cadastra-marca.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>updateMarca</from-outcome> 
+            <to-view-id>/administrador/altera-marca.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addConcessionaria</from-outcome> 
+            <to-view-id>../multiMarcas/administrador/cadastra-concessionaria.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>updateConcessionaria</from-outcome> 
+            <to-view-id>/administrador/altera-concessionaria.xhtml</to-view-id> 
+        </navigation-case>
+      
+        <navigation-case>
+            <from-outcome>listaConcessionarias</from-outcome> 
+            <to-view-id>../multiMarcas/administrador/lista-concessionarias.xhtml</to-view-id> 
+        </navigation-case>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <navigation-case>
+            <from-outcome>teste</from-outcome> 
+            <to-view-id>/teste-mensagem.xhtml</to-view-id> 
+        </navigation-case>
+    
+        <navigation-case>
+            <from-outcome>addEndereco</from-outcome> 
+            <to-view-id>/cadastra-endereco.xhtml</to-view-id> 
+        </navigation-case>
+        
+    </navigation-rule>
+   
+</faces-config>

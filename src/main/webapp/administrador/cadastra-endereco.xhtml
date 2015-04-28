@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Cadastro de Endereço</title>
+    </h:head>
+    <h:body>
+        <div id="topo">  
+            <ui:include src="menu.xhtml"/>  
+        </div> 
+
+        <h:form>
+            <h1> Cadastro de Endereço </h1>
+            <h:panelGrid columns="2">
+
+                <h:outputText value="CEP: " />
+                <p:inputMask mask="99999-999" value="#{enderecoBean.endereco.cep}" />
+
+                <h:outputLabel value="Logradouro: "/>
+                <h:inputText  value="#{enderecoBean.endereco.lagradouro}"/>
+
+                <h:outputLabel value="UF" />
+                <p:inputText size="5" value="#{enderecoBean.endereco.estado}" />
+
+                <h:outputLabel value="Cidade" />
+                <p:inputText size="50" value="#{enderecoBean.endereco.cidade}" />
+
+                <h:outputLabel value="Bairro:" />
+                <p:inputText size="25" value="#{enderecoBean.endereco.bairro}" />
+
+                <h:commandButton value="Enviar" action="#{enderecoBean.addEndereco()}"/>
+                
+            </h:panelGrid>
+
+        </h:form>
+
+    </h:body>
+</html>
+

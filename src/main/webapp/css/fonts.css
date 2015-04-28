@@ -1,0 +1,17 @@
+@font-face{
+	font-family: 'newJuneBold';
+	src: url('fonts/bold/newjune-book-webfont.eot');
+	src: url('fonts/bold/newjune-bold-webfont.eot?iefix') format('embedded-opentype'),
+		 url('fonts/bold/newjune-bold-webfont.woff') format('woff'), 
+		 url('fonts/bold/newjune-bold-webfont.ttf') format('truetype'),
+	 	 url('fonts/bold/newjune-bold-webfont.svg#newJuneBold') format('svg');		  
+}
+
+@font-face{
+	font-family: 'newJuneBook';
+	src: url('fonts/book/newjune-book-webfont.eot');
+	src: url('fonts/book/newjune-book-webfont.eot?iefix') format('embedded-opentype'),
+	url('fonts/book/newjune-book-webfont.woff') format('woff'),
+	url('fonts/book/newjune-book-webfont.ttf') format('truetype'),
+	url('fonts/book/newjune-book-webfont.svg#newJuneBook') format('svg');
+}

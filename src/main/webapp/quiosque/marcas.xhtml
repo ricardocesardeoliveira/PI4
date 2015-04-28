@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Multi-Marcas</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/main.css" />
+
+        <script src="../js/modernizr.js"></script>
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--<h:link class="navbar-brand" outcome="index" value="MULTI-MARCAS" />-->
+                </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                <h:form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">@</span>
+                            <h:inputText class="form-control" pt:placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h:inputSecret pt:placeholder="Password" class="form-control" />
+                    </div>
+                    <buttom type="submit" class="btn btn-success">Entrar</buttom>
+                    <!-- <h:commandButton type="submit" class="btn btn-success" value="Entrar" /> -->
+                </h:form>
+              </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="mybold"><h:link outcome="index" value="Home" /></li>
+                    <li class="active mybold">Marcas</li>
+                </ol>
+            </nav>
+            
+            <div class="box-content text-center">
+                <h1><h:graphicImage value="../img/logo.png" class="center-block img-responsive" /></h1>
+                <div class="row text-center">
+                <div class="col-md-offset-1 col-md-2">
+                  <h:graphicImage class="img-circle" value="../img/logo/100x100-fiat.png" alt="Logo Fiat" />
+                  <h2>Fiat</h2>
+                  <p><em>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</em></p>
+                  <p><a class="btn btn-primary" href="#" role="button">Veja os Veiculos &raquo;</a></p>
+                </div>
+                <div class="col-md-2">
+                  <h:graphicImage  class="img-circle" value="../img/logo/100x100-vw.png" alt="Logo Volkswagen" />
+                  <h2>Volkswagen</h2>
+                  <p><em>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</em></p>
+                  <p><a class="btn btn-primary" href="#" role="button">Veja os Veiculos &raquo;</a></p>
+                </div>
+                <div class="col-md-2">
+                  <h:graphicImage class="img-circle" value="../img/logo/100x100-bmw.png" alt="Logo BMW" />
+                  <h2>BMW</h2>
+                  <p><em>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</em></p>
+                  <p><a class="btn btn-primary" href="#" role="button">Veja os Veiculos &raquo;</a></p>
+                </div>
+                <div class="col-md-2">
+                  <h:graphicImage class="img-circle" value="../img/logo/100x100-nissan.png" alt="Logo Nissan" />
+                  <h2>Nissan</h2>
+                  <p><em>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</em></p>
+                  <p><a class="btn btn-primary" href="#" role="button">Veja os Veiculos &raquo;</a></p>
+                </div>
+                <div class="col-md-2">
+                  <h:graphicImage class="img-circle" value="../img/logo/100x100-toyota.png" alt="Logo Toyota" />
+                  <h2>Toyota</h2>
+                  <p><em>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa.</em></p>
+                  <p><a class="btn btn-primary" href="#" role="button">Veja os Veiculos &raquo;</a></p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <script src="../js/jquery-1.11.2.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </h:body>
+</html>
+

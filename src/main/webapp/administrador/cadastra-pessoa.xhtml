@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title> Multi Marcas-Cars </title>
+
+        <link rel="StyleSheet" type="text/css" href="css/style.css" media="screen" />
+    </h:head>
+    <h:body>
+
+        <div id="topo">  
+            <ui:include src="menu.xhtml"/>  
+        </div> 
+
+        <div class="container-principal">
+            <h:form id="form-cadastro">
+                <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
+
+                <p:panel header="Cadastro de Clientes" id="titulo-cadastro" style="margin-top: 10px;">
+                    <h:panelGrid columns="4" cellpadding="5">
+
+                        <p:outputLabel value="Nome" for="nome"/>
+                        <p:inputText id="nome" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
+                        <p:message for="nome" />
+                        <h:outputText value="#{pessoaBean.pessoa.nome}" />
+
+                        <p:outputLabel value="RG" for="rg" />
+                        <p:inputText id="rg" value="#{pessoaBean.pessoa.rg}" required="true" />
+                        <p:message for="rg" />
+                        <h:outputText value="#{pessoaBean.pessoa.rg}" />
+
+                        <p:outputLabel value="CPF" for="cpf" />
+                        <p:inputMask id="cpf" value="#{pessoaBean.pessoa.cpf}" required="true" mask="999.999.999-99"/>
+                        <p:message for="cpf" />
+                        <h:outputText value="#{pessoaBean.pessoa.cpf}" />          
+
+                        <p:outputLabel value="Sexo" for="sexo" />
+                        <p:selectOneMenu id="sexo" value="#{pessoaBean.pessoa.sexo}" style="width:130px">
+                            <f:selectItem itemLabel="" noSelectionOption="true" />
+                            <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                            <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+                        </p:selectOneMenu>
+                        <p:message for="sexo" />
+                        <h:outputText value="#{pessoaBean.pessoa.sexo}" />
+                        
+                        <p:outputLabel for="popup" value="Data Nascimento:" />
+                        <p:calendar id="popup" value="#{pessoaBean.pessoa.data_nasc}" />
+
+                        <!--
+                        <p:outputLabel value="Data Nascimento" for="data" />
+                        <p:inputMask id="data" value="#{pessoaBean.pessoa.data_nasc}" mask="99/99/9999"/>
+                        <p:message for="data" />
+                        <h:outputText value="#{pessoaBean.pessoa.data_nasc}" />          
+                        -->
+                    </h:panelGrid>
+
+                </p:panel>
+
+                <p:panel header="Endereço">  
+
+                    <h:panelGrid columns="2" cellpadding="5"> 
+                        <h:outputText value="CEP:"/>
+                        <p:inputMask id="cep" mask="99999-999" style="width:70px" value="#{pessoaBean.endereco.cep}" >
+                            <f:ajax listener="#{pessoaBean.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
+                        </p:inputMask>
+                            
+                        <p:outputLabel for="logradouro" value="Logradouro" />   
+                        <p:inputText id="logradouro" value="#{pessoaBean.endereco.logradouro}"/>  
+
+                        <p:outputLabel for="bairro" value="Bairro" />   
+                        <p:inputText id="bairro" value="#{pessoaBean.endereco.bairro}" />  
+
+                        <p:outputLabel for="uf" value="UF"  />   
+                        <p:inputMask id="uf" style="width:50px" mask="a*" value="#{pessoaBean.endereco.estado}" />  
+
+                        <p:outputLabel for="cidade" value="Cidade" />   
+                        <p:inputText id="cidade" value="#{pessoaBean.endereco.cidade}"  />  
+
+                        <p:outputLabel for="numero" value="Número" />   
+                        <p:inputText id="numero" value="#{pessoaBean.endereco.numero}" style="width:40px"/>  
+
+                        <p:commandButton value="CEP" icon="ui-icon-search">
+                            <f:ajax listener="#{pessoaBean.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
+                        </p:commandButton>
+
+                        <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
+                    </h:panelGrid>  
+
+                </p:panel>
+
+            </h:form>   
+
+        </div>
+    </h:body>
+</html>
+
