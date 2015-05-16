@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Multi-Marcas - Veiculos Fiat</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="css/fonts.css" />
+        <link rel="stylesheet" href="css/main.css" />
+
+        <script src="js/modernizr.js"></script>
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--<h:link class="navbar-brand" outcome="index" value="MULTI-MARCAS" />-->
+                </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                <h:form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">@</span>
+                            <h:inputText class="form-control" pt:placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h:inputSecret pt:placeholder="Password" class="form-control" />
+                    </div>
+                    <buttom type="submit" class="btn btn-success">Entrar</buttom>
+                    <!-- <h:commandButton type="submit" class="btn btn-success" value="Entrar" /> -->
+                </h:form>
+              </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="mybold"><h:link outcome="index" value="Home" /></li>
+                    <li class="mybold"><h:link outcome="marcas" value="Marcas" /></li>
+                    <li class="active mybold">Toyota</li>
+                </ol>
+            </nav>
+            
+            <div class="box-content">
+            
+            <div class="row">
+                <div class="col-md-offset-6 col-md-6">
+                    <h:form id="buscar-car">
+                        <div class="input-group">
+                            <h:inputText class="form-control" pt:placeholder="Procurar por..." />
+                            <span class="input-group-btn">
+                                <h:commandButton type="button" class="btn btn-default" value="Pesquisar" />
+                            </span>
+                        </div>
+                     </h:form>
+                </div>
+            </div>
+
+            <br />
+            
+            <div class="row">
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="thumbnail">
+                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
+                    <div class="caption">
+                      <h3><em>#Default#</em></h3>
+                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
+                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+             </div>
+            </div>
+            
+            <!-- Paginação -->
+                <!--
+                <nav>
+                    <div class="text-center">
+                      <ul class="pagination">
+                        <li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                      </ul>
+                    </div>
+                </nav>
+                -->
+        </div>
+        
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel"><em>Titulo Modal</em></h4>
+                </div>
+                <div class="modal-body">
+                  <img src="img/default/1024x768.gif" class="img-responsive" alt="Imagem Veiculo" />
+                  <p class="lead text-muted"><em>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.</em></p>
+                </div>
+                <div class="modal-footer">
+                  <div class="col-md-4"><button type="button" class="btn btn-block btn-success">Comprar</button></div>
+                  <div class="col-md-4"><button type="button" class="btn btn-block btn-info">Customizar</button></div>
+                  <div class="col-md-4"><button type="button" class="btn btn-block btn-danger" data-dismiss="modal">Fechar</button></div>  
+                </div>
+              </div>
+            </div>
+      </div>
+
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </h:body>
+</html>
+

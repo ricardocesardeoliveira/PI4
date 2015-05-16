@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
         <title> Cadastro de Concessionaria </title>
@@ -12,13 +13,19 @@
             <ui:include src="menu.xhtml"/>  
         </div> 
 
-        <h:form>
+        <h:form id="form-cadastro">
             <h1> Cadastro de Concessionarias </h1>
 
-            <h:outputLabel value="Concessionaria: "/>
-            <h:inputText  value="#{concessionariaBean.concessionaria.nome}"/>
-            <h:commandButton value="Enviar" action="#{concessionariaBean.addConcessionaria()}"/>
-
+            <p:panel header="Cadastro de Concessionarias" id="titulo-cadastro" style="margin-top: 10px;">
+                <h:panelGrid columns="4" cellpadding="5">
+                    <h:outputLabel value="Concessionaria: "/>
+                    <h:inputText  value="#{concessionariaBean.concessionaria.nome}"/>
+                    <h:outputLabel value="Região: "/>
+                    <h:inputText  value="#{concessionariaBean.concessionaria.regiao}"/>
+                    <h:commandButton value="Enviar" action="#{concessionariaBean.addConcessionaria()}"/>
+                </h:panelGrid>
+            </p:panel>
+                    
         </h:form>
 
     </h:body>

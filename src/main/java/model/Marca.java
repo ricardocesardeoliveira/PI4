@@ -10,8 +10,9 @@ import javax.persistence.Id;
 public class Marca implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_marca;
+    
     private String nome;
 
     public Long getId_marca() {

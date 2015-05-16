@@ -13,22 +13,97 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+ 
     
     <dependencies>
+        <!--
+        <dependency>
+            <groupId>org.primefaces.extensions</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.8</version>
+        </dependency> 
+        -->
+        <!--    
+        <dependency>            
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>sqljdbc4</artifactId>
+            <version>4.0</version>
+        </dependency>
+        -->
+        <dependency> 
+            <groupId>org.slf4j</groupId> 
+            <artifactId>slf4j-api</artifactId> 
+            <version>1.6.4</version> 
+        </dependency> 
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <version>5.0</version>
         </dependency>
+        <dependency> 
+            <groupId>javax.validation</groupId> 
+            <artifactId>validation-api</artifactId> 
+            <version>1.0.0.GA</version> 
+            <scope>provided</scope> 
+        </dependency> 
+    
+        <dependency> 
+            <groupId>org.slf4j</groupId> 
+            <artifactId>slf4j-api</artifactId> 
+            <version>1.6.4</version> 
+        </dependency> 
+    
+        <dependency> 
+            <groupId>org.jboss.logging</groupId> 
+            <artifactId>jboss-logging</artifactId> 
+            <version>3.1.0.CR2</version> 
+        </dependency> 
+    
+        <dependency> 
+            <groupId>org.slf4j</groupId> 
+            <artifactId>slf4j-log4j12</artifactId> 
+            <version>1.6.4</version> 
+        </dependency> 
+
+        <dependency> 
+            <groupId>log4j</groupId> 
+            <artifactId>log4j</artifactId> 
+            <version>1.2.17</version> 
+        </dependency>
+        
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.8.Final</version>
+        </dependency>
+
+        <!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.1.Final</version>
+            <version>3.6.10.Final</version>
+        </dependency>
+        
+        <!-- For 3.5 and older -->  
+        <dependency>  
+            <groupId>org.primefaces</groupId>  
+            <artifactId>primefaces</artifactId>  
+            <version>5.1</version>  
         </dependency>
         <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>hibernate-jpa-2.1-api-1.0.0.Final</artifactId>
-            <version>SNAPSHOT</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-commons-annotations</artifactId>
+            <version>3.2.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
@@ -93,11 +168,6 @@
             <id>PrimeFaces-maven-lib</id>
             <layout>default</layout>
             <name>Repository for library PrimeFaces-maven-lib</name>
-        </repository>
-        <repository>
-            <id>unknown-jars-temp-repo</id>
-            <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
-            <url>file:${project.basedir}/lib</url>
         </repository>
     </repositories>
 </project>

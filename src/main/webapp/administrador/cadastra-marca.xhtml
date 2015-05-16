@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
         <title> Cadastro de Marca </title>
@@ -15,10 +16,14 @@
         <h:form>
             <h1> Cadastro de Marcas </h1>
 
-            <h:outputLabel value="Marca: "/>
-            <h:inputText  value="#{marcaBean.marca.nome}"/>
-            <h:commandButton value="Enviar" action="#{marcaBean.addMarca()}"/>
-
+            <p:panel header="Cadastro de Marcas" id="titulo-cadastro" style="margin-top: 10px;">
+                <h:panelGrid columns="4" cellpadding="5">
+                    <h:outputLabel value="Marca: "/>
+                    <h:inputText  value="#{marcaBean.marca.nome}"/>
+                    <h:commandButton value="Enviar" action="#{marcaBean.addMarca()}"/>
+            </h:panelGrid>
+        </p:panel>
+            
         </h:form>
 
     </h:body>

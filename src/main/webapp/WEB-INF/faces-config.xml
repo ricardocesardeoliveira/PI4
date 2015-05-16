@@ -8,7 +8,7 @@
         
         <navigation-case>
             <from-outcome>addPessoa</from-outcome> 
-            <to-view-id>../multiMarcas/administrador/cadastra-pessoa.xhtml</to-view-id> 
+            <to-view-id>/administrador/cadastra-pessoa.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
@@ -18,17 +18,17 @@
       
         <navigation-case>
             <from-outcome>listaPessoas</from-outcome> 
-            <to-view-id>../multiMarcas/administrador/lista-pessoas.xhtml</to-view-id> 
+            <to-view-id>/administrador/lista-pessoas.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>listaMarcas</from-outcome> 
-            <to-view-id>../multiMarcas/administrador/lista-marcas.xhtml</to-view-id> 
+            <to-view-id>/administrador/lista-marcas.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>addMarca</from-outcome> 
-            <to-view-id>../multiMarcas/administrador/cadastra-marca.xhtml</to-view-id> 
+            <to-view-id>/administrador/cadastra-marca.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
@@ -38,7 +38,7 @@
         
         <navigation-case>
             <from-outcome>addConcessionaria</from-outcome> 
-            <to-view-id>../multiMarcas/administrador/cadastra-concessionaria.xhtml</to-view-id> 
+            <to-view-id>/administrador/cadastra-concessionaria.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
@@ -48,14 +48,80 @@
       
         <navigation-case>
             <from-outcome>listaConcessionarias</from-outcome> 
-            <to-view-id>../multiMarcas/administrador/lista-concessionarias.xhtml</to-view-id> 
+            <to-view-id>/administrador/lista-concessionarias.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addVeiculo</from-outcome> 
+            <to-view-id>/administrador/cadastra-veiculo.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addCor</from-outcome> 
+            <to-view-id>/administrador/cadastra-cor.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>updateCor</from-outcome> 
+            <to-view-id>/administrador/altera-cor.xhtml</to-view-id> 
+        </navigation-case>
+      
+        <navigation-case>
+            <from-outcome>listaCores</from-outcome> 
+            <to-view-id>/administrador/lista-cores.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addCor</from-outcome> 
+            <to-view-id>/administrador/cadastra-cor.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addVeiculo</from-outcome> 
+            <to-view-id>/administrador/cadastra-veiculo.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>updateVeiculo</from-outcome> 
+            <to-view-id>/administrador/altera-veiculo.xhtml</to-view-id> 
+        </navigation-case>
+      
+        <navigation-case>
+            <from-outcome>listaVeiculos</from-outcome> 
+            <to-view-id>/administrador/lista-veiculos.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addVeiculo</from-outcome> 
+            <to-view-id>/administrador/cadastra-veiculo.xhtml</to-view-id> 
         </navigation-case>
         
         
         
+        <navigation-case>
+            <from-outcome>veiculos-bmw</from-outcome> 
+            <to-view-id>/quiosque/veiculos-bmw.xhtml</to-view-id> 
+        </navigation-case>
         
+        <navigation-case>
+            <from-outcome>veiculos-fiat</from-outcome> 
+            <to-view-id>/quiosque/veiculos-fiat.xhtml</to-view-id> 
+        </navigation-case>
         
+        <navigation-case>
+            <from-outcome>veiculos-nissan</from-outcome> 
+            <to-view-id>/quiosque/veiculos-nissan.xhtml</to-view-id> 
+        </navigation-case>
         
+        <navigation-case>
+            <from-outcome>veiculos-toyota</from-outcome> 
+            <to-view-id>/quiosque/veiculos-toyota.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>veiculos-volkswagen</from-outcome> 
+            <to-view-id>/quiosque/veiculos-volkswagen.xhtml</to-view-id> 
+        </navigation-case>
         
         
         

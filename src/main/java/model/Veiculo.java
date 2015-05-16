@@ -1,19 +1,55 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-@Entity(name = "tab_veiculo")
+@Entity(name = "TAB_VEICULO")
 public class Veiculo implements Serializable  {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
-    private String modelo, ano, categoria, preco, motor, marca, img_princial;
-    //private String cor;
+    @Column(name = "NOME")
+    private String nome;
+    @Column(name = "MODELO")
+    private String modelo;
+    @Column(name = "ANO")
+    private String ano;
+    @Column(name = "CATEGORIA")
+    private String categoria;
+    @Column(name = "PRECO")
+    private String preco;
+    @Column(name = "MOTOR")
+    private String motor;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_marca")
+    private Marca marca;
+    
+    @Column(name = "IMG_PRINCIPAL")
+    private String img_princial;
+    
+    
+    @ManyToOne
+    @JoinColumn(name = "idCor")
+    private Cor cor;    
+    
+//    private List<Acessorio> acessorios;
+
+    public Cor getCor() {
+        return cor;
+    }
+
+    public void setCor(Cor cor) {
+        this.cor = cor;
+    }
 
     public Long getId() {
         return id;
@@ -63,11 +99,11 @@ public class Veiculo implements Serializable  {
         this.motor = motor;
     }
 
-    public String getMarca() {
+    public Marca getMarca() {
         return marca;
     }
 
-    public void setMarca(String marca) {
+    public void setMarca(Marca marca) {
         this.marca = marca;
     }
 
@@ -78,4 +114,13 @@ public class Veiculo implements Serializable  {
     public void setImg_princial(String img_princial) {
         this.img_princial = img_princial;
     } 
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
 }

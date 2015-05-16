@@ -1,14 +1,12 @@
 package controler;
 
 import dao.MarcaDao;
-import dao.PessoaDao;
 import java.util.List;
 import model.Marca;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
-import model.Pessoa;
 
 @ManagedBean
 @SessionScoped
@@ -19,6 +17,10 @@ public class MarcaBean {
 
     public MarcaBean() {
         marca = new Marca();
+    }
+    public List<Marca> getMarcas() {
+        List<Marca> lista = new MarcaDao().list();
+        return lista;
     }
     
     public String prepararAlterarMarca() {

@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
 public class Pessoa implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_pessoa;
     private String nome, rg, cpf, sexo;
     private String data_nasc;

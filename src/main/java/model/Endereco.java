@@ -13,7 +13,7 @@ import javax.persistence.Id;
 public class Endereco implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cep;
     private String logradouro, bairro, cidade, estado, numero, complemento;

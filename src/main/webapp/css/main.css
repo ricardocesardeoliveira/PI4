@@ -19,3 +19,32 @@ body{
     border-radius: 6px;
     padding: 10px 10px;
 }
+
+.bg {
+    background: #292C37;
+}
+
+.label-acessorios {
+    cursor: pointer;
+}
+
+.check-acessorios {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 25px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.check-acessorios:checked + label .thumbnail {
+    border: 3px #54AF54 solid;
+}
+
+.ui-state-error, 
+.ui-widget-content 
+.ui-state-error, 
+.ui-widget-header 
+.ui-state-error {
+    border: 1px solid #cd0a0a !important;
+}

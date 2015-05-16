@@ -10,9 +10,10 @@ import javax.persistence.Id;
 public class Concessionaria implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_concessionaria;
     private String nome;
+    private String regiao;
 
     public Long getId_concessionaria() {
         return id_concessionaria;
@@ -30,4 +31,12 @@ public class Concessionaria implements Serializable {
         this.nome = nome;
     }
 
+    public String getRegiao() {
+        return regiao;
+    }
+
+    public void setRegiao(String regiao) {
+        this.regiao = regiao;
+    }
+    
 }

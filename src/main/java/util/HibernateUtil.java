@@ -1,6 +1,7 @@
 package util;
 
 import model.Concessionaria;
+import model.Cor;
 import model.Endereco;
 import model.Marca;
 import model.Pessoa;
@@ -25,6 +26,7 @@ public class HibernateUtil {
                 ac.addAnnotatedClass(Concessionaria.class);
                 ac.addAnnotatedClass(Endereco.class);
                 ac.addAnnotatedClass(Veiculo.class);
+                ac.addAnnotatedClass(Cor.class);
                 sessionFactory = ac.configure().buildSessionFactory();
             } catch (Throwable ex) {
                 System.err.println("Initial SessionFactory creation failed." + ex);
