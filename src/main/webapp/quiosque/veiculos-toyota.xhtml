@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -43,156 +44,33 @@
             </div>
 
             <br />
-            
             <div class="row">
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
                 
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
+                <ui:repeat var="veiculo" value="#{veiculoBean.lista}">
+                    
+                    <div class="col-md-3">
+                      <div class="thumbnail">
+                          <h:graphicImage value="../img/veiculos/toyota/#{veiculo.img_princial}" class="img-responsive" alt="#{veiculo.nome}" />
+                        <div class="caption">
+                            <h3><em><h:outputText value="#{veiculo.nome}"></h:outputText></em></h3>
+                            <p>
+                                <strong><h:outputLabel value="Fabricante"></h:outputLabel>: </strong> 
+                                <h:outputText value="#{veiculo.marca.nome}"></h:outputText><br />
+                                <strong><h:outputLabel value="Ano"></h:outputLabel>: </strong>
+                                <h:outputText value="#{veiculo.ano}"></h:outputText><br />
+                                <strong><h:outputLabel value="Potência"></h:outputLabel>: </strong>
+                                <h:outputText value="#{veiculo.motor}"></h:outputText><br />
+                                <strong><h:outputLabel value="Preço"></h:outputLabel>: </strong>
+                                <h:outputText value="R$ #{veiculo.preco}"></h:outputText>
+                            </p>
+                          <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
+                          <div class="clearfix"></div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
+                    
+                </ui:repeat>
             </div>
-            
-            <div class="row">
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <h:graphicImage value="img/1024x768.gif" class="img-responsive" alt="" />
-                    <div class="caption">
-                      <h3><em>#Default#</em></h3>
-                      <p><strong>Fabricante:</strong> #default#<br /><strong>Ano:</strong> #default#<br /><strong>Potência:</strong> #default#<br /><strong>Preço:</strong> #default#</p>
-                      <p><a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" role="button">Mais..</a></p>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-             </div>
             </div>
             
             <!-- Paginação -->
