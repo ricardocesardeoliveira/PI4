@@ -48,3 +48,28 @@ body{
 .ui-state-error {
     border: 1px solid #cd0a0a !important;
 }
+
+.form-signin {
+    max-width: 800px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.form-signin .form-control:focus {
+    z-index: 1;
+}
+.form-signin .form-control {
+    position: relative;
+}
