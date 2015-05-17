@@ -1,49 +1,53 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"  
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
+
     <h:head>
-        <title> Lista de concessionarias </title>
+        <title> Lista de pessoas </title>
     </h:head>
+    
     <h:body>
 
         <div id="topo">  
-            <ui:include src="menu.xhtml"/>  
+            <ui:include src="../menu.xhtml"/>  
         </div> 
 
         <div class="container-principal">
-            <p:dataTable id="marcasconcessionarias" var="concessionaria" value="#{concessionariaBean.listarConcessionarias()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhuma concessionaria cadastrada.">
-
+            <p:dataTable id="pessoas" var="pessoa" value="#{pessoaBean.listarPessoas()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhuma pessoa cadastrada.">
                 <f:facet name="header">
-                    Lista de concessionarias
+                    Lista de Pessoas
                 </f:facet>
-
                 <p:column headerText="ID" style="width:50px; text-align: center;">
-                    <h:outputText value="#{concessionaria.id_concessionaria}" />
+                    <h:outputText value="#{pessoa.id_pessoa}" />
                 </p:column>
-                <p:column headerText="Nome da concessionaria">
-                    <h:outputText value="#{concessionaria.nome}" />
+                <p:column headerText="Nome">
+                    <h:outputText value="#{pessoa.nome}" />
                 </p:column>
-                <p:column headerText="Região da concessionaria">
-                    <h:outputText value="#{concessionaria.nome}" />
+                <p:column headerText="RG">
+                    <h:outputText value="#{pessoa.rg}"/>
+                </p:column>
+                <p:column headerText="CPF">
+                    <h:outputText value="#{pessoa.cpf}"/>
+                </p:column>
+                <p:column headerText="Sexo">
+                    <h:outputText value="#{pessoa.sexo}"/>
                 </p:column>
                 <p:column headerText="Editar" style="text-align: center; width:55px">        
                     <h:form>
-                        <p:commandButton action="#{concessionariaBean.prepararAlterarConcessionaria()}" icon="ui-icon-pencil" />
+                        <p:commandButton action="#{pessoaBean.prepararAlterarPessoa()}" icon="ui-icon-pencil" />
                     </h:form>  
                 </p:column>
-
                 <p:column headerText="Excluir" style="text-align: center; width:55px">
                     <h:form>           
                         <p:growl id="message" showDetail="true" />
-
-                        <p:commandButton update="message" action="#{concessionariaBean.excluirConcessionaria()}" icon="ui-icon-close">
-                            <p:confirm header="Atenção" message="Deseja realmente Excluir?" icon="ui-icon-alert" />
+                        <p:commandButton update="message" action="#{pessoaBean.excluirPessoa()}" icon="ui-icon-close">
+                            <p:confirm header="Atenção" message="Deseja realmente excluir a pessoa selecionada?" icon="ui-icon-alert" />
                         </p:commandButton>
-
                         <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
                             <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
                             <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />

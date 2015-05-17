@@ -6,32 +6,33 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-        <title> Lista Cores </title>
+        <title> Lista de concessionarias </title>
     </h:head>
     <h:body>
 
         <div id="topo">  
-            <ui:include src="menu.xhtml"/>  
+            <ui:include src="../menu.xhtml"/>  
         </div> 
 
         <div class="container-principal">
-            <p:dataTable id="cores" var="cor" value="#{corBean.listarCores()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhuma cor cadastrada.">
+            <p:dataTable id="marcasconcessionarias" var="concessionaria" value="#{concessionariaBean.listarConcessionarias()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhuma concessionaria cadastrada.">
 
                 <f:facet name="header">
-                    Lista de Cadastros de Cores
+                    Lista de concessionarias
                 </f:facet>
 
                 <p:column headerText="ID" style="width:50px; text-align: center;">
-                    <h:outputText value="#{cor.idCor}" />
+                    <h:outputText value="#{concessionaria.id_concessionaria}" />
                 </p:column>
-                <p:column headerText="Nome">
-                    <h:outputText value="#{cor.nome}" />
+                <p:column headerText="Nome da concessionaria">
+                    <h:outputText value="#{concessionaria.nome}" />
                 </p:column>
-
+                <p:column headerText="Região da concessionaria">
+                    <h:outputText value="#{concessionaria.nome}" />
+                </p:column>
                 <p:column headerText="Editar" style="text-align: center; width:55px">        
-
                     <h:form>
-                        <p:commandButton action="#{corBean.prepararAlterarCor()}" icon="ui-icon-pencil" />
+                        <p:commandButton action="#{concessionariaBean.prepararAlterarConcessionaria()}" icon="ui-icon-pencil" />
                     </h:form>  
                 </p:column>
 
@@ -39,7 +40,7 @@
                     <h:form>           
                         <p:growl id="message" showDetail="true" />
 
-                        <p:commandButton update="message" action="#{corBean.excluirCor()}" icon="ui-icon-close">
+                        <p:commandButton update="message" action="#{concessionariaBean.excluirConcessionaria()}" icon="ui-icon-close">
                             <p:confirm header="Atenção" message="Deseja realmente Excluir?" icon="ui-icon-alert" />
                         </p:commandButton>
 

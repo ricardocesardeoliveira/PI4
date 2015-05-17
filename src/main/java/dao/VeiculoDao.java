@@ -22,6 +22,14 @@ public class VeiculoDao {
         return (Veiculo) session.load(Veiculo.class, id);
     }
 
+    public List<Veiculo> listVeiculosFiat() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        List lista = session.createQuery("from TAB_VEICULO where id_marca: 5").list();
+        t.commit();
+        return lista;
+    }
+    
     public List<Veiculo> list() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();

@@ -8,92 +8,92 @@
         
         <navigation-case>
             <from-outcome>addPessoa</from-outcome> 
-            <to-view-id>/administrador/cadastra-pessoa.xhtml</to-view-id> 
+            <to-view-id>/administrador/pessoa/cadastra-pessoa.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>updatePessoa</from-outcome> 
-            <to-view-id>/administrador/altera-pessoa.xhtml</to-view-id> 
+            <to-view-id>/administrador/pessoa/altera-pessoa.xhtml</to-view-id> 
         </navigation-case>
       
         <navigation-case>
             <from-outcome>listaPessoas</from-outcome> 
-            <to-view-id>/administrador/lista-pessoas.xhtml</to-view-id> 
+            <to-view-id>/administrador/pessoa/lista-pessoas.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>listaMarcas</from-outcome> 
-            <to-view-id>/administrador/lista-marcas.xhtml</to-view-id> 
+            <to-view-id>/administrador/marca/lista-marcas.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>addMarca</from-outcome> 
-            <to-view-id>/administrador/cadastra-marca.xhtml</to-view-id> 
+            <to-view-id>/administrador/marca/cadastra-marca.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>updateMarca</from-outcome> 
-            <to-view-id>/administrador/altera-marca.xhtml</to-view-id> 
+            <to-view-id>/administrador/marca/altera-marca.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>addConcessionaria</from-outcome> 
-            <to-view-id>/administrador/cadastra-concessionaria.xhtml</to-view-id> 
+            <to-view-id>/administrador/concessionaria/cadastra-concessionaria.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>updateConcessionaria</from-outcome> 
-            <to-view-id>/administrador/altera-concessionaria.xhtml</to-view-id> 
+            <to-view-id>/administrador/concessionaria/altera-concessionaria.xhtml</to-view-id> 
         </navigation-case>
       
         <navigation-case>
             <from-outcome>listaConcessionarias</from-outcome> 
-            <to-view-id>/administrador/lista-concessionarias.xhtml</to-view-id> 
+            <to-view-id>/administrador/concessionaria/lista-concessionarias.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>addVeiculo</from-outcome> 
-            <to-view-id>/administrador/cadastra-veiculo.xhtml</to-view-id> 
+            <to-view-id>/administrador/veiculo/cadastra-veiculo.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>addCor</from-outcome> 
-            <to-view-id>/administrador/cadastra-cor.xhtml</to-view-id> 
+            <to-view-id>/administrador/cor/cadastra-cor.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>updateCor</from-outcome> 
-            <to-view-id>/administrador/altera-cor.xhtml</to-view-id> 
+            <to-view-id>/administrador/cor/altera-cor.xhtml</to-view-id> 
         </navigation-case>
       
         <navigation-case>
             <from-outcome>listaCores</from-outcome> 
-            <to-view-id>/administrador/lista-cores.xhtml</to-view-id> 
+            <to-view-id>/administrador/cor/lista-cores.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>addCor</from-outcome> 
-            <to-view-id>/administrador/cadastra-cor.xhtml</to-view-id> 
+            <to-view-id>/administrador/cor/cadastra-cor.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>addVeiculo</from-outcome> 
-            <to-view-id>/administrador/cadastra-veiculo.xhtml</to-view-id> 
+            <to-view-id>/administrador/veiculo/cadastra-veiculo.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>updateVeiculo</from-outcome> 
-            <to-view-id>/administrador/altera-veiculo.xhtml</to-view-id> 
+            <to-view-id>/administrador/veiculo/altera-veiculo.xhtml</to-view-id> 
         </navigation-case>
       
         <navigation-case>
             <from-outcome>listaVeiculos</from-outcome> 
-            <to-view-id>/administrador/lista-veiculos.xhtml</to-view-id> 
+            <to-view-id>/administrador/veiculo/lista-veiculos.xhtml</to-view-id> 
         </navigation-case>
         
         <navigation-case>
             <from-outcome>addVeiculo</from-outcome> 
-            <to-view-id>/administrador/cadastra-veiculo.xhtml</to-view-id> 
+            <to-view-id>/administrador/veiculo/cadastra-veiculo.xhtml</to-view-id> 
         </navigation-case>
         
         
@@ -124,7 +124,10 @@
         </navigation-case>
         
         
-        
+        <navigation-case>
+            <from-outcome>index</from-outcome> 
+            <to-view-id>/quiosque/veiculos-volkswagen.xhtml</to-view-id> 
+        </navigation-case>
         
         
         

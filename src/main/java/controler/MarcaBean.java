@@ -31,7 +31,7 @@ public class MarcaBean {
     public String addMarca() throws Exception {
         MarcaDao marcaDAO = new MarcaDao();
         marcaDAO.save(marca);
-        return "index";
+        return "listaMarcas";
     }
 
      public DataModel listarMarcas() {
@@ -44,13 +44,13 @@ public class MarcaBean {
         Marca marcaTemp = (Marca) (listaMarcas.getRowData());
         MarcaDao dao = new MarcaDao();
         dao.remove(marcaTemp);
-        return "index";
+        return "listaMarcas";
     }
     
     public String alterarMarca() {
         MarcaDao dao = new MarcaDao();
         dao.update(marca);
-        return "index";
+        return "listaMarcas";
     }
     
     public Marca getMarca() {

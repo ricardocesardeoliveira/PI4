@@ -33,7 +33,7 @@ public class CorBean {
     public String addCor() throws Exception {
         CorDao corDAO = new CorDao();
         corDAO.save(cor);
-        return "index";
+        return "listaCores";
     }
 
      public DataModel listarCores() {
@@ -46,13 +46,13 @@ public class CorBean {
         Cor corTemp = (Cor) (listaCores.getRowData());
         CorDao dao = new CorDao();
         dao.remove(corTemp);
-        return "index";
+        return "listaCores";
     }
     
     public String alterarCor() {
         CorDao dao = new CorDao();
         dao.update(cor);
-        return "index";
+        return "listaCores";
     }
     
     public Cor getCor() {

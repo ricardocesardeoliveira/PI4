@@ -53,13 +53,13 @@ public class PessoaBean {
         Pessoa pessoaTemp = (Pessoa) (listaPessoas.getRowData());
         PessoaDao dao = new PessoaDao();
         dao.remove(pessoaTemp);
-        return "index";
+        return "listaPessoas";
     }
 
     public String alterarPessoa() {
         PessoaDao dao = new PessoaDao();
         dao.update(pessoa);
-        return "index";
+        return "listaPessoas";
     }
 
     public Pessoa getPessoa() {

@@ -1,9 +1,12 @@
 
 package controler;
 
+import dao.MarcaDao;
+import dao.VeiculoDao;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.List;
 import model.Marca;
 import model.Veiculo;
 
@@ -42,6 +45,11 @@ public class VeiculoQuiosqueBean implements Serializable {
     public String setarMarcaVW(){
         this.marca.setNome("VolksWagen");
         return "veiculos-volkswagen";
+    }
+    
+    public List<Veiculo> getVeiculosFiat() {
+        List<Veiculo> lista = new VeiculoDao().listVeiculosFiat();
+        return lista;
     }
     
     public Veiculo getVeiculo() {

@@ -27,7 +27,7 @@ public class ConcessionariaBean {
     public String addConcessionaria() throws Exception {
         ConcessionariaDao concessionariaDAO = new ConcessionariaDao();
         concessionariaDAO.save(concessionaria);
-        return "index";
+        return "listaConcessionarias";
     }
 
      public DataModel listarConcessionarias() {
@@ -40,13 +40,13 @@ public class ConcessionariaBean {
         Concessionaria marcaTemp = (Concessionaria) (listaConcessionarias.getRowData());
         ConcessionariaDao dao = new ConcessionariaDao();
         dao.remove(marcaTemp);
-        return "index";
+        return "listaConcessionarias";
     }
     
     public String alterarConcessionaria() {
         ConcessionariaDao dao = new ConcessionariaDao();
         dao.update(concessionaria);
-        return "index";
+        return "listaConcessionarias";
     }
 
     public Concessionaria getConcessionaria() {
