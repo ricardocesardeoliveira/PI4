@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 @Entity(name = "TAB_VEICULO")
 public class Veiculo implements Serializable  {
@@ -19,9 +21,11 @@ public class Veiculo implements Serializable  {
     @Column(name = "NOME")
     private String nome;
     @Column(name = "MODELO")
-    private String modelo;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date modelo;
     @Column(name = "ANO")
-    private String ano;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date ano;
     @Column(name = "CATEGORIA")
     private String categoria;
     @Column(name = "PRECO")
@@ -59,19 +63,19 @@ public class Veiculo implements Serializable  {
         this.id = id;
     }
 
-    public String getModelo() {
+    public Date getModelo() {
         return modelo;
     }
 
-    public void setModelo(String modelo) {
+    public void setModelo(Date modelo) {
         this.modelo = modelo;
     }
 
-    public String getAno() {
+    public Date getAno() {
         return ano;
     }
 
-    public void setAno(String ano) {
+    public void setAno(Date ano) {
         this.ano = ano;
     }
 

@@ -55,7 +55,8 @@ public class VeiculoBean {
          Veiculo veiculoTemp = (Veiculo) (listaVeiculos.getRowData());
          VeiculoDao dao = new VeiculoDao();
          dao.remove(veiculoTemp);
-         return "index";
+         listarVeiculos();
+         return "listaVeiculos";
      }
  
      public String alterarVeiculo() {

@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core" 
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <meta charset="utf-8" />
@@ -58,7 +59,9 @@
                                 <strong><h:outputLabel value="Fabricante"></h:outputLabel>: </strong> 
                                 <h:outputText value="#{veiculo.marca.nome}"></h:outputText><br />
                                 <strong><h:outputLabel value="Ano"></h:outputLabel>: </strong>
-                                <h:outputText value="#{veiculo.ano}"></h:outputText><br />
+                                <h:outputText value="#{veiculo.ano}">
+                                    <f:convertDateTime pattern="MM/yyyy" />
+                                </h:outputText><br />
                                 <strong><h:outputLabel value="Potência"></h:outputLabel>: </strong>
                                 <h:outputText value="#{veiculo.motor}"></h:outputText><br />
                                 <strong><h:outputLabel value="Preço"></h:outputLabel>: </strong>

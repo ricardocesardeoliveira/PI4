@@ -18,7 +18,8 @@
         </div> 
 
         <div class="container-principal">
-            <p:dataTable id="veiculos" var="veiculo" value="#{veiculoBean.listarVeiculos()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhum veículo cadastrado.">
+            <h:form> 
+                <p:dataTable id="veiculos" var="veiculo" value="#{veiculoBean.listarVeiculos()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhum veículo cadastrado.">
                 <f:facet name="header">
                     Lista de Veículos
                 </f:facet>
@@ -42,21 +43,18 @@
                         <p:commandButton action="#{veiculoBean.prepararAlterarVeiculo()}" icon="ui-icon-pencil" />
                     </h:form>  
                 </p:column>
-                <p:column headerText="Excluir" style="text-align: center; width:55px">
-                    <h:form>           
+                <p:column headerText="Excluir" style="text-align: center; width:55px">    
                         <p:growl id="message" showDetail="true" />
-                        <p:commandButton update="message" action="#{veiculoBean.excluirVeiculo()}" icon="ui-icon-close">
+                        <p:commandButton update="message veiculos" action="#{veiculoBean.excluirVeiculo()}" icon="ui-icon-close">
                             <p:confirm header="Atenção" message="Deseja realmente excluir o veículo selecionado?" icon="ui-icon-alert" />
                         </p:commandButton>
                         <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
-                            <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                            <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
                             <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
                         </p:confirmDialog>
-                    </h:form>
                 </p:column>
-
-            </p:dataTable>
-
+                </p:dataTable>
+            </h:form>
         </div>
     </h:body>
 </html>
