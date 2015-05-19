@@ -39,9 +39,7 @@
                     <h:outputText value="#{veiculo.preco}"/>
                 </p:column>
                 <p:column headerText="Editar" style="text-align: center; width:55px">        
-                    <h:form>
-                        <p:commandButton action="#{veiculoBean.prepararAlterarVeiculo()}" icon="ui-icon-pencil" />
-                    </h:form>  
+                    <p:commandButton action="#{veiculoBean.prepararAlterarVeiculo()}" icon="ui-icon-pencil" />
                 </p:column>
                 <p:column headerText="Excluir" style="text-align: center; width:55px">    
                         <p:growl id="message" showDetail="true" />

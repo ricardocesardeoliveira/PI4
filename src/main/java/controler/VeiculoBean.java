@@ -32,7 +32,7 @@ public class VeiculoBean {
          cor = new Cor();
      }
  
-     public String prepararAlterarPessoa() {
+     public String prepararAlterarVeiculo() {
          veiculo = (Veiculo) (listaVeiculos.getRowData());
          return "updateVeiculo";
      }
@@ -62,7 +62,7 @@ public class VeiculoBean {
      public String alterarVeiculo() {
          VeiculoDao dao = new VeiculoDao();
          dao.update(veiculo);
-         return "index";
+         return "listaVeiculos";
      }
 
     public Veiculo getVeiculo() {
