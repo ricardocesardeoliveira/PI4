@@ -15,7 +15,8 @@
         </div> 
 
         <div class="container-principal">
-            <p:dataTable id="cores" var="cor" value="#{corBean.listarCores()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhuma cor cadastrada.">
+            <h:form>
+                <p:dataTable id="cores" var="cor" value="#{corBean.listarCores()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhuma cor cadastrada.">
 
                 <f:facet name="header">
                     Lista de Cadastros de Cores
@@ -29,17 +30,13 @@
                 </p:column>
 
                 <p:column headerText="Editar" style="text-align: center; width:55px">        
-
-                    <h:form>
-                        <p:commandButton action="#{corBean.prepararAlterarCor()}" icon="ui-icon-pencil" />
-                    </h:form>  
+                    <p:commandButton action="#{corBean.prepararAlterarCor()}" icon="ui-icon-pencil" />  
                 </p:column>
 
-                <p:column headerText="Excluir" style="text-align: center; width:55px">
-                    <h:form>           
+                <p:column headerText="Excluir" style="text-align: center; width:55px">           
                         <p:growl id="message" showDetail="true" />
 
-                        <p:commandButton update="message" action="#{corBean.excluirCor()}" icon="ui-icon-close">
+                        <p:commandButton update="message cores" action="#{corBean.excluirCor()}" icon="ui-icon-close">
                             <p:confirm header="Atenção" message="Deseja realmente Excluir?" icon="ui-icon-alert" />
                         </p:commandButton>
 
@@ -47,10 +44,11 @@
                             <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
                             <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
                         </p:confirmDialog>
-                    </h:form>
+                    
                 </p:column>
 
-            </p:dataTable>
+                </p:dataTable>
+            </h:form>
 
         </div>
     </h:body>
