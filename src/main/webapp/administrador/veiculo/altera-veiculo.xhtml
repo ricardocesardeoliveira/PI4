@@ -40,7 +40,7 @@
                         <p:inputText id="imagem" value="#{veiculoBean.veiculo.img_princial}" required="true" />
                         
                         <p:outputLabel value="Marca:" for="marca" />
-                        <p:selectOneMenu id="marca" value="#{veiculoBean.marca.id_marca}">
+                        <p:selectOneMenu id="marca" value="#{veiculoBean.veiculo.marca.id_marca}">
                             <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
                             <f:selectItems value="#{marcaBean.marcas}" var="marca" itemValue="#{marca.id_marca}" itemLabel="#{marca.nome}" />
                         </p:selectOneMenu>
@@ -52,7 +52,7 @@
                         <p:inputText id="preco" value="#{veiculoBean.veiculo.preco}" required="true" label="Preço" requiredMessage="Campo preço é obrigatorio!"/>
                                                 
                         <p:outputLabel value="Cor:" for="cor" />
-                        <p:selectOneMenu id="cor" value="#{veiculoBean.cor.idCor}">
+                        <p:selectOneMenu id="cor" value="#{veiculoBean.veiculo.cor.idCor}">
                             <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
                             <f:selectItems value="#{corBean.cores}" var="cor" itemValue="#{cor.idCor}" itemLabel="#{cor.nome}" />
                         </p:selectOneMenu>
