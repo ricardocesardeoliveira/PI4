@@ -1,11 +1,11 @@
 
 package controler;
 
-import dao.MarcaDao;
 import dao.VeiculoDao;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import model.Marca;
 import model.Veiculo;
@@ -17,10 +17,15 @@ public class VeiculoQuiosqueBean implements Serializable {
     public VeiculoQuiosqueBean() {
         veiculo = new Veiculo();
         marca = new Marca();
+        listaFiat = new ArrayList<>();
     }
 
     private Veiculo veiculo;
     private Marca marca;
+    private String valorPesquisa;
+    
+    
+    private List<Veiculo> listaFiat;
     
     public String setarMarcaBMW(){
         this.marca.setNome("BMW");
@@ -47,9 +52,15 @@ public class VeiculoQuiosqueBean implements Serializable {
         return "veiculos-volkswagen";
     }
     
+    
     public List<Veiculo> getVeiculosFiat() {
-        List<Veiculo> lista = new VeiculoDao().listVeiculosFiat();
-        return lista;
+        listaFiat = new VeiculoDao().listVeiculosFiat();
+        return listaFiat;
+    }
+    
+    public List<Veiculo> getVeiculosFiatFilter() {
+        listaFiat = new VeiculoDao().listVeiculosFiatFilter(valorPesquisa);
+        return listaFiat;
     }
     
     public List<Veiculo> getVeiculosVW() {
@@ -87,5 +98,15 @@ public class VeiculoQuiosqueBean implements Serializable {
     public void setMarca(Marca marca) {
         this.marca = marca;
     }
+
+    public String getValorPesquisa() {
+        return valorPesquisa;
+    }
+
+    public void setValorPesquisa(String valorPesquisa) {
+        this.valorPesquisa = valorPesquisa;
+    }
+
+    
     
 }

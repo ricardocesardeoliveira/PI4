@@ -29,6 +29,14 @@ public class VeiculoDao {
         return lista;
     }
     
+    public List<Veiculo> listVeiculosFiatFilter(String nome) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        List lista = session.createQuery("from TAB_VEICULO where nome like 'Palio'").list();
+        t.commit();
+        return lista;
+    }
+    
     public List<Veiculo> listVeiculosVW() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
