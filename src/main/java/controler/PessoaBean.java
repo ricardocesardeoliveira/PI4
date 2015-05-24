@@ -1,6 +1,5 @@
 package controler;
 
-import dao.EnderecoDao;
 import dao.PessoaDao;
 import model.Endereco;
 import model.Pessoa;
@@ -9,12 +8,12 @@ import model.Pessoa;
 //import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class PessoaBean {
 
     private Pessoa pessoa;

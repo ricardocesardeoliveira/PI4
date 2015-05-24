@@ -8,7 +8,7 @@ package controler;
 import dao.VeiculoDao;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import model.Cor;
@@ -16,7 +16,7 @@ import model.Marca;
 import model.Veiculo;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class VeiculoBean {
     
     private Veiculo veiculo;

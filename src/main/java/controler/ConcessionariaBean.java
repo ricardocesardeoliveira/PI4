@@ -3,13 +3,13 @@ package controler;
 import dao.ConcessionariaDao;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import model.Concessionaria;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class ConcessionariaBean {
     
     private Concessionaria concessionaria;

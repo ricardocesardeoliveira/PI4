@@ -4,12 +4,12 @@ import dao.MarcaDao;
 import java.util.List;
 import model.Marca;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class MarcaBean {
 
     private Marca marca;

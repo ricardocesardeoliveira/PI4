@@ -3,10 +3,10 @@ package controler;
 import dao.EnderecoDao;
 import model.Endereco;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class EnderecoBean {
 
     private Endereco endereco;
