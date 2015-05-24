@@ -52,6 +52,26 @@ public class VeiculoQuiosqueBean implements Serializable {
         return lista;
     }
     
+    public List<Veiculo> getVeiculosVW() {
+        List<Veiculo> lista = new VeiculoDao().listVeiculosVW();
+        return lista;
+    }
+    
+    public List<Veiculo> getVeiculosBMW() {
+        List<Veiculo> lista = new VeiculoDao().listVeiculosBMW();
+        return lista;
+    }
+    
+    public List<Veiculo> getVeiculosNissan() {
+        List<Veiculo> lista = new VeiculoDao().listVeiculosNissan();
+        return lista;
+    }
+    
+    public List<Veiculo> getVeiculosToyota() {
+        List<Veiculo> lista = new VeiculoDao().listVeiculosToyota();
+        return lista;
+    }
+    
     public Veiculo getVeiculo() {
         return veiculo;
     }

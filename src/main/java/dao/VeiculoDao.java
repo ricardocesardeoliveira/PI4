@@ -2,7 +2,6 @@
 package dao;
 
 import java.util.List;
-import model.Pessoa;
 import model.Veiculo;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -25,7 +24,39 @@ public class VeiculoDao {
     public List<Veiculo> listVeiculosFiat() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        List lista = session.createQuery("from TAB_VEICULO where id_marca: 5").list();
+        List lista = session.createQuery("from TAB_VEICULO where id_marca = 1").list();
+        t.commit();
+        return lista;
+    }
+    
+    public List<Veiculo> listVeiculosVW() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        List lista = session.createQuery("from TAB_VEICULO where id_marca = 2").list();
+        t.commit();
+        return lista;
+    }
+    
+    public List<Veiculo> listVeiculosBMW() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        List lista = session.createQuery("from TAB_VEICULO where id_marca = 3").list();
+        t.commit();
+        return lista;
+    }
+    
+    public List<Veiculo> listVeiculosNissan() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        List lista = session.createQuery("from TAB_VEICULO where id_marca = 4").list();
+        t.commit();
+        return lista;
+    }
+    
+    public List<Veiculo> listVeiculosToyota() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        List lista = session.createQuery("from TAB_VEICULO where id_marca = 5").list();
         t.commit();
         return lista;
     }
