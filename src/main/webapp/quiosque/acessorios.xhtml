@@ -2,16 +2,63 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
+      
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <title> Multi-Marcas Quiosque </title>
+            <meta name="description" content="" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+            <link rel="stylesheet" href="../css/bootstrap.min.css" />
+            <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+            <link rel="stylesheet" href="../css/fonts.css" />
+            <link rel="stylesheet" href="../css/main.css" />
+
+            <script src="../js/modernizr.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     </h:head>
     <h:body>
+        <div class="container">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="mybold"><h:link outcome="index.xhtml" value="Home" /></li>
+                    <li class="mybold"><h:link outcome="marcas.xhtml" value="Marcas" /></li>
+                    <li class="mybold"><h:link outcome="veiculos-fiat.xhtml" value="Veículos" /></li>
+                    <li class="active mybold">Kits / Acessórios</li>
+                </ol>
+            </nav>
+        </div>
+        
+        
         <p:dataTable id="checkboxDT" var="car" value="#{veiculoQuiosqueBean.veiculosFiat}" selection="#{veiculoQuiosqueBean.veiculoSelecionados}" rowKey="#{car.id}" style="margin-bottom:0">
             <f:facet name="header">
-            Checkbox
+            KIT
+        </f:facet>
+        <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
+        <p:column headerText="Id">
+            <h:outputText value="#{car.id}" />
+        </p:column>
+        <p:column headerText="Year">
+            <h:outputText value="#{car.ano}" />
+        </p:column>
+        <p:column headerText="Brand">
+            <h:outputText value="#{car.marca.nome}" />
+        </p:column>
+        <p:column headerText="Color">
+            <h:outputText value="#{car.cor.nome}" />
+        </p:column>
+        <p:column headerText="Imagem">
+            <h:graphicImage value="../img/acessorios/100187143.jpg" class="img-responsive" width="60"  />
+        </p:column>
+    </p:dataTable>
+        
+        <p:dataTable id="checkboxDT1" var="car" value="#{veiculoQuiosqueBean.veiculosFiat}" selection="#{veiculoQuiosqueBean.veiculoSelecionados}" rowKey="#{car.id}" style="margin-bottom:0">
+            <f:facet name="header">
+            ACESSÓRIO
         </f:facet>
         <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
         <p:column headerText="Id">
@@ -30,10 +77,11 @@
             <h:graphicImage value="../img/acessorios/100187143.jpg" class="img-responsive" width="60"  />
         </p:column>
         <f:facet name="footer">
-            <p:commandButton process="checkboxDT" icon="ui-icon-search" value="View" oncomplete="PF('multiCarDialog').show()" />
+            <p:commandButton process="checkboxDT1" icon="ui-icon-search" value="Avançar" oncomplete="PF('multiCarDialog').show()" />
         </f:facet>
     </p:dataTable>
-
+        
+        
     </h:body>
 </html>
 

@@ -15,7 +15,7 @@
             <from-outcome>updatePessoa</from-outcome> 
             <to-view-id>/administrador/pessoa/altera-pessoa.xhtml</to-view-id> 
         </navigation-case>
-      
+
         <navigation-case>
             <from-outcome>listaPessoas</from-outcome> 
             <to-view-id>/administrador/pessoa/lista-pessoas.xhtml</to-view-id> 
@@ -94,6 +94,28 @@
         <navigation-case>
             <from-outcome>addVeiculo</from-outcome> 
             <to-view-id>/administrador/veiculo/cadastra-veiculo.xhtml</to-view-id> 
+        </navigation-case>
+        
+        
+        
+        <navigation-case>
+            <from-outcome>addAcessorio</from-outcome> 
+            <to-view-id>/administrador/acessorio/cadastra-acessorio.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>updateAcessorio</from-outcome> 
+            <to-view-id>/administrador/acessorio/altera-acessorio.xhtml</to-view-id> 
+        </navigation-case>
+      
+        <navigation-case>
+            <from-outcome>listaAcessorios</from-outcome> 
+            <to-view-id>/administrador/acessorio/lista-acessorios.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addAcessorio</from-outcome> 
+            <to-view-id>/administrador/acessorio/cadastra-acessorio.xhtml</to-view-id> 
         </navigation-case>
         
         
