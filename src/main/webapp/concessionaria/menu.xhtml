@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <link rel="StyleSheet" type="text/css" href="css/style.css" media="screen" />
+    </h:head>
+    <h:body>
+        <nav>
+            <h:form>  
+                <p:growl id="messages"/>
+
+                <p:menubar>
+                    <p:menuitem value="Home" action="index" icon="ui-icon-arrowreturnthick-1-w" />
+
+                    <p:submenu label="Cadastrar" >
+                        <p:menuitem value="Concessionaria" outcome="addConcessionaria" />
+                        <p:menuitem value="Cor" outcome="addCor" />
+                        <p:menuitem value="Marca" outcome="addMarca" />
+                        <p:menuitem value="Pessoa" outcome="addPessoa" />
+                        <p:menuitem value="Veículo" outcome="addVeiculo" />
+                    </p:submenu>
+
+                    <p:submenu label="Consultar" >
+                        <p:menuitem value="Concessionaria" outcome="listaConcessionarias" />
+                        <p:menuitem value="Cor" outcome="listaCores" />
+                        <p:menuitem value="Marca" outcome="listaMarcas" />
+                        <p:menuitem value="Pessoa" outcome="listaPessoas" />
+                        <p:menuitem value="Veículo" outcome="listaVeiculos" />
+                    </p:submenu>
+                    
+                    <p:submenu label="Relatórios" >
+                        <p:menuitem value="Veículos mais consultados por faixa de idade" outcome="listaPessoas" />
+                        <p:menuitem value="Veículos mais consultados por Sexo" outcome="listaMarcas" />
+                        <p:menuitem value="Veículos mais consultados por região" outcome="listaConcessionarias" />
+                        <p:menuitem value="Concessionárias que mais venderam" outcome="listaPessoas" />
+                        <p:menuitem value="Veículos mais vendidos" outcome="listaPessoas" />
+                    </p:submenu>
+                    
+                    <f:facet name="options">
+
+                        <p:commandButton type="button" value="Logout" icon="ui-icon-extlink"  />
+                    </f:facet>
+                </p:menubar>
+            </h:form>
+
+        </nav>
+    </h:body>
+</html>
+

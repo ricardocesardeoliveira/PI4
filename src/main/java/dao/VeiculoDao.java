@@ -3,6 +3,7 @@ package dao;
 
 import java.util.List;
 import model.Veiculo;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
@@ -32,7 +33,9 @@ public class VeiculoDao {
     public List<Veiculo> listVeiculosFiatFilter(String nome) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        List lista = session.createQuery("from TAB_VEICULO where nome like 'Palio'").list();
+        Query query = session.createQuery("from TAB_VEICULO where nome = :nome");
+        query.setParameter("nome", nome);
+        List lista = query.list();
         t.commit();
         return lista;
     }

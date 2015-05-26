@@ -23,7 +23,8 @@ public class VeiculoQuiosqueBean implements Serializable {
     private Veiculo veiculo;
     private Marca marca;
     private String valorPesquisa;
-    
+    private Veiculo veiculoSelecionado;
+    private List<Veiculo> veiculoSelecionados;
     
     private List<Veiculo> listaFiat;
     
@@ -58,9 +59,8 @@ public class VeiculoQuiosqueBean implements Serializable {
         return listaFiat;
     }
     
-    public List<Veiculo> getVeiculosFiatFilter() {
+    public void veiculosFiatFilter() {
         listaFiat = new VeiculoDao().listVeiculosFiatFilter(valorPesquisa);
-        return listaFiat;
     }
     
     public List<Veiculo> getVeiculosVW() {
@@ -105,6 +105,30 @@ public class VeiculoQuiosqueBean implements Serializable {
 
     public void setValorPesquisa(String valorPesquisa) {
         this.valorPesquisa = valorPesquisa;
+    }
+
+    public Veiculo getVeiculoSelecionado() {
+        return veiculoSelecionado;
+    }
+
+    public void setVeiculoSelecionado(Veiculo veiculoSelecionado) {
+        this.veiculoSelecionado = veiculoSelecionado;
+    }
+
+    public List<Veiculo> getVeiculoSelecionados() {
+        return veiculoSelecionados;
+    }
+
+    public void setVeiculoSelecionados(List<Veiculo> veiculoSelecionados) {
+        this.veiculoSelecionados = veiculoSelecionados;
+    }
+
+    public List<Veiculo> getListaFiat() {
+        return listaFiat;
+    }
+
+    public void setListaFiat(List<Veiculo> listaFiat) {
+        this.listaFiat = listaFiat;
     }
 
     
