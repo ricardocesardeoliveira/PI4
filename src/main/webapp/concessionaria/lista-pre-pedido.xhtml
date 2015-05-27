@@ -9,22 +9,22 @@
     </h:head>
     <h:body>
         <h:form id="form">
-            <p:dataTable var="car" value="#{veiculoQuiosqueBean.veiculosFiat}" paginator="true" rows="10" >
+            <p:dataTable var="prePedido" value="#{prePedidoBean.lista}" paginator="true" rows="10" >
                          
-                <p:column headerText="Id" sortBy="#{car.id}" filterBy="#{car.id}">
-                    <h:outputText value="#{car.id}" />
+                <p:column headerText="Id" sortBy="#{prePedido.id}" filterBy="#{prePedido.id}">
+                    <h:outputText value="#{prePedido.id}" />
                 </p:column>
-                <p:column headerText="Modelo" sortBy="#{car.modelo}" filterBy="#{car.modelo}">
-                    <h:outputText value="#{car.modelo}" />
+                <p:column headerText="Cliente" sortBy="#{prePedido.pessoa.nome}" filterBy="#{prePedido.pessoa.nome}">
+                    <h:outputText value="#{prePedido.pessoa.nome}" />
                 </p:column>
-                <p:column headerText="Marca" sortBy="#{car.marca.nome}" filterBy="#{car.marca.nome}">
-                    <h:outputText value="#{car.marca.nome}" />
+                <p:column headerText="Veiculo" sortBy="#{prePedido.veiculo.nome}" filterBy="#{prePedido.veiculo.nome}">
+                    <h:outputText value="#{prePedido.veiculo.nome}" />
                 </p:column>
-                <p:column headerText="Color" sortBy="#{car.cor.nome}" filterBy="#{car.cor.nome}">
-                    <h:outputText value="#{car.cor.nome}" />
+                <p:column headerText="Preço" sortBy="#{prePedido.preco}" filterBy="#{prePedido.preco}">
+                    <h:outputText value="#{prePedido.preco}" />
                 </p:column>
-                <p:column headerText="Motor" sortBy="#{car.motor}" filterBy="#{car.motor}">
-                   <h:outputText value="#{car.motor}" />
+                <p:column headerText="Data" sortBy="#{prePedido.dia}" filterBy="#{prePedido.dia}">
+                   <h:outputText value="#{prePedido.dia}" />
                 </p:column>
             </p:dataTable>
 

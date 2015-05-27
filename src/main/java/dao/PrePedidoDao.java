@@ -1,44 +1,45 @@
+
 package dao;
 
-import util.HibernateUtil;
 import java.util.List;
-import model.Acessorio;
+import model.PrePedido;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import util.HibernateUtil;
 
-public class AcessorioDao {
-
-    public void save(Acessorio acessorio) {
+public class PrePedidoDao {
+    
+        public void save(PrePedido prePedido) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        session.save(acessorio);
+        session.save(prePedido);
         t.commit();
     }
 
-    public Acessorio getAcessorio(long id) {
+    public PrePedido getPrePedido(long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        return (Acessorio) session.load(Acessorio.class, id);
+        return (PrePedido) session.load(PrePedido.class, id);
     }
 
-    public List<Acessorio> list() {
+    public List<PrePedido> list() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        List lista = session.createQuery("from tab_acessorio").list();
+        List lista = session.createQuery("from TAB_PRE_PEDIDO").list();
         t.commit();
         return lista;
     }
 
-    public void remove(Acessorio acessorio) {
+    public void remove(PrePedido prePedido) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        session.delete(acessorio);
+        session.delete(prePedido);
         t.commit();
     }
 
-    public void update(Acessorio acessorio) {
+    public void update(PrePedido prePedido) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        session.update(acessorio);
+        session.update(prePedido);
         t.commit();
     }
 
