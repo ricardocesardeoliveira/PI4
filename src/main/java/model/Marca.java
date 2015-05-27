@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,8 +12,9 @@ public class Marca implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_marca")
     private Long id_marca;
-    
+    @Column(name = "nome")
     private String nome;
 
     public Long getId_marca() {

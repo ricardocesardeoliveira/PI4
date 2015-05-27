@@ -19,8 +19,8 @@ public class Veiculo implements Serializable  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private Long id;
+    @Column(name = "id_veiculo")
+    private Long id_veiculo;
     @Column(name = "NOME")
     private String nome;
     @Column(name = "MODELO")
@@ -42,15 +42,14 @@ public class Veiculo implements Serializable  {
     
     @Column(name = "IMG_PRINCIPAL")
     private String img_princial;
-    
-    
+
     @ManyToOne
-    @JoinColumn(name = "idCor")
+    @JoinColumn(name = "id_Cor")
     private Cor cor;    
     
     @ManyToMany
     @JoinTable(name="TAB_VEICULO_ACESSORIO", joinColumns=
-    {@JoinColumn(name="id")}, inverseJoinColumns=
+    {@JoinColumn(name="id_veiculo")}, inverseJoinColumns=
     {@JoinColumn(name="id_acessorio")})
     private List<Acessorio> acessorios;
 
@@ -63,11 +62,11 @@ public class Veiculo implements Serializable  {
     }
 
     public Long getId() {
-        return id;
+        return id_veiculo;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long id_veiculo) {
+        this.id_veiculo = id_veiculo;
     }
 
     public Date getModelo() {

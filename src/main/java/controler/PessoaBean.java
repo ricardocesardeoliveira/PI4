@@ -1,12 +1,10 @@
 package controler;
 
 import dao.PessoaDao;
+import java.io.Serializable;
+import java.util.List;
 import model.Endereco;
 import model.Pessoa;
-//import java.text.DateFormat;
-//import java.text.SimpleDateFormat;
-//import java.util.Date;
-import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.model.DataModel;
@@ -14,13 +12,11 @@ import javax.faces.model.ListDataModel;
 
 @ManagedBean
 @RequestScoped
-public class PessoaBean {
+public class PessoaBean  implements Serializable {
 
     private Pessoa pessoa;
     private Endereco endereco;
     private DataModel listaPessoas;
-//    private String data;
-//    private Date dt;
 
     public PessoaBean () {
         endereco = new Endereco();
@@ -85,11 +81,4 @@ public class PessoaBean {
         this.endereco = endereco;
     }
 
-//    public String getData() {
-//        return data;
-//    }
-//    
-//    public void setData(String data) {
-//        this.data = data;
-//    }
 }

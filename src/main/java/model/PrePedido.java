@@ -17,26 +17,27 @@ public class PrePedido implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;    
-    @Column(name = "DIA")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_pre_pedido")
+    private Long id_pre_pedido;    
+    @Column(name = "dia")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dia;
-    @Column(name = "PRECO")
+    @Column(name = "preco")
     private String preco;
     @ManyToOne
-    @JoinColumn(name = "ID")
+    @JoinColumn(name = "id_veiculo")
     private Veiculo veiculo;
     @ManyToOne
     @JoinColumn(name = "id_pessoa")
     private Pessoa pessoa;
 
     public Long getId() {
-        return id;
+        return id_pre_pedido;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long id_pre_pedido) {
+        this.id_pre_pedido = id_pre_pedido;
     }
 
     public Date getDia() {

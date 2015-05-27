@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 //import java.util.Date;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,9 +18,19 @@ public class Pessoa implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_pessoa")
     private Long id_pessoa;
-    private String nome, rg, cpf, sexo;
+    @Column(name = "nome")
+    private String nome;
+    @Column(name = "rg")
+    private String rg;
+    @Column(name = "cpf")
+    private String cpf;
+    @Column(name = "sexo")
+    private String sexo;
+    @Column(name = "data_nasc")
     private String data_nasc;
+    @Column(name = "eMail")
     private String eMail;
 
 //    @Temporal(TemporalType.DATE)

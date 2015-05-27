@@ -4,6 +4,7 @@ import servicos.CepWebService;
 import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,16 +15,30 @@ public class Endereco implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id_endereco")
+    private Long id_endereco;
+    @Column(name = "cep")
     private String cep;
-    private String logradouro, bairro, cidade, estado, numero, complemento;
+    @Column(name = "logradouro")
+    private String logradouro;
+    @Column(name = "bairro")
+    private String bairro;
+    @Column(name = "cidade")
+    private String cidade;
+    @Column(name = "estado")
+    private String estado;
+    @Column(name = "numero")
+    private String numero;
+    @Column(name = "complemento")
+    private String complemento;
+    @Column(name = "regiao")
     private String regiao;
 
     public Endereco() {
     }
 
-    public Endereco(Long id, String logradouro, String bairro, String cep, String cidade, String estado, String numero, String complemento) {
-        this.id = id;
+    public Endereco(Long id_endereco, String logradouro, String bairro, String cep, String cidade, String estado, String numero, String complemento) {
+        this.id_endereco = id_endereco;
         this.logradouro = logradouro;
         this.bairro = bairro;
         this.cep = cep;
@@ -48,15 +63,15 @@ public class Endereco implements Serializable {
     }
 
     public Long getId_endereco() {
-        return id;
+        return id_endereco;
     }
 
     public Long getId() {
-        return id;
+        return id_endereco;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long id_endereco) {
+        this.id_endereco = id_endereco;
     }
 
     public String getRegiao() {
@@ -68,7 +83,7 @@ public class Endereco implements Serializable {
     }
 
     public void setId_endereco(Long id_endereco) {
-        this.id = id_endereco;
+        this.id_endereco = id_endereco;
     }
 
     public String getLogradouro() {

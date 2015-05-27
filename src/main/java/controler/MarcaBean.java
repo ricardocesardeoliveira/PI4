@@ -1,6 +1,7 @@
 package controler;
 
 import dao.MarcaDao;
+import java.io.Serializable;
 import java.util.List;
 import model.Marca;
 import javax.faces.bean.ManagedBean;
@@ -10,7 +11,7 @@ import javax.faces.model.ListDataModel;
 
 @ManagedBean
 @RequestScoped
-public class MarcaBean {
+public class MarcaBean  implements Serializable {
 
     private Marca marca;
     private DataModel listaMarcas;
@@ -68,7 +69,5 @@ public class MarcaBean {
     public void setListaMarcas(DataModel listaMarcas) {
         this.listaMarcas = listaMarcas;
     }
-    
-    
 
 }

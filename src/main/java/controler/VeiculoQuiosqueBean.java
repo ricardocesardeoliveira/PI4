@@ -131,6 +131,4 @@ public class VeiculoQuiosqueBean implements Serializable {
         this.listaFiat = listaFiat;
     }
 
-    
-    
 }

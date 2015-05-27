@@ -2,7 +2,6 @@ package dao;
 
 import java.util.List;
 import model.Marca;
-import model.Pessoa;
 import util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

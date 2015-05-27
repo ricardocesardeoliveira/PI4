@@ -6,6 +6,7 @@
 package controler;
 
 import dao.VeiculoDao;
+import java.io.Serializable;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -17,7 +18,7 @@ import model.Veiculo;
 
 @ManagedBean
 @RequestScoped
-public class VeiculoBean {
+public class VeiculoBean implements Serializable {
     
     private Veiculo veiculo;
     private List<Veiculo> lista;

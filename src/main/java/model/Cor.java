@@ -2,6 +2,7 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,15 +13,17 @@ public class Cor implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCor;
+    @Column(name = "id_cor")
+    private Integer id_cor;
+    @Column(name = "nome")
     private String nome;
 
     public Integer getIdCor() {
-        return idCor;
+        return id_cor;
     }
 
-    public void setIdCor(Integer idCor) {
-        this.idCor = idCor;
+    public void setIdCor(Integer id_cor) {
+        this.id_cor = id_cor;
     }
 
     public String getNome() {

@@ -5,15 +5,13 @@
  */
 package controler;
 
-import java.util.List;
-import javax.annotation.PostConstruct;
+import java.io.Serializable;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
-import javax.faces.bean.ManagedProperty;
 
 @Named(value = "relatorioBean")
 @Dependent
-public class RelatorioBean {
+public class RelatorioBean  implements Serializable{
     
     public RelatorioBean() {
     }

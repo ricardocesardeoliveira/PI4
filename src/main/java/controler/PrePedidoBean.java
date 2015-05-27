@@ -2,6 +2,7 @@
 package controler;
 
 import dao.PrePedidoDao;
+import java.io.Serializable;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -11,7 +12,7 @@ import model.PrePedido;
 
 @Named(value = "prePedidoBean")
 @RequestScoped
-public class PrePedidoBean {
+public class PrePedidoBean  implements Serializable {
 
     private PrePedido prePedido;
     private DataModel listaPrePedidos;

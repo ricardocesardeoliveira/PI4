@@ -1,13 +1,14 @@
 package controler;
 
 import dao.EnderecoDao;
+import java.io.Serializable;
 import model.Endereco;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-public class EnderecoBean {
+public class EnderecoBean  implements Serializable {
 
     private Endereco endereco;
 

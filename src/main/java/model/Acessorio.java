@@ -3,10 +3,12 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity(name = "tab_acessorio")
@@ -14,10 +16,15 @@ public class Acessorio implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_acessorio")
     private Long id_acessorio;
+    @Column(name = "nome")
     private String nome;
+    @Column(name = "valor")
     private double valor;
+    @Column(name = "descricao")
     private String descricao;
+    @JoinColumn(name = "id_veiculo")
     @ManyToOne(cascade=CascadeType.ALL)
     private Veiculo veiculo;
 

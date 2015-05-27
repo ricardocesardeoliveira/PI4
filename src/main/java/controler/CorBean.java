@@ -2,6 +2,7 @@
 package controler;
 
 import dao.CorDao;
+import java.io.Serializable;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -11,7 +12,7 @@ import model.Cor;
 
 @ManagedBean
 @RequestScoped
-public class CorBean {
+public class CorBean  implements Serializable {
     
     private Cor cor;
     private DataModel listaCores;

@@ -2,6 +2,7 @@
 package controler;
 
 import dao.AcessorioDao;
+import java.io.Serializable;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -11,7 +12,7 @@ import model.Acessorio;
 
 @Named(value = "acessorioBean")
 @RequestScoped
-public class AcessorioBean {
+public class AcessorioBean  implements Serializable {
 
     private Acessorio acessorio;
     private DataModel listaAcessorios;
