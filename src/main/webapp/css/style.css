@@ -17,3 +17,32 @@
 #topo{
     font-size: 13px;
 }
+
+.text-default, .ui-menuitem-link {
+    font-size: 14px !important;
+    font-weight: normal !important;
+    color: #fff;
+}
+
+.ui-menuitem-text {
+    color: #000;
+}
+
+.ui-panel-title, .ui-datatable-header {
+    font-size: 20px !important;
+}
+
+.nav-menu {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.ui-panel, .ui-datatable  {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.ui-menu, .ui-menu-child {
+    background: #E1E1E1 !important;
+    border: 1px solid #a8a8a8;
+}
