@@ -5,30 +5,62 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Multi-Marcas Concessionária</title>
     </h:head>
     <h:body>
         <h:form id="form">
-            <p:dataTable var="prePedido" value="#{prePedidoBean.lista}" paginator="true" rows="10" >
-                         
-                <p:column headerText="Id" sortBy="#{prePedido.id}" filterBy="#{prePedido.id}">
-                    <h:outputText value="#{prePedido.id}" />
+            <p:dataTable var="prePedido" selectionMode="single" value="#{prePedidoBean.lista}" paginator="true" rows="10" selection="#{prePedidoBean.prePedidoSelecionado}" rowKey="#{prePedido.id}">
+                
+                <p:column headerText="CPF" sortBy="#{prePedido.pessoa.cpf}" filterBy="#{prePedido.pessoa.cpf}">
+                    <h:outputText value="#{prePedido.pessoa.cpf}" />
                 </p:column>
                 <p:column headerText="Cliente" sortBy="#{prePedido.pessoa.nome}" filterBy="#{prePedido.pessoa.nome}">
                     <h:outputText value="#{prePedido.pessoa.nome}" />
                 </p:column>
-                <p:column headerText="Veiculo" sortBy="#{prePedido.veiculo.nome}" filterBy="#{prePedido.veiculo.nome}">
+                <p:column headerText="Veículo" sortBy="#{prePedido.veiculo.nome}" filterBy="#{prePedido.veiculo.nome}">
                     <h:outputText value="#{prePedido.veiculo.nome}" />
                 </p:column>
                 <p:column headerText="Preço" sortBy="#{prePedido.preco}" filterBy="#{prePedido.preco}">
                     <h:outputText value="#{prePedido.preco}" />
                 </p:column>
-                <p:column headerText="Data" sortBy="#{prePedido.dia}" filterBy="#{prePedido.dia}">
-                   <h:outputText value="#{prePedido.dia}" />
+                <p:column headerText="Data" sortBy="#{prePedido.dia}" filterBy="#{prePedido.dia}" >
+                   <h:outputText value="#{prePedido.dia}" >
+                       <f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+                   </h:outputText>                   
                 </p:column>
+                <p:column style="width:32px;text-align: center">
+                    <p:commandButton update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">
+                        <f:setPropertyActionListener value="#{prePedido}" target="#{prePedidoBean.prePedidoSelecionado}" />
+                   </p:commandButton>
+               </p:column>
             </p:dataTable>
 
-    
+            <p:dialog header="Informações adicionais" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+            <p:outputPanel style="margin: 0 auto;" id="carDetail">
+                <p:panelGrid style="margin: 0 auto;" columns="2" rendered="#{not empty prePedidoBean.prePedidoSelecionado}" columnClasses="label,value">
+                    <f:facet name="header">
+                        <p:graphicImage value="../img/veiculos/fiat/#{prePedidoBean.prePedidoSelecionado.veiculo.img_princial}" width="60"/> 
+                    </f:facet>
+
+                    <h:outputText value="Id:" />
+                    <h:outputText value="#{prePedidoBean.prePedidoSelecionado.id}" />
+
+                    <h:outputText value="Year" />
+                    <h:outputText value="#{prePedidoBean.prePedidoSelecionado.preco}" />
+
+                    <h:outputText value="Color:" />
+                    <h:outputText value="#{prePedidoBean.prePedidoSelecionado.preco}" />
+
+                    <h:outputText value="Price" />
+                    <h:outputText value="$#{prePedidoBean.prePedidoSelecionado.preco}" />
+                    
+                    <f:facet name="footer">
+                        <h:button value="Finalizar pré-pedido"  />
+                    </f:facet>
+                </p:panelGrid>
+            </p:outputPanel>
+    </p:dialog>
+                  
         </h:form>
     </h:body>
 </html>

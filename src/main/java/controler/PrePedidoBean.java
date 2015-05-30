@@ -15,8 +15,10 @@ import model.PrePedido;
 public class PrePedidoBean  implements Serializable {
 
     private PrePedido prePedido;
+    private PrePedido prePedidoSelecionado;
     private DataModel listaPrePedidos;
     private List<PrePedido> lista;
+    
 
     public PrePedidoBean() {
         prePedido = new PrePedido();
@@ -77,5 +79,13 @@ public class PrePedidoBean  implements Serializable {
     public void setLista(List<PrePedido> lista) {
         this.lista = lista;
     }
-    
+
+    public PrePedido getPrePedidoSelecionado() {
+        return prePedidoSelecionado;
+    }
+
+    public void setPrePedidoSelecionado(PrePedido prePedidoSelecionado) {
+        this.prePedidoSelecionado = prePedidoSelecionado;
+    }
+
 }
