@@ -21,12 +21,15 @@
                     <h:outputText value="#{prePedido.veiculo.nome}" />
                 </p:column>
                 <p:column headerText="Preço" sortBy="#{prePedido.preco}" filterBy="#{prePedido.preco}">
-                    <h:outputText value="#{prePedido.preco}" />
+                    <h:outputText value="R$ #{prePedido.preco}" />
                 </p:column>
                 <p:column headerText="Data" sortBy="#{prePedido.dia}" filterBy="#{prePedido.dia}" >
                    <h:outputText value="#{prePedido.dia}" >
                        <f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
                    </h:outputText>                   
+                </p:column>
+                <p:column headerText="Status" sortBy="#{prePedido.status}" filterBy="#{prePedido.status}">
+                    <h:outputText value="#{prePedido.status}" />
                 </p:column>
                 <p:column style="width:32px;text-align: center">
                     <p:commandButton update=":form:carDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">
@@ -35,24 +38,30 @@
                </p:column>
             </p:dataTable>
 
-            <p:dialog header="Informações adicionais" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+            <p:dialog header="Informações do veículo" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
             <p:outputPanel style="margin: 0 auto;" id="carDetail">
                 <p:panelGrid style="margin: 0 auto;" columns="2" rendered="#{not empty prePedidoBean.prePedidoSelecionado}" columnClasses="label,value">
                     <f:facet name="header">
-                        <p:graphicImage value="../img/veiculos/fiat/#{prePedidoBean.prePedidoSelecionado.veiculo.img_princial}" width="60"/> 
+                        <p:graphicImage value="../img/veiculos/#{prePedidoBean.prePedidoSelecionado.veiculo.marca.nome}/#{prePedidoBean.prePedidoSelecionado.veiculo.img_princial}" width="60"/> 
                     </f:facet>
 
-                    <h:outputText value="Id:" />
-                    <h:outputText value="#{prePedidoBean.prePedidoSelecionado.id}" />
+                    <h:outputText value="Veículo" />
+                    <h:outputText value="#{prePedidoBean.prePedidoSelecionado.veiculo.nome}" />
 
-                    <h:outputText value="Year" />
-                    <h:outputText value="#{prePedidoBean.prePedidoSelecionado.preco}" />
+                    <h:outputText value="Ano / Modelo" />
+                    <h:outputText value="#{prePedidoBean.prePedidoSelecionado.veiculo.ano.year} / #{prePedidoBean.prePedidoSelecionado.veiculo.modelo.year}" />
 
-                    <h:outputText value="Color:" />
-                    <h:outputText value="#{prePedidoBean.prePedidoSelecionado.preco}" />
+                    <h:outputText value="Cor" />
+                    <h:outputText value="#{prePedidoBean.prePedidoSelecionado.veiculo.cor.nome}" />
 
-                    <h:outputText value="Price" />
-                    <h:outputText value="$#{prePedidoBean.prePedidoSelecionado.preco}" />
+                    <h:outputText value="Preço Veículo" />
+                    <h:outputText value="R$ #{prePedidoBean.prePedidoSelecionado.veiculo.preco}" />
+                    
+                    <h:outputText value="Preço Veículo + Acessório(s)" />
+                    <h:outputText value="R$ #{prePedidoBean.prePedidoSelecionado.veiculo.preco}" />
+                    
+                    <h:outputText value="Comissão concessionária" />
+                    <h:outputText value="R$ #{prePedidoBean.prePedidoSelecionado.preco}" />
                     
                     <f:facet name="footer">
                         <h:button value="Finalizar pré-pedido"  />

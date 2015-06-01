@@ -147,4 +147,20 @@ public class Veiculo implements Serializable  {
         this.acessorios = acessorios;
     }
 
+    public Long getId_veiculo() {
+        return id_veiculo;
+    }
+
+    public void setId_veiculo(Long id_veiculo) {
+        this.id_veiculo = id_veiculo;
+    }
+
+    public List<Kit> getKits() {
+        return kits;
+    }
+
+    public void setKits(List<Kit> kits) {
+        this.kits = kits;
+    }
+
 }

@@ -25,6 +25,8 @@ public class PrePedido implements Serializable {
     private Date dia;
     @Column(name = "preco")
     private String preco;
+    @Column(name = "status")
+    private String status;
     @ManyToOne
     @JoinColumn(name = "id_veiculo")
     private Veiculo veiculo;
@@ -70,6 +72,22 @@ public class PrePedido implements Serializable {
 
     public void setPreco(String preco) {
         this.preco = preco;
+    }
+
+    public Long getId_pre_pedido() {
+        return id_pre_pedido;
+    }
+
+    public void setId_pre_pedido(Long id_pre_pedido) {
+        this.id_pre_pedido = id_pre_pedido;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 }
