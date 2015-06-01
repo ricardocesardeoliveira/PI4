@@ -1,3 +1,13 @@
+$(document).ready(function(){
+    $(".check").change(function(){
+       if($("input[type='checkbox']:checked").size() === 3){
+          $("input[type='checkbox']:not(:checked)").attr('disabled', 'disabled');
+       } else {
+          $("input[type='checkbox']:not(:checked)").removeAttr('disabled', 'disabled');
+       }
+   });
+});
+
 /*zera checkbox ao fechar o modal*/
 $(document).ready(function($) {
     $('#myModal').on('hidden.bs.modal', function (e) {

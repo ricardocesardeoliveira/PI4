@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title> Multi-Marcas Quiosque </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/main.css" />
+
+        <script src="../js/modernizr.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="mybold"><h:link outcome="index.xhtml" value="Home" /></li>
+                    <li class="mybold"><h:link outcome="marcas.xhtml" value="Marcas" /></li>
+                    <li class="active mybold">Fiat</li>
+                </ol>
+            </nav>
+            
+            <div class="box-content">
+            
+                <div class="row">
+                    <div class="col-md-offset-6 col-md-6">
+                        <h:form id="buscar-car">
+                            <div class="input-group">
+                                <p:inputText class="form-control" pt:placeholder="Procurar por..." >
+                                    <f:ajax event="blur" execute="@all" />
+                                </p:inputText>    
+
+                                <span class="input-group-btn">
+                                    <h:commandButton class="btn btn-default" value="Pesquisar" >
+                                        <!--<f:ajax execute="@form" render="@all"/>-->
+
+                                    </h:commandButton>
+                                </span>
+                            </div>
+                         </h:form>
+                    </div>
+                </div>
+
+                <br />
+                <h:form id="concessionaria">
+                    <div class="row">
+                        <p:growl id="msg" />
+                        <ui:repeat var="concessionaria" value="" id="minhaDivAjax">
+                            
+                            <div class="col-md-2">
+                              <div class="thumbnail">
+                                  <h:selectBooleanCheckbox styleClass="check check-concessionaria" value="" />
+                                  <h:graphicImage value="../img/1024x768.gif" class="img-responsive" alt="Logo Concessionaria" />
+                                <div class="caption">
+                                    <p>
+                                        <strong><h:outputLabel value="Nome"></h:outputLabel>: </strong> 
+                                        <h:outputText value="blabla"></h:outputText><br />
+                                        <strong><h:outputLabel value="Regiao"></h:outputLabel>: </strong>
+                                        <h:outputText value="blabla"></h:outputText>
+                                    </p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-2">
+                              <div class="thumbnail">
+                                  <h:selectBooleanCheckbox styleClass="check check-concessionaria" value="" />
+                                  <h:graphicImage value="../img/1024x768.gif" class="img-responsive" alt="Logo Concessionaria" />
+                                <div class="caption">
+                                    <p>
+                                        <strong><h:outputLabel value="Nome"></h:outputLabel>: </strong> 
+                                        <h:outputText value="blabla"></h:outputText><br />
+                                        <strong><h:outputLabel value="Regiao"></h:outputLabel>: </strong>
+                                        <h:outputText value="blabla"></h:outputText>
+                                    </p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-2">
+                              <div class="thumbnail">
+                                  <h:selectBooleanCheckbox styleClass="check check-concessionaria" value="" />
+                                  <h:graphicImage value="../img/1024x768.gif" class="img-responsive" alt="Logo Concessionaria" />
+                                <div class="caption">
+                                    <p>
+                                        <strong><h:outputLabel value="Nome"></h:outputLabel>: </strong> 
+                                        <h:outputText value="blabla"></h:outputText><br />
+                                        <strong><h:outputLabel value="Regiao"></h:outputLabel>: </strong>
+                                        <h:outputText value="blabla"></h:outputText>
+                                    </p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-2">
+                              <div class="thumbnail">
+                                  <h:selectBooleanCheckbox styleClass="check check-concessionaria" value="" />
+                                  <h:graphicImage value="../img/1024x768.gif" class="img-responsive" alt="Logo Concessionaria" />
+                                <div class="caption">
+                                    <p>
+                                        <strong><h:outputLabel value="Nome"></h:outputLabel>: </strong> 
+                                        <h:outputText value="blabla"></h:outputText><br />
+                                        <strong><h:outputLabel value="Regiao"></h:outputLabel>: </strong>
+                                        <h:outputText value="blabla"></h:outputText>
+                                    </p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-2">
+                              <div class="thumbnail">
+                                  <h:selectBooleanCheckbox styleClass="check check-concessionaria" value="" />
+                                  <h:graphicImage value="../img/1024x768.gif" class="img-responsive" alt="Logo Concessionaria" />
+                                <div class="caption">
+                                    <p>
+                                        <strong><h:outputLabel value="Nome"></h:outputLabel>: </strong> 
+                                        <h:outputText value="blabla"></h:outputText><br />
+                                        <strong><h:outputLabel value="Regiao"></h:outputLabel>: </strong>
+                                        <h:outputText value="blabla"></h:outputText>
+                                    </p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-md-2">
+                              <div class="thumbnail">
+                                  <h:selectBooleanCheckbox styleClass="check check-concessionaria" value="" />
+                                  <h:graphicImage value="../img/1024x768.gif" class="img-responsive" alt="Logo Concessionaria" />
+                                <div class="caption">
+                                    <p>
+                                        <strong><h:outputLabel value="Nome"></h:outputLabel>: </strong> 
+                                        <h:outputText value="blabla"></h:outputText><br />
+                                        <strong><h:outputLabel value="Regiao"></h:outputLabel>: </strong>
+                                        <h:outputText value="blabla"></h:outputText>
+                                    </p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                        </ui:repeat>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h:commandButton class="btn btn-success center-block" value="Prosseguir" />
+                        </div>
+                    </div>
+                </h:form>
+                
+            </div>
+        </div>
+        
+        <script src="../js/jquery-1.11.2.min.js"></script>
+        <script src="../js/functions.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </h:body>
+</html>
+
