@@ -7,6 +7,11 @@
     <h:head>
         <title> Cadastro de Marca </title>
         <link rel="StyleSheet" type="text/css" href="../../css/style.css" media="screen" />
+        <script>
+            $(document).ready(function(){
+                $('.clear-input').val("");
+            });
+        </script>
     </h:head>
     <h:body>
 
@@ -18,7 +23,7 @@
             <p:panel header="Cadastro de Marcas" id="titulo-cadastro" style="margin-top: 10px;">
                 <h:panelGrid columns="4" cellpadding="5">
                     <h:outputLabel value="Marca: "/>
-                    <h:inputText  value="#{marcaBean.marca.nome}"/>
+                    <h:inputText styleClass="clear-input" value="#{marcaBean.marca.nome}"/>
                     <h:commandButton value="Enviar" action="#{marcaBean.addMarca()}"/>
             </h:panelGrid>
         </p:panel>

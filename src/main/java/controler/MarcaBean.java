@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.List;
 import model.Marca;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class MarcaBean  implements Serializable {
 
     private Marca marca;

@@ -8,6 +8,11 @@
     <h:head>
         <title> Cadastro de veículo </title>
         <link rel="StyleSheet" type="text/css" href="../../css/style.css" media="screen" />
+        <script>
+            $(document).ready(function(){
+                $('.clear-input').val("");
+            });
+        </script>
     </h:head>
     <h:body>
 
@@ -24,19 +29,19 @@
                     <h:panelGrid columns="4" cellpadding="5">
 
                         <p:outputLabel for="nome" value="Nome:" />
-                        <p:inputText id="nome" value="#{veiculoBean.veiculo.nome}" />
+                        <p:inputText styleClass="clear-input" id="nome" value="#{veiculoBean.veiculo.nome}" />
                         <p:message for="nome" />
-                        <h:outputText value="#{veiculoBean.veiculo.nome}" />
+                        <!--<h:outputText value="#{veiculoBean.veiculo.nome}" />-->
                         
                         <p:outputLabel for="ano" value="Ano:" />
                         <p:calendar id="ano" value="#{veiculoBean.veiculo.ano}" pattern="MM/yyyy" pages="3" />
                         <p:message for="ano" />
-                        <h:outputText value="#{veiculoBean.veiculo.ano}" />
+                        <!--<h:outputText value="#{veiculoBean.veiculo.ano}" />-->
                         
                         <p:outputLabel for="modelo" value="Modelo:" />
                         <p:calendar id="modelo" value="#{veiculoBean.veiculo.modelo}" pattern="MM/yyyy" pages="3" />
                         <p:message for="modelo" />
-                        <h:outputText value="#{veiculoBean.veiculo.modelo}" />
+                        <!--<h:outputText value="#{veiculoBean.veiculo.modelo}" />-->
                         
                         <p:outputLabel value="Categoria:" for="categoria" />
                         <p:selectOneMenu id="categoria" value="#{veiculoBean.veiculo.categoria}" style="width:130px">
@@ -45,12 +50,12 @@
                             <f:selectItem itemLabel="Corrida" itemValue="Corrida" />
                         </p:selectOneMenu>
                         <p:message for="categoria" />
-                        <h:outputText value="#{veiculoBean.veiculo.categoria}" />
+                        <!--<h:outputText value="#{veiculoBean.veiculo.categoria}" />-->
                         
                         <p:outputLabel value="Imagem:" for="imagem" />
-                        <p:inputText id="imagem" value="#{veiculoBean.veiculo.img_princial}" required="true" />
+                        <p:inputText styleClass="clear-input" id="imagem" value="#{veiculoBean.veiculo.img_princial}" required="true" />
                         <p:message for="imagem" />
-                        <h:outputText value="#{veiculoBean.veiculo.img_princial}" />
+                        <!--<h:outputText value="#{veiculoBean.veiculo.img_princial}" />-->
                         
                         <p:outputLabel value="Marca:" for="marca" />
                         <p:selectOneMenu id="marca" value="#{veiculoBean.marca.id_marca}">
@@ -58,17 +63,17 @@
                             <f:selectItems value="#{marcaBean.marcas}" var="marca" itemValue="#{marca.id_marca}" itemLabel="#{marca.nome}" />
                         </p:selectOneMenu>
                         <p:message for="marca" />
-                        <h:outputText value="#{veiculoBean.veiculo.marca.nome}" />
+                        <!--<h:outputText value="#{veiculoBean.veiculo.marca.nome}" />-->
 
                         <p:outputLabel value="Motor:" for="motor"/>
-                        <p:inputText id="motor" value="#{veiculoBean.veiculo.motor}" required="true" label="Motor" requiredMessage="Campo motor é obrigatorio!"/>
+                        <p:inputText styleClass="clear-input" id="motor" value="#{veiculoBean.veiculo.motor}" required="true" label="Motor" requiredMessage="Campo motor é obrigatorio!"/>
                         <p:message for="motor" />
-                        <h:outputText value="#{veiculoBean.veiculo.motor}" />
+                        <!--<h:outputText value="#{veiculoBean.veiculo.motor}" />-->
                         
                         <p:outputLabel value="Preço:" for="preco"/>
-                        <p:inputText id="preco" value="#{veiculoBean.veiculo.preco}" required="true" label="Preço" requiredMessage="Campo preço é obrigatorio!"/>
+                        <p:inputText styleClass="clear-input" id="preco" value="#{veiculoBean.veiculo.preco}" required="true" label="Preço" requiredMessage="Campo preço é obrigatorio!"/>
                         <p:message for="preco" />
-                        <h:outputText value="#{veiculoBean.veiculo.preco}" />
+                        <!--<h:outputText value="#{veiculoBean.veiculo.preco}" />-->
                                                 
                         <p:outputLabel value="Cor:" for="cor" />
                         <p:selectOneMenu id="cor" value="#{veiculoBean.cor.idCor}">
@@ -76,7 +81,7 @@
                             <f:selectItems value="#{corBean.cores}" var="cor" itemValue="#{cor.idCor}" itemLabel="#{cor.nome}" />
                         </p:selectOneMenu>
                         <p:message for="cor" />
-                        <h:outputText value="#{veiculoBean.veiculo.cor.nome}" />
+                        <!--<h:outputText value="#{veiculoBean.veiculo.cor.nome}" />-->
                                                 
                         <p:commandButton value="Enviar" action="#{veiculoBean.addVeiculo()}" icon="ui-icon-check" validateClient="true" ajax="true" />
                         
