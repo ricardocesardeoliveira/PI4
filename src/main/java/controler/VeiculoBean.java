@@ -9,7 +9,7 @@ import dao.VeiculoDao;
 import java.io.Serializable;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import model.Cor;
@@ -17,7 +17,7 @@ import model.Marca;
 import model.Veiculo;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class VeiculoBean implements Serializable {
     
     private Veiculo veiculo;
