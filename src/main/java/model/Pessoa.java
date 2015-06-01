@@ -32,6 +32,8 @@ public class Pessoa implements Serializable {
     private String data_nasc;
     @Column(name = "eMail")
     private String eMail;
+    @Column(name = "password")
+    private String password;
 
 //    @Temporal(TemporalType.DATE)
 //    private Date data_nasc;
@@ -107,6 +109,14 @@ public class Pessoa implements Serializable {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }

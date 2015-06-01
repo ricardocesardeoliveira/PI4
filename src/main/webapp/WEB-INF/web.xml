@@ -21,4 +21,15 @@
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
+    
+    <error-page>  
+        <exception-type>exception.AcessoNegadoAdministrador</exception-type>
+        <location>/login/loginAdministrador.xhtml</location>     
+    </error-page>  
+    
+    <error-page>  
+        <exception-type>exception.AcessoNegadoConcessionaria</exception-type>
+        <location>/login/loginConcessionaria.xhtml</location>  
+    </error-page>
+
 </web-app>

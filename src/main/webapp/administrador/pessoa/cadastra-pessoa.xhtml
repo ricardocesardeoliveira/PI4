@@ -37,6 +37,11 @@
                         <p:message for="cpf" />
                         <h:outputText value="#{pessoaBean.pessoa.cpf}" />          
 
+                        <p:outputLabel value="Password" for="password" />
+                        <p:inputText id="password" value="#{pessoaBean.pessoa.password}" required="true" />
+                        <p:message for="password" />
+                        <h:outputText value="#{pessoaBean.pessoa.password}" />
+                        
                         <p:outputLabel value="Sexo" for="sexo" />
                         <p:selectOneMenu id="sexo" value="#{pessoaBean.pessoa.sexo}" style="width:130px">
                             <f:selectItem itemLabel="" noSelectionOption="true" />

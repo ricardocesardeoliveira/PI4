@@ -7,6 +7,26 @@
     <navigation-rule> 
         
         <navigation-case>
+            <from-outcome>indexAdministrador</from-outcome> 
+            <to-view-id>/administrador/index.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>loginAdministrador</from-outcome> 
+            <to-view-id>/login/loginAdministrador.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>indexConcessionaria</from-outcome> 
+            <to-view-id>/concessionaria/index.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>loginConcessionaria</from-outcome> 
+            <to-view-id>/login/loginConcessionaria.xhtml</to-view-id> 
+        </navigation-case>
+        
+        <navigation-case>
             <from-outcome>addPessoa</from-outcome> 
             <to-view-id>/administrador/pessoa/cadastra-pessoa.xhtml</to-view-id> 
         </navigation-case>
@@ -151,7 +171,10 @@
             <to-view-id>/quiosque/veiculos-volkswagen.xhtml</to-view-id> 
         </navigation-case>
         
-        
+        <navigation-case>
+            <from-outcome>listarPrepedidos</from-outcome> 
+            <to-view-id>/concessionaria/lista-pre-pedido.xhtml</to-view-id> 
+        </navigation-case>
         
         
         

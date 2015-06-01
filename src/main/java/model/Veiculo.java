@@ -53,6 +53,12 @@ public class Veiculo implements Serializable  {
     {@JoinColumn(name="id_acessorio")})
     private List<Acessorio> acessorios;
 
+    @ManyToMany
+    @JoinTable(name="TAB_VEICULO_KIT", joinColumns=
+    {@JoinColumn(name="id_veiculo")}, inverseJoinColumns=
+    {@JoinColumn(name="id_kit")})
+    private List<Kit> kits;
+    
     public Cor getCor() {
         return cor;
     }

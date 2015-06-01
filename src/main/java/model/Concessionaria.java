@@ -18,6 +18,8 @@ public class Concessionaria implements Serializable {
     private String nome;
     @Column(name = "regiao")
     private String regiao;
+    @Column(name = "password")
+    private String password;
 
     public Long getId_concessionaria() {
         return id_concessionaria;
@@ -42,5 +44,13 @@ public class Concessionaria implements Serializable {
     public void setRegiao(String regiao) {
         this.regiao = regiao;
     }
-    
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+   
 }
