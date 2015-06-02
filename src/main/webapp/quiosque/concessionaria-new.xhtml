@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Multi-Marcas Quiosque</title>
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            <p:dataTable id="checkboxDT" disabledSelection="#{(concessionariaBean.listaConcessionariasSelecionadas.size() > 0) ? true : false}" var="concessionaria" value="#{concessionariaBean.lista}" paginator="true" rows="10" selection="#{concessionariaBean.listaConcessionariasSelecionadas}" rowKey="#{concessionaria.id_concessionaria}">
+                <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
+                <p:column headerText="Nome da concessionária" sortBy="#{concessionaria.nome}" filterBy="#{concessionaria.nome}">
+                    <h:outputText value="#{concessionaria.nome}" />
+                </p:column>
+                <p:column headerText="Região" sortBy="#{concessionaria.regiao}" filterBy="#{concessionaria.regiao}" width="150">
+                    <h:outputText value="#{concessionaria.regiao}" />
+                </p:column>
+                <p:column headerText="Telefone" width="150">
+                    <h:outputText value="#{concessionaria.telefone}" />
+                </p:column>
+                <p:column headerText="Fax" width="150">
+                    <h:outputText value="#{concessionaria.fax}" />
+                </p:column>
+                <p:column headerText="E-mail">
+                    <h:outputText value="#{concessionaria.email}" />
+                </p:column>
+                <f:facet name="footer">
+                    <p:commandButton process="checkboxDT" value="Avançar" />
+                </f:facet>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

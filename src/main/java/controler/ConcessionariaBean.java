@@ -1,6 +1,7 @@
 package controler;
 
 import dao.ConcessionariaDao;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -14,9 +15,12 @@ public class ConcessionariaBean {
     
     private Concessionaria concessionaria;
     private DataModel listaConcessionarias;
-
+    private List<Concessionaria> lista;
+    private List<Concessionaria> listaConcessionariasSelecionadas;
+    
     public ConcessionariaBean() {
         concessionaria = new Concessionaria();
+        listaConcessionariasSelecionadas = new ArrayList<>();
     }
     
     public String prepararAlterarConcessionaria() {
@@ -64,5 +68,23 @@ public class ConcessionariaBean {
     public void setListaConcessionarias(DataModel listaConcessionarias) {
         this.listaConcessionarias = listaConcessionarias;
     }
-    
+
+    public List<Concessionaria> getLista() {
+        List<Concessionaria> lista = new ConcessionariaDao().list();
+        this.lista = lista;
+        return this.lista;
+    }
+
+    public void setLista(List<Concessionaria> lista) {
+        this.lista = lista;
+    }
+
+    public List<Concessionaria> getListaConcessionariasSelecionadas() {
+        return listaConcessionariasSelecionadas;
+    }
+
+    public void setListaConcessionariasSelecionadas(List<Concessionaria> listaConcessionariasSelecionadas) {
+        this.listaConcessionariasSelecionadas = listaConcessionariasSelecionadas;
+    }
+
 }
