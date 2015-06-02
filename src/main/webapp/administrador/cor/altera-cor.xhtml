@@ -16,20 +16,18 @@
             <ui:include src="../menu.xhtml"/>  
         </div> 
 
-        <h:form>
-
-            <p:panel>
-                <h:panelGrid columns="2" cellspacing="6" >
-
-                    <p:outputLabel value="Nome:" for="nome" />
-                    <p:inputText value="#{corBean.cor.nome}" id="nome"/>
-
-                    <p:commandButton action="#{corBean.alterarCor()}" value="Salvar" icon="ui-icon-check" />
-
-                </h:panelGrid>
-            </p:panel>
-
-        </h:form>
+        <div class="container-principal">
+            <h:form>
+                <p:panel header="Alterar Cor">
+                    <h:panelGrid columns="2" cellspacing="5" >
+                        <p:outputLabel value="Nome:" for="nome" />
+                        <p:inputText value="#{corBean.cor.nome}" id="nome"/>
+                        <p:commandButton action="#{corBean.alterarCor()}" value="Salvar" icon="ui-icon-check" />
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </div>
+        
     </h:body>
 </html>
 

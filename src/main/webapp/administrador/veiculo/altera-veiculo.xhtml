@@ -16,54 +16,54 @@
             <ui:include src="../menu.xhtml"/>  
         </div> 
 
-        <h:form>
+        <div class="container-principal">
+            <h:form>
+                <p:panel header="Alterar Veiculo">
+                    <h:panelGrid columns="2" cellspacing="6" >
 
-            <p:panel>
-                <h:panelGrid columns="2" cellspacing="6" >
+                        <p:outputLabel for="nome" value="Nome:" />
+                            <p:inputText id="nome" value="#{veiculoBean.veiculo.nome}" />
 
-                    <p:outputLabel for="nome" value="Nome:" />
-                        <p:inputText id="nome" value="#{veiculoBean.veiculo.nome}" />
-                        
-                        <p:outputLabel for="ano" value="Ano:" />
-                        <p:calendar id="ano" value="#{veiculoBean.veiculo.ano}" pattern="MM/yyyy" pages="1" />
-                        
-                        <p:outputLabel for="modelo" value="Modelo:" />
-                        <p:calendar id="modelo" value="#{veiculoBean.veiculo.modelo}" pattern="MM/yyyy" pages="1" />
-                        
-                        <p:outputLabel value="Categoria:" for="categoria" />
-                        <p:selectOneMenu id="categoria" value="#{veiculoBean.veiculo.categoria}" style="width:130px">
-                            <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
-                            <f:selectItem itemLabel="Passeio" itemValue="Passeio" />
-                            <f:selectItem itemLabel="Corrida" itemValue="Corrida" />
-                        </p:selectOneMenu>
-                        
-                        <p:outputLabel value="Imagem:" for="imagem" />
-                        <p:inputText id="imagem" value="#{veiculoBean.veiculo.img_princial}" required="true" />
-                        
-                        <p:outputLabel value="Marca:" for="marca" />
-                        <p:selectOneMenu id="marca" value="#{veiculoBean.veiculo.marca.id_marca}">
-                            <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
-                            <f:selectItems value="#{marcaBean.marcas}" var="marca" itemValue="#{marca.id_marca}" itemLabel="#{marca.nome}" />
-                        </p:selectOneMenu>
+                            <p:outputLabel for="ano" value="Ano:" />
+                            <p:calendar id="ano" value="#{veiculoBean.veiculo.ano}" pattern="MM/yyyy" pages="1" />
 
-                        <p:outputLabel value="Motor:" for="motor"/>
-                        <p:inputText id="motor" value="#{veiculoBean.veiculo.motor}" required="true" label="Motor" requiredMessage="Campo motor é obrigatorio!"/>
-                        
-                        <p:outputLabel value="Preço:" for="preco"/>
-                        <p:inputText id="preco" value="#{veiculoBean.veiculo.preco}" required="true" label="Preço" requiredMessage="Campo preço é obrigatorio!"/>
-                                                
-                        <p:outputLabel value="Cor:" for="cor" />
-                        <p:selectOneMenu id="cor" value="#{veiculoBean.veiculo.cor.idCor}">
-                            <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
-                            <f:selectItems value="#{corBean.cores}" var="cor" itemValue="#{cor.idCor}" itemLabel="#{cor.nome}" />
-                        </p:selectOneMenu>
+                            <p:outputLabel for="modelo" value="Modelo:" />
+                            <p:calendar id="modelo" value="#{veiculoBean.veiculo.modelo}" pattern="MM/yyyy" pages="1" />
 
-                        <p:commandButton action="#{veiculoBean.alterarVeiculo()}" value="Salvar" icon="ui-icon-check" />
+                            <p:outputLabel value="Categoria:" for="categoria" />
+                            <p:selectOneMenu id="categoria" value="#{veiculoBean.veiculo.categoria}" style="width:130px">
+                                <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+                                <f:selectItem itemLabel="Passeio" itemValue="Passeio" />
+                                <f:selectItem itemLabel="Corrida" itemValue="Corrida" />
+                            </p:selectOneMenu>
 
-                </h:panelGrid>
-            </p:panel>
+                            <p:outputLabel value="Imagem:" for="imagem" />
+                            <p:inputText id="imagem" value="#{veiculoBean.veiculo.img_princial}" required="true" />
 
-        </h:form>
+                            <p:outputLabel value="Marca:" for="marca" />
+                            <p:selectOneMenu id="marca" value="#{veiculoBean.veiculo.marca.id_marca}">
+                                <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+                                <f:selectItems value="#{marcaBean.marcas}" var="marca" itemValue="#{marca.id_marca}" itemLabel="#{marca.nome}" />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Motor:" for="motor"/>
+                            <p:inputText id="motor" value="#{veiculoBean.veiculo.motor}" required="true" label="Motor" requiredMessage="Campo motor é obrigatorio!"/>
+
+                            <p:outputLabel value="Preço:" for="preco"/>
+                            <p:inputText id="preco" value="#{veiculoBean.veiculo.preco}" required="true" label="Preço" requiredMessage="Campo preço é obrigatorio!"/>
+
+                            <p:outputLabel value="Cor:" for="cor" />
+                            <p:selectOneMenu id="cor" value="#{veiculoBean.veiculo.cor.idCor}">
+                                <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+                                <f:selectItems value="#{corBean.cores}" var="cor" itemValue="#{cor.idCor}" itemLabel="#{cor.nome}" />
+                            </p:selectOneMenu>
+
+                            <p:commandButton action="#{veiculoBean.alterarVeiculo()}" value="Salvar" icon="ui-icon-check" />
+
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </div>
     </h:body>
 </html>
 

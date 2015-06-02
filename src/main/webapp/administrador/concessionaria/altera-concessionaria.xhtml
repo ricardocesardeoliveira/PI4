@@ -15,24 +15,25 @@
         <div id="topo">  
             <ui:include src="../menu.xhtml"/>  
         </div> 
+        
+        <div class="container-principal">
+            <h:form>
+                <p:panel header="Alterar Concessionaria">
+                    <h:panelGrid columns="2" cellspacing="6" >
 
-        <h:form>
+                        <p:outputLabel value="Nome:" for="nome" />
+                        <p:inputText value="#{concessionariaBean.concessionaria.nome}" id="nome"/>
 
-            <p:panel>
-                <h:panelGrid columns="2" cellspacing="6" >
+                        <p:outputLabel value="Região:" for="regiao" />
+                        <p:inputText value="#{concessionariaBean.concessionaria.regiao}" id="regiao"/>
 
-                    <p:outputLabel value="Nome:" for="nome" />
-                    <p:inputText value="#{concessionariaBean.concessionaria.nome}" id="nome"/>
-                    
-                    <p:outputLabel value="Região:" for="regiao" />
-                    <p:inputText value="#{concessionariaBean.concessionaria.regiao}" id="regiao"/>
+                        <p:commandButton action="#{concessionariaBean.alterarConcessionaria()}" value="Salvar" icon="ui-icon-check" />
 
-                    <p:commandButton action="#{concessionariaBean.alterarConcessionaria()}" value="Salvar" icon="ui-icon-check" />
-
-                </h:panelGrid>
-            </p:panel>
-
-        </h:form>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </div>
+        
     </h:body>
 </html>
 

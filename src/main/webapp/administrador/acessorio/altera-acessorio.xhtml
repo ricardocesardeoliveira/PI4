@@ -16,23 +16,24 @@
             <ui:include src="../menu.xhtml"/>  
         </div> 
 
-        <h:form>
+        <div class="container-principal">
+            <h:form>
+                <p:panel header="Alterar Acessorio">
+                    <h:panelGrid columns="2" cellspacing="6" >
 
-            <p:panel>
-                <h:panelGrid columns="2" cellspacing="6" >
+                        <p:outputLabel value="Nome:" for="nome" />
+                        <p:inputText value="#{acessorioBean.acessorio.nome}" id="nome"/>
+                        <p:outputLabel value="Preço" for="preco" />
+                        <p:inputText value="#{acessorioBean.acessorio.valor}" id="preco"/>
+                        <p:outputLabel value="Descrição:" for="descricao" />
+                        <p:inputText value="#{acessorioBean.acessorio.descricao}" id="descricao"/>
+                        <p:commandButton action="#{acessorioBean.alterarAcessorio()}" value="Salvar" icon="ui-icon-check" />
 
-                    <p:outputLabel value="Nome:" for="nome" />
-                    <p:inputText value="#{acessorioBean.acessorio.nome}" id="nome"/>
-                    <p:outputLabel value="Preço" for="preco" />
-                    <p:inputText value="#{acessorioBean.acessorio.valor}" id="preco"/>
-                    <p:outputLabel value="Descrição:" for="descricao" />
-                    <p:inputText value="#{acessorioBean.acessorio.descricao}" id="descricao"/>
-                    <p:commandButton action="#{acessorioBean.alterarAcessorio()}" value="Salvar" icon="ui-icon-check" />
-
-                </h:panelGrid>
-            </p:panel>
-
-        </h:form>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </div>
+            
     </h:body>
 </html>
 

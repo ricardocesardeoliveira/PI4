@@ -16,32 +16,31 @@
             <ui:include src="../menu.xhtml"/>  
         </div> 
 
-        <h:form>
+        <div class="container-principal">
+            <h:form>
+                <p:panel header="Alterar Pessoa">
+                    <h:panelGrid columns="2" cellspacing="6" >
 
-            <p:panel>
-                <h:panelGrid columns="2" cellspacing="6" >
+                        <p:outputLabel value="Nome:" for="nome" />
+                        <p:inputText value="#{pessoaBean.pessoa.nome}" id="nome"/>
 
-                    <p:outputLabel value="Nome:" for="nome" />
-                    <p:inputText value="#{pessoaBean.pessoa.nome}" id="nome"/>
+                        <p:outputLabel value="RG:" for="rg" />
+                        <p:inputText value="#{pessoaBean.pessoa.rg}" id="rg"/>
 
-                    <p:outputLabel value="RG:" for="rg" />
-                    <p:inputText value="#{pessoaBean.pessoa.rg}" id="rg"/>
+                        <p:outputLabel value="CPF:" for="cpf" />
+                        <p:inputMask value="#{pessoaBean.pessoa.cpf}" id="cpf" mask="999.999.999-99"/>
 
-                    <p:outputLabel value="CPF:" for="cpf" />
-                    <p:inputMask value="#{pessoaBean.pessoa.cpf}" id="cpf" mask="999.999.999-99"/>
+                        <p:outputLabel value="Sexo:" for="sex" />
+                        <p:selectOneMenu id="sex" value="#{pessoaBean.pessoa.sexo}" style="width:130px;">
+                            <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                            <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+                        </p:selectOneMenu>
 
-                    <p:outputLabel value="Sexo:" for="sex" />
-                    <h:selectOneMenu id="sex" value="#{pessoaBean.pessoa.sexo}" style="width:130px;">
-                        <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
-                        <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
-                    </h:selectOneMenu>
-
-                    <p:commandButton action="#{pessoaBean.alterarPessoa()}" value="Salvar" icon="ui-icon-check" />
-
-                </h:panelGrid>
-            </p:panel>
-
-        </h:form>
+                        <p:commandButton action="#{pessoaBean.alterarPessoa()}" value="Salvar" icon="ui-icon-check" />
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </div>
     </h:body>
 </html>
 

@@ -16,20 +16,18 @@
             <ui:include src="../menu.xhtml"/>  
         </div> 
 
-        <h:form>
-
-            <p:panel>
-                <h:panelGrid columns="2" cellspacing="6" >
-
-                    <p:outputLabel value="Nome:" for="nome" />
-                    <p:inputText value="#{marcaBean.marca.nome}" id="nome"/>
-
-                    <p:commandButton action="#{marcaBean.alterarMarca()}" value="Salvar" icon="ui-icon-check" />
-
-                </h:panelGrid>
-            </p:panel>
-
-        </h:form>
+        <div class="container-principal">
+            <h:form>
+                <p:panel header="Alterar Marca">
+                    <h:panelGrid columns="2" cellspacing="5" >
+                        <p:outputLabel value="Nome:" for="nome" />
+                        <p:inputText value="#{marcaBean.marca.nome}" id="nome"/>
+                        <p:commandButton action="#{marcaBean.alterarMarca()}" value="Salvar" icon="ui-icon-check" />
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </div>
+        
     </h:body>
 </html>
 
