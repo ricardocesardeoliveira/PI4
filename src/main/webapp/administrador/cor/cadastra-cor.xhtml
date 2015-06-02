@@ -17,17 +17,19 @@
 
         <div id="topo">  
             <ui:include src="../menu.xhtml"/>  
-        </div> 
-
-        <h:form>
-            <p:panel header="Cadastro de Cores" id="titulo-cadastro" style="margin-top: 10px;">
-                <h:panelGrid columns="4" cellpadding="5">
-                    <h:outputLabel value="Cor: "/>
-                    <h:inputText styleClass="clear-input"  value="#{corBean.cor.nome}"/>
-                    <h:commandButton value="Enviar" action="#{corBean.addCor()}"/>
-                </h:panelGrid>
-            </p:panel>
-        </h:form>
+        </div>
+        
+        <div class="container-principal">
+            <h:form>
+                <p:panel header="Cadastro de Cores" id="titulo-cadastro" style="margin-top: 10px;">
+                    <h:panelGrid columns="3" cellpadding="5">
+                        <p:outputLabel value="Cor: "/>
+                        <p:inputText styleClass="clear-input"  value="#{corBean.cor.nome}"/>
+                        <p:commandButton value="Enviar" action="#{corBean.addCor()}"/>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </div>
 
     </h:body>
 </html>

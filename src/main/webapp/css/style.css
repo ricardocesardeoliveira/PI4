@@ -18,31 +18,34 @@
     font-size: 13px;
 }
 
+.ui-panel-title, .ui-datatable-header {
+    text-transform: uppercase;
+}
+
 .text-default, .ui-menuitem-link {
     font-size: 14px !important;
     font-weight: normal !important;
-    color: #fff;
-}
-
-.ui-menuitem-text {
-    color: #000;
 }
 
 .ui-panel-title, .ui-datatable-header {
-    font-size: 20px !important;
+    font-size: 20px;
 }
 
-.nav-menu {
+.nav-menu, .ui-datatable, .ui-panel  {
+    margin: 10px auto;
+}
+
+.nav-menu, .ui-datatable  {
     width: 1024px;
-    margin: 0 auto;
+}
+.ui-panel {
+    width:1015px;
 }
 
-.ui-panel, .ui-datatable  {
-    width: 1024px;
-    margin: 0 auto;
+.ui-button-text {
+    font-weight: bold;
 }
-
-.ui-menu, .ui-menu-child {
-    background: #E1E1E1 !important;
-    border: 1px solid #a8a8a8;
+   
+body {
+    background: #F2F2F2;
 }

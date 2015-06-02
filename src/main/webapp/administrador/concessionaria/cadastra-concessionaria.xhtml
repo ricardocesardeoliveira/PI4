@@ -12,20 +12,26 @@
 
         <div id="topo">  
             <ui:include src="../menu.xhtml"/>  
-        </div> 
+        </div>
+        
+        <div class="container-principal">
 
-        <h:form id="form-cadastro">
-            <p:panel header="Cadastro de Concessionarias" id="titulo-cadastro" style="margin-top: 10px;">
-                <h:panelGrid columns="4" cellpadding="5">
-                    <h:outputLabel value="Concessionaria: "/>
-                    <h:inputText  value="#{concessionariaBean.concessionaria.nome}"/>
-                    <h:outputLabel value="Região: "/>
-                    <h:inputText  value="#{concessionariaBean.concessionaria.regiao}"/>
-                    <h:commandButton value="Enviar" action="#{concessionariaBean.addConcessionaria()}"/>
-                </h:panelGrid>
-            </p:panel>
-                    
-        </h:form>
+            <h:form id="form-cadastro">
+                <p:panel header="Cadastro de Concessionarias" id="titulo-cadastro" style="margin-top: 10px;">
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:outputLabel value="Concessionaria: "/>
+                        <p:inputText  value="#{concessionariaBean.concessionaria.nome}"/>
 
+                        <p:outputLabel value="Região: "/>
+                        <p:inputText value="#{concessionariaBean.concessionaria.regiao}"/>
+
+                        <p:commandButton value="Enviar" action="#{concessionariaBean.addConcessionaria()}"/>
+                    </h:panelGrid>
+                </p:panel>
+
+            </h:form>
+
+        </div>
+        
     </h:body>
 </html>
