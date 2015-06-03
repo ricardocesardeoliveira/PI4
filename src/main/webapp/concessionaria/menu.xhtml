@@ -6,14 +6,14 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <link rel="StyleSheet" type="text/css" href="css/style.css" media="screen" />
+        <link rel="StyleSheet" type="text/css" href="../css/style.css" media="screen" />
     </h:head>
     <h:body>
         <nav>
             <h:form>  
                 <p:growl id="messages"/>
                 <p:menubar>
-                    <p:menuitem value="Home" action="index" icon="ui-icon-arrowreturnthick-1-w" />
+                    <p:menuitem value="Home" action="/concessionaria/index" icon="ui-icon-arrowreturnthick-1-w" />
 
                     <p:submenu label="Pré-pedido" >
                         <p:menuitem value="Consultar Pré-pedidos" outcome="listarPrepedidos" />

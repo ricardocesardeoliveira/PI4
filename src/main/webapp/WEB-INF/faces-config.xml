@@ -178,6 +178,26 @@
         
         
         
+        <navigation-case>
+            <from-outcome>relVeiculosMaisVendidos</from-outcome> 
+            <to-view-id>/administrador/relatorio/veic_mais_vendido.xhtml</to-view-id> 
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>relVeiculosMaisConsumidosFaixaIdade</from-outcome> 
+            <to-view-id>/administrador/relatorio/veic_mais_cons_faixa_idade.xhtml</to-view-id> 
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>relVeiculosMaisConsumidosRegiao</from-outcome> 
+            <to-view-id>/administrador/relatorio/veic_mais_cons_regiao.xhtml</to-view-id> 
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>relVeiculosMaisConsumidosPorSexo</from-outcome> 
+            <to-view-id>/administrador/relatorio/veic_mais_cons_sexo.xhtml</to-view-id> 
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>relConcessionariaMaisVendeu</from-outcome> 
+            <to-view-id>/administrador/relatorio/cons_mais_vendeu.xhtml</to-view-id> 
+        </navigation-case>
         
         
         
