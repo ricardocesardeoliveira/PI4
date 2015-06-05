@@ -81,3 +81,17 @@ body{
     height: 20px;
     width: 20px;
 }
+
+.ui-paginator-top, 
+.ui-datatable-footer,
+.ui-paginator-bottom{
+    background: #F5F5F5;
+}
+
+.ui-column-title {
+    font-size: 13px;
+}
+
+th .ui-state-default {
+    border: 0;
+}

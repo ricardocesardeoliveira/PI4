@@ -3,34 +3,67 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile" 
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Multi-Marcas Quiosque</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title> Multi-Marcas Quiosque </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/main.css" />
+
+        <script src="../js/modernizr.js"></script>
     </h:head>
     <h:body>
-        <h:form id="form">
-            <p:dataTable id="checkboxDT" disabledSelection="#{(concessionariaBean.listaConcessionariasSelecionadas.size() > 0) ? true : false}" var="concessionaria" value="#{concessionariaBean.lista}" paginator="true" rows="10" selection="#{concessionariaBean.listaConcessionariasSelecionadas}" rowKey="#{concessionaria.id_concessionaria}">
-                <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
-                <p:column headerText="Nome da concessionária" sortBy="#{concessionaria.nome}" filterBy="#{concessionaria.nome}">
-                    <h:outputText value="#{concessionaria.nome}" />
-                </p:column>
-                <p:column headerText="Região" sortBy="#{concessionaria.regiao}" filterBy="#{concessionaria.regiao}" width="150">
-                    <h:outputText value="#{concessionaria.regiao}" />
-                </p:column>
-                <p:column headerText="Telefone" width="150">
-                    <h:outputText value="#{concessionaria.telefone}" />
-                </p:column>
-                <p:column headerText="Fax" width="150">
-                    <h:outputText value="#{concessionaria.fax}" />
-                </p:column>
-                <p:column headerText="E-mail">
-                    <h:outputText value="#{concessionaria.email}" />
-                </p:column>
-                <f:facet name="footer">
-                    <p:commandButton process="checkboxDT" value="Avançar" />
-                </f:facet>
-            </p:dataTable>
-        </h:form>
+        <div class="container">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="mybold"><h:link outcome="index.xhtml" value="Home" /></li>
+                    <li class="mybold"><h:link outcome="marcas.xhtml" value="Marcas" /></li>
+                    <li class="active mybold">Concessionaria</li>
+                </ol>
+            </nav>
+            
+            <h:form id="form">
+                <p:dataTable id="checkboxDT" disabledSelection="#{(concessionariaBean.listaConcessionariasSelecionadas.size() > 0) ? true : false}" var="concessionaria" value="#{concessionariaBean.lista}" paginator="true" rows="10" selection="#{concessionariaBean.listaConcessionariasSelecionadas}" rowKey="#{concessionaria.id_concessionaria}">
+                        <p:column selectionMode="multiple" style="text-align:center" />
+
+                        <p:column headerText="Nome da concessionária" sortBy="#{concessionaria.nome}" filterBy="#{concessionaria.nome}">
+                            <h:outputText value="#{concessionaria.nome}" />
+                        </p:column>
+
+                        <p:column headerText="Região" sortBy="#{concessionaria.regiao}" filterBy="#{concessionaria.regiao}">
+                            <h:outputText value="#{concessionaria.regiao}" />
+                        </p:column>
+
+                        <p:column headerText="Telefone">
+                            <h:outputText value="#{concessionaria.telefone}" />
+                        </p:column>
+
+                        <p:column headerText="Fax">
+                            <h:outputText value="#{concessionaria.fax}" />
+                        </p:column>
+
+                        <p:column headerText="E-mail">
+                            <h:outputText value="#{concessionaria.email}" />
+                        </p:column>
+
+                        <f:facet name="footer">
+                            <p:commandButton process="checkboxDT" value="Avançar" />
+                        </f:facet>
+                </p:dataTable>
+            </h:form>
+          
+        </div>
+        
+         <script src="../js/jquery-1.11.2.min.js"></script>
+         <script src="../js/functions.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
     </h:body>
 </html>
 

@@ -1,10 +1,11 @@
 $(document).ready(function(){
-    $(".check").change(function(){
-       if($("input[type='checkbox']:checked").size() === 3){
-          $("input[type='checkbox']:not(:checked)").attr('disabled', 'disabled');
-       } else {
-          $("input[type='checkbox']:not(:checked)").removeAttr('disabled', 'disabled');
-       }
+    $("th .ui-chkbox").css("display", "none");
+    $(".ui-chkbox-box").click(function(){
+        if($("tr[aria-selected=true]").size() === 3){
+            $("tr[aria-selected=false] td").removeClass("ui-selection-column");
+        } else {
+            $("tr[aria-selected=false] td").addClass("ui-selection-column");
+        }
    });
 });
 
