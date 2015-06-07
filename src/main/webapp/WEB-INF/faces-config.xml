@@ -143,7 +143,10 @@
             <to-view-id>/quiosque/concessionaria-new.xhtml</to-view-id>
         </navigation-case>
         
-        
+        <navigation-case>
+            <from-outcome>indexQuiosque</from-outcome> 
+            <to-view-id>/quiosque/index.xhtml</to-view-id>
+        </navigation-case>
         
         <navigation-case>
             <from-outcome>veiculos-bmw</from-outcome> 

@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import model.Acessorio;
+import model.Concessionaria;
 import model.Marca;
 import model.Veiculo;
 
@@ -29,7 +30,8 @@ public class VeiculoQuiosqueBean implements Serializable {
     private Veiculo veiculoSelecionado;
     private List<Veiculo> veiculoSelecionados;
     private List<Acessorio> listaAcessorios;
-    
+    private List<Acessorio> listaAcessoriosSelecionados;
+    private List<Concessionaria> listaConcessionariasSelecionadas;
     private List<Veiculo> listaFiat;
     
     public String setarMarcaBMW(){
@@ -139,16 +141,32 @@ public class VeiculoQuiosqueBean implements Serializable {
     }
 
     public List<Acessorio> getListaAcessorios() {
+        listaAcessorios = new AcessorioDao().list();
         return listaAcessorios;
     }
 
     public void setListaAcessorios(List<Acessorio> listaAcessorios) {
         this.listaAcessorios = listaAcessorios;
     }
-//    
-//    public List<Acessorio> getListaAcessoriosQuiosque() {
-//        List<Acessorio> lista = new AcessorioDao().list();
-//        return lista;
-//    }
+
+    public List<Acessorio> getListaAcessoriosSelecionados() {
+        return listaAcessoriosSelecionados;
+    }
+
+    public void setListaAcessoriosSelecionados(List<Acessorio> listaAcessoriosSelecionados) {
+        this.listaAcessoriosSelecionados = listaAcessoriosSelecionados;
+    }
+
+    public List<Concessionaria> getListaConcessionariasSelecionadas() {
+        return listaConcessionariasSelecionadas;
+    }
+
+    public void setListaConcessionariasSelecionadas(List<Concessionaria> listaConcessionariasSelecionadas) {
+        this.listaConcessionariasSelecionadas = listaConcessionariasSelecionadas;
+    }
+    
+    public String gerarPrepedido() {
+        return "indexQuiosque";
+    } 
     
 }

@@ -33,28 +33,31 @@
                 </ol>
             </nav>
         
-        
-            <p:dataTable id="checkboxDT1" var="acessorio" value="#{veiculoQuiosqueBean.listaAcessorios}" selection="#{veiculoQuiosqueBean.listaAcessorios}" rowKey="#{acessorio.id_acessorio}" style="margin-bottom:0">
-                <f:facet name="header">
-                    ACESSÓRIOS
-                </f:facet>
-                <p:column selectionMode="multiple" style="width:40px;text-align:center"/>
-                <p:column headerText="Nome">
-                    <h:outputText value="#{acessorio.nome}" />
-                </p:column>
-                <p:column headerText="Descrição">
-                    <h:outputText value="#{acessorio.descricao}" />
-                </p:column>
-                <p:column headerText="Valor" width="100" >
-                    <h:outputText value="#{acessorio.valor}" />
-                </p:column>
-                <p:column headerText="Imagem" width="150" >
-                    <h:graphicImage value="../img/acessorios/#{acessorio.imagem}" class="img-responsive" width="100" />
-                </p:column>
-                <p:column>
-                    <p><h:commandButton action="#{veiculoQuiosqueBean.setarAcessorios()}" class="btn btn-primary" role="button" value="Veja os Veiculos &raquo;" /></p>
-                </p:column>
-            </p:dataTable>
+            <form id="form">
+                <p:dataTable id="checkboxDT1" var="acessorio" value="#{veiculoQuiosqueBean.listaAcessorios}" selection="#{veiculoQuiosqueBean.listaAcessoriosSelecionados}" rowKey="#{acessorio.id_acessorio}" style="margin-bottom:0">
+                    <f:facet name="header">
+                        ACESSÓRIOS
+                    </f:facet>
+                    <p:column selectionMode="multiple" style="width:40px;text-align:center"/>
+                    <p:column headerText="Nome">
+                        <h:outputText value="#{acessorio.nome}" />
+                    </p:column>
+                    <p:column headerText="Descrição">
+                        <h:outputText value="#{acessorio.descricao}" />
+                    </p:column>
+                    <p:column headerText="Valor" width="100" >
+                        <h:outputText value="#{acessorio.valor}" />
+                    </p:column>
+                    <p:column headerText="Imagem" width="150" >
+                        <h:graphicImage value="../img/acessorios/#{acessorio.imagem}" class="img-responsive" width="100" />
+                    </p:column>
+                </p:dataTable>
+                <center>
+                    <p:button outcome="concessionaria-new" value="Avançar" >
+                        <f:param name="acessorios" value="#{veiculoQuiosqueBean.listaAcessorios}" />
+                    </p:button>
+                </center>    
+            </form>    
         </div>
     </h:body>
 </html>

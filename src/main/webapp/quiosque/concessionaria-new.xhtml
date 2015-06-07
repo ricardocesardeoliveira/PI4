@@ -31,7 +31,7 @@
             </nav>
             
             <h:form id="form">
-                <p:dataTable id="checkboxDT" var="concessionaria" value="#{concessionariaBean.lista}" paginator="true" rows="10" selection="#{concessionariaBean.listaConcessionariasSelecionadas}" rowKey="#{concessionaria.id_concessionaria}">
+                <p:dataTable id="checkboxDT" var="concessionaria" value="#{concessionariaBean.lista}" paginator="true" rows="10" selection="#{veiculoQuiosqueBean.listaConcessionariasSelecionadas}" rowKey="#{concessionaria.id_concessionaria}">
                         <p:column selectionMode="multiple" style="text-align:center" />
 
                         <p:column headerText="Nome da concessionária" sortBy="#{concessionaria.nome}" filterBy="#{concessionaria.nome}">
@@ -55,7 +55,7 @@
                         </p:column>
 
                         <f:facet name="footer">
-                            <p:commandButton process="checkboxDT" value="Avançar" />
+                            <p:button outcome="cadastro-cliente" value="Avançar" icon="ui-icon-star" />
                         </f:facet>
                 </p:dataTable>
             </h:form>
