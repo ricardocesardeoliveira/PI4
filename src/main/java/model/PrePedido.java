@@ -24,9 +24,11 @@ public class PrePedido implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dia;
     @Column(name = "preco")
-    private String preco;
+    private Double preco;
     @Column(name = "status")
     private String status;
+    @Column(name = "comissao")
+    private Double comissao;
     @ManyToOne
     @JoinColumn(name = "id_veiculo")
     private Veiculo veiculo;
@@ -66,11 +68,11 @@ public class PrePedido implements Serializable {
         this.pessoa = pessoa;
     }
 
-    public String getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
@@ -90,4 +92,12 @@ public class PrePedido implements Serializable {
         this.status = status;
     }
 
+    public Double getComissao() {
+        return comissao;
+    }
+
+    public void setComissao(Double comissao) {
+        this.comissao = comissao;
+    }
+    
 }

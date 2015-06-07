@@ -66,16 +66,13 @@
 
                             <h:outputText value="Preço Veículo + Acessório(s)" />
                             <h:outputText value="R$ #{prePedidoBean.prePedidoSelecionado.veiculo.preco}" />
-
-                            <h:outputText value="Comissão concessionária" />
-                            <h:outputText value="R$ #{prePedidoBean.prePedidoSelecionado.preco}" />
-
-                            <f:facet name="footer">
-                                <h:button value="Finalizar pré-pedido"  />
-                            </f:facet>
+                            
                         </p:panelGrid>
                     </p:outputPanel>
                 </p:dialog>
+                <center>
+                    <p:commandButton action="#{prePedidoBean.finalizarPrePedido()}" value="Finalizar Pré-pedido" icon="ui-icon-check" />
+                </center>    
             </h:form>
         </div>
     </h:body>

@@ -1,13 +1,19 @@
 
 package controler;
 
+import dao.CorDao;
 import dao.PrePedidoDao;
+import java.awt.event.ActionEvent;
 import java.io.Serializable;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
+import javax.inject.Scope;
 import model.PrePedido;
 
 @Named(value = "prePedidoBean")
@@ -86,6 +92,14 @@ public class PrePedidoBean  implements Serializable {
 
     public void setPrePedidoSelecionado(PrePedido prePedidoSelecionado) {
         this.prePedidoSelecionado = prePedidoSelecionado;
+    }
+    
+    public String finalizarPrePedido() {
+        prePedidoSelecionado.setStatus("Fechado");
+        prePedidoSelecionado.setComissao( ((prePedidoSelecionado.getPreco() * 10) / 100) );
+        PrePedidoDao dao = new PrePedidoDao();
+        dao.update(prePedidoSelecionado);
+        return "listarPrePedidos";
     }
 
 }

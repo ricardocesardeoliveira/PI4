@@ -175,7 +175,14 @@
             <from-outcome>listarPrepedidos</from-outcome> 
             <to-view-id>/concessionaria/lista-pre-pedido.xhtml</to-view-id> 
         </navigation-case>
-        
+        <navigation-case>
+            <from-outcome>indexConcessionaria</from-outcome> 
+            <to-view-id>/concessionaria/index.xhtml</to-view-id> 
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listaPrepedidosAdm</from-outcome> 
+            <to-view-id>/administrador/pedido/lista-pre-pedido.xhtml</to-view-id> 
+        </navigation-case>
         
         
         <navigation-case>
