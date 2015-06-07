@@ -134,8 +134,8 @@
         </navigation-case>
         
         <navigation-case>
-            <from-outcome>addAcessorio</from-outcome> 
-            <to-view-id>/administrador/acessorio/cadastra-acessorio.xhtml</to-view-id> 
+            <from-outcome>addAcessorioQuiosque</from-outcome> 
+            <to-view-id>/quiosque/acessorios.xhtml</to-view-id> 
         </navigation-case>
         
         
@@ -206,6 +206,11 @@
             <to-view-id>/administrador/relatorio/cons_mais_vendeu.xhtml</to-view-id> 
         </navigation-case>
         
+        
+        <navigation-case>
+            <from-outcome>selecionarConcessionarias</from-outcome> 
+            <to-view-id>/quiosque/concessionaria-new.xhtml</to-view-id> 
+        </navigation-case>
         
         
         <navigation-case>

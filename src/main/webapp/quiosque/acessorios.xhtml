@@ -31,57 +31,31 @@
                     <li class="active mybold">Kits / Acessórios</li>
                 </ol>
             </nav>
-        </div>
         
         
-        <p:dataTable id="checkboxDT" var="car" value="#{veiculoQuiosqueBean.veiculosFiat}" selection="#{veiculoQuiosqueBean.veiculoSelecionados}" rowKey="#{car.id}" style="margin-bottom:0">
+            <p:dataTable id="checkboxDT1" var="acessorio" value="#{acessorioBean.listaAcessoriosQuiosque}" selection="#{veiculoQuiosqueBean.veiculoSelecionados}" rowKey="#{acessorio.id_acessorio}" style="margin-bottom:0">
             <f:facet name="header">
-            KIT
+            ACESSÓRIOS
         </f:facet>
-        <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
-        <p:column headerText="Id">
-            <h:outputText value="#{car.id}" />
+        <p:column selectionMode="multiple" style="width:40px;text-align:center"/>
+        <p:column headerText="Nome">
+            <h:outputText value="#{acessorio.nome}" />
         </p:column>
-        <p:column headerText="Year">
-            <h:outputText value="#{car.ano}" />
+        <p:column headerText="Descrição">
+            <h:outputText value="#{acessorio.descricao}" />
         </p:column>
-        <p:column headerText="Brand">
-            <h:outputText value="#{car.marca.nome}" />
-        </p:column>
-        <p:column headerText="Color">
-            <h:outputText value="#{car.cor.nome}" />
+        <p:column headerText="Valor">
+            <h:outputText value="#{acessorio.valor}" />
         </p:column>
         <p:column headerText="Imagem">
-            <h:graphicImage value="../img/acessorios/100187143.jpg" class="img-responsive" width="60"  />
-        </p:column>
-    </p:dataTable>
-        
-        <p:dataTable id="checkboxDT1" var="car" value="#{veiculoQuiosqueBean.veiculosFiat}" selection="#{veiculoQuiosqueBean.veiculoSelecionados}" rowKey="#{car.id}" style="margin-bottom:0">
-            <f:facet name="header">
-            ACESSÓRIO
-        </f:facet>
-        <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
-        <p:column headerText="Id">
-            <h:outputText value="#{car.id}" />
-        </p:column>
-        <p:column headerText="Year">
-            <h:outputText value="#{car.ano}" />
-        </p:column>
-        <p:column headerText="Brand">
-            <h:outputText value="#{car.marca.nome}" />
-        </p:column>
-        <p:column headerText="Color">
-            <h:outputText value="#{car.cor.nome}" />
-        </p:column>
-        <p:column headerText="Imagem">
-            <h:graphicImage value="../img/acessorios/100187143.jpg" class="img-responsive" width="60"  />
+            <h:graphicImage value="../img/acessorios/#{acessorio.imagem}" class="img-responsive" width="60"  />
         </p:column>
         <f:facet name="footer">
-            <p:commandButton process="checkboxDT1" icon="ui-icon-search" value="Avançar" oncomplete="PF('multiCarDialog').show()" />
+            <p:commandButton  icon="ui-icon-search" value="Avançar"  action="#{veiculoQuiosqueBean.setarAcessorios()}" />
         </f:facet>
     </p:dataTable>
-        
-        
+        </div>
+        <p:commandButton  icon="ui-icon-search" value="Avançar"  action="#{veiculoQuiosqueBean.setarAcessorios}" />
     </h:body>
 </html>
 

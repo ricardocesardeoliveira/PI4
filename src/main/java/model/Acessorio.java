@@ -21,6 +21,8 @@ public class Acessorio implements Serializable {
     private double valor;
     @Column(name = "descricao")
     private String descricao;
+    @Column(name = "imagem")
+    private String imagem;
 
     public Long getId_acessorio() {
         return id_acessorio;
@@ -52,6 +54,14 @@ public class Acessorio implements Serializable {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
     
 }

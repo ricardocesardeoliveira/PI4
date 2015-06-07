@@ -37,8 +37,8 @@
                 <div class="col-md-offset-6 col-md-6">
                     <h:form id="buscar-car">
                         <div class="input-group">
-                            <p:inputText value="#{veiculoQuiosqueBean.valorPesquisa}" class="form-control" pt:placeholder="Procurar por..." >
-                                <f:ajax event="blur" listener="#{veiculoQuiosqueBean.veiculosFiatFilter}" execute="@all" />
+                            <p:inputText class="form-control" pt:placeholder="Procurar por..." >
+                               
                             </p:inputText>    
                             
                             <span class="input-group-btn">
@@ -75,7 +75,8 @@
                                 <strong><h:outputLabel value="Preço"></h:outputLabel>: </strong>
                                 <h:outputText value="R$ #{veiculo.preco}"></h:outputText>
                             </p>
-                          <p><a href="#" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal" role="button">Selecionar / Customizar Veículo</a></p>
+                          <!--<p><a href="#" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal" role="button">Selecionar / Customizar Veículo</a></p>-->
+                          <p:commandButton value="Customizar Veículo" class="btn btn-primary btn-sm btn-block" action="#{veiculoQuiosqueBean.setarVeiculo(veiculo.id_veiculo)}" />
                           <div class="clearfix"></div>
                         </div>
                       </div>

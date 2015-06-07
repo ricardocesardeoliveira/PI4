@@ -2,6 +2,7 @@
 package controler;
 
 import dao.AcessorioDao;
+import dao.VeiculoDao;
 import java.io.Serializable;
 import java.util.List;
 import javax.inject.Named;
@@ -9,6 +10,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import model.Acessorio;
+import model.Veiculo;
 
 @Named(value = "acessorioBean")
 @RequestScoped
@@ -16,6 +18,7 @@ public class AcessorioBean  implements Serializable {
 
     private Acessorio acessorio;
     private DataModel listaAcessorios;
+    private List<Acessorio> listaAcessoriosQuiosque;
 
     public AcessorioBean() {
         acessorio = new Acessorio();
@@ -37,6 +40,7 @@ public class AcessorioBean  implements Serializable {
         listaAcessorios = new ListDataModel(lista);
         return listaAcessorios;
     }
+     
      
     public String excluirAcessorio() {
        Acessorio acessorioTemp = (Acessorio) (listaAcessorios.getRowData());
@@ -65,6 +69,15 @@ public class AcessorioBean  implements Serializable {
 
     public void setListaAcessorios(DataModel listaAcessorios) {
         this.listaAcessorios = listaAcessorios;
+    }
+
+    public List<Acessorio> getListaAcessoriosQuiosque() {
+        List<Acessorio> lista = new AcessorioDao().list();
+        return lista;
+    }
+
+    public void setListaAcessoriosQuiosque(List<Acessorio> listaAcessoriosQuiosque) {
+        this.listaAcessoriosQuiosque = listaAcessoriosQuiosque;
     }
   
 }

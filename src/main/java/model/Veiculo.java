@@ -67,14 +67,6 @@ public class Veiculo implements Serializable  {
         this.cor = cor;
     }
 
-    public Long getId() {
-        return id_veiculo;
-    }
-
-    public void setId(Long id_veiculo) {
-        this.id_veiculo = id_veiculo;
-    }
-
     public Date getModelo() {
         return modelo;
     }

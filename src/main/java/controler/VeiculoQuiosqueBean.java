@@ -22,7 +22,6 @@ public class VeiculoQuiosqueBean implements Serializable {
 
     private Veiculo veiculo;
     private Marca marca;
-    private String valorPesquisa;
     private Veiculo veiculoSelecionado;
     private List<Veiculo> veiculoSelecionados;
     
@@ -55,12 +54,8 @@ public class VeiculoQuiosqueBean implements Serializable {
     
     
     public List<Veiculo> getVeiculosFiat() {
-        listaFiat = new VeiculoDao().listVeiculosFiat();
-        return listaFiat;
-    }
-    
-    public void veiculosFiatFilter() {
-        listaFiat = new VeiculoDao().listVeiculosFiatFilter(valorPesquisa);
+        List<Veiculo> lista = new VeiculoDao().listVeiculosFiat();
+        return lista;
     }
     
     public List<Veiculo> getVeiculosVW() {
@@ -99,14 +94,6 @@ public class VeiculoQuiosqueBean implements Serializable {
         this.marca = marca;
     }
 
-    public String getValorPesquisa() {
-        return valorPesquisa;
-    }
-
-    public void setValorPesquisa(String valorPesquisa) {
-        this.valorPesquisa = valorPesquisa;
-    }
-
     public Veiculo getVeiculoSelecionado() {
         return veiculoSelecionado;
     }
@@ -131,4 +118,19 @@ public class VeiculoQuiosqueBean implements Serializable {
         this.listaFiat = listaFiat;
     }
 
+    public String setarVeiculo(Long idVeiclulo){
+        List<Veiculo> lista = new VeiculoDao().list();
+        for (Veiculo veiculo : lista) {
+            if (veiculo.getId_veiculo().equals(idVeiclulo)) {
+                this.veiculo = veiculo;
+            }
+        }
+        return "addAcessorioQuiosque";
+    }
+    
+    public String setarAcessorios(){
+        List<Veiculo> lista = new VeiculoDao().list();
+        return "selecionarConcessionarias";
+    }
+    
 }
