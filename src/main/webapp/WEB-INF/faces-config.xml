@@ -135,7 +135,12 @@
         
         <navigation-case>
             <from-outcome>addAcessorioQuiosque</from-outcome> 
-            <to-view-id>/quiosque/acessorios.xhtml</to-view-id> 
+            <to-view-id>/quiosque/acessorios.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addConcessionariaQuiosque</from-outcome> 
+            <to-view-id>/quiosque/concessionaria-new.xhtml</to-view-id>
         </navigation-case>
         
         
@@ -175,10 +180,12 @@
             <from-outcome>listarPrepedidos</from-outcome> 
             <to-view-id>/concessionaria/lista-pre-pedido.xhtml</to-view-id> 
         </navigation-case>
+        
         <navigation-case>
             <from-outcome>indexConcessionaria</from-outcome> 
             <to-view-id>/concessionaria/index.xhtml</to-view-id> 
         </navigation-case>
+        
         <navigation-case>
             <from-outcome>listaPrepedidosAdm</from-outcome> 
             <to-view-id>/administrador/pedido/lista-pre-pedido.xhtml</to-view-id> 

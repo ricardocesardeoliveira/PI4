@@ -1,12 +1,14 @@
 
 package controler;
 
+import dao.AcessorioDao;
 import dao.VeiculoDao;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import model.Acessorio;
 import model.Marca;
 import model.Veiculo;
 
@@ -18,12 +20,15 @@ public class VeiculoQuiosqueBean implements Serializable {
         veiculo = new Veiculo();
         marca = new Marca();
         listaFiat = new ArrayList<>();
+//        veiculoSelecionados = new ArrayList<>();
+        listaAcessorios = new ArrayList<>();
     }
 
     private Veiculo veiculo;
     private Marca marca;
     private Veiculo veiculoSelecionado;
     private List<Veiculo> veiculoSelecionados;
+    private List<Acessorio> listaAcessorios;
     
     private List<Veiculo> listaFiat;
     
@@ -128,9 +133,22 @@ public class VeiculoQuiosqueBean implements Serializable {
         return "addAcessorioQuiosque";
     }
     
-    public String setarAcessorios(){
-        List<Veiculo> lista = new VeiculoDao().list();
-        return "selecionarConcessionarias";
+    public String adicionarAcessorios(){
+        this.veiculo.setAcessorios(listaAcessorios);
+        return "concessionaria-new";
     }
+
+    public List<Acessorio> getListaAcessorios() {
+        return listaAcessorios;
+    }
+
+    public void setListaAcessorios(List<Acessorio> listaAcessorios) {
+        this.listaAcessorios = listaAcessorios;
+    }
+//    
+//    public List<Acessorio> getListaAcessoriosQuiosque() {
+//        List<Acessorio> lista = new AcessorioDao().list();
+//        return lista;
+//    }
     
 }
