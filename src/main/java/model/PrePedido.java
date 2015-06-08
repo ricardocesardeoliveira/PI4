@@ -3,6 +3,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +25,7 @@ public class PrePedido implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dia;
     @Column(name = "preco")
-    private Double preco;
+    private String preco;
     @Column(name = "status")
     private String status;
     @Column(name = "comissao")
@@ -35,6 +36,11 @@ public class PrePedido implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_pessoa")
     private Pessoa pessoa;
+    @ManyToMany
+    @JoinTable(name="TAB_PrePedido_Concessionaria", joinColumns=
+    {@JoinColumn(name="id_pre_pedido")}, inverseJoinColumns=
+    {@JoinColumn(name="id_concessionaria")})
+    private List<Concessionaria> concessionarias;
 
     public Long getId() {
         return id_pre_pedido;
@@ -68,11 +74,11 @@ public class PrePedido implements Serializable {
         this.pessoa = pessoa;
     }
 
-    public Double getPreco() {
+    public String getPreco() {
         return preco;
     }
 
-    public void setPreco(Double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 
@@ -98,6 +104,14 @@ public class PrePedido implements Serializable {
 
     public void setComissao(Double comissao) {
         this.comissao = comissao;
+    }
+
+    public List<Concessionaria> getConcessionarias() {
+        return concessionarias;
+    }
+
+    public void setConcessionarias(List<Concessionaria> concessionarias) {
+        this.concessionarias = concessionarias;
     }
     
 }

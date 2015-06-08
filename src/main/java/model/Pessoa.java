@@ -31,24 +31,20 @@ public class Pessoa implements Serializable {
     @Column(name = "data_nasc")
     private String data_nasc;
     @Column(name = "eMail")
-    private String eMail;
+    private String email;
     @Column(name = "password")
     private String password;
     @Column(name = "idade")
     private Integer idade;
+    @Column(name = "telefone")
+    private String telefone;
+    @Column(name = "celular")
+    private String celular;
 
 //    @Temporal(TemporalType.DATE)
 //    private Date data_nasc;
     @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
-
-    public String geteMail() {
-        return eMail;
-    }
-
-    public void seteMail(String eMail) {
-        this.eMail = eMail;
-    }
 
     public Long getId_pessoa() {
         return id_pessoa;
@@ -128,5 +124,31 @@ public class Pessoa implements Serializable {
     public void setIdade(Integer idade) {
         this.idade = idade;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+    
+    
     
 }

@@ -2,15 +2,22 @@
 package controler;
 
 import dao.AcessorioDao;
+import dao.PessoaDao;
+import dao.PrePedidoDao;
 import dao.VeiculoDao;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import model.Acessorio;
 import model.Concessionaria;
+import model.Endereco;
 import model.Marca;
+import model.Pessoa;
+import model.PrePedido;
 import model.Veiculo;
 
 @Named(value = "veiculoQuiosqueBean")
@@ -24,6 +31,9 @@ public class VeiculoQuiosqueBean implements Serializable {
 //        veiculoSelecionados = new ArrayList<>();
         listaAcessorios = new ArrayList<>();
 //        listaAcessoriosSelecionados = new ArrayList<>();
+        prePedido = new PrePedido();
+        pessoa = new Pessoa();
+        endereco = new Endereco();
     }
 
     private Veiculo veiculo;
@@ -34,6 +44,9 @@ public class VeiculoQuiosqueBean implements Serializable {
     private List<Acessorio> listaAcessoriosSelecionados;
     private List<Concessionaria> listaConcessionariasSelecionadas;
     private List<Veiculo> listaFiat;
+    private PrePedido prePedido;
+    private Pessoa pessoa;
+    private Endereco endereco; 
     
     public String setarMarcaBMW(){
         this.marca.setNome("BMW");
@@ -140,6 +153,11 @@ public class VeiculoQuiosqueBean implements Serializable {
         this.veiculo.setAcessorios(listaAcessoriosSelecionados);
         return "selecionarConcessionarias";
     }
+    
+    public String adicionarConcessionarias(){
+//        this.veiculo.setAcessorios(listaAcessoriosSelecionados);
+        return "preencherCadastro";
+    }
 
     public List<Acessorio> getListaAcessorios() {
         listaAcessorios = new AcessorioDao().list();
@@ -167,7 +185,43 @@ public class VeiculoQuiosqueBean implements Serializable {
     }
     
     public String gerarPrepedido() {
+        
+        PessoaDao pessoaDAO = new PessoaDao();
+        pessoa.setEndereco(endereco);
+        pessoaDAO.save(pessoa);
+        
+        this.prePedido.setDia(new Date());
+        this.prePedido.setVeiculo(this.veiculo);
+        this.prePedido.setPessoa(this.pessoa);
+        this.prePedido.setStatus("Aberto");
+        this.prePedido.setPreco(this.veiculo.getPreco());
+        PrePedidoDao prePedidoDao = new PrePedidoDao();
+        prePedidoDao.save(this.prePedido);
         return "indexQuiosque";
     } 
+
+    public PrePedido getPrePedido() {
+        return prePedido;
+    }
+
+    public void setPrePedido(PrePedido prePedido) {
+        this.prePedido = prePedido;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
     
 }

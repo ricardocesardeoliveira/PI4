@@ -96,10 +96,10 @@ public class PrePedidoBean  implements Serializable {
     
     public String finalizarPrePedido() {
         prePedidoSelecionado.setStatus("Fechado");
-        prePedidoSelecionado.setComissao( ((prePedidoSelecionado.getPreco() * 10) / 100) );
+        prePedidoSelecionado.setComissao(70.0);
         PrePedidoDao dao = new PrePedidoDao();
         dao.update(prePedidoSelecionado);
-        return "listarPrePedidos";
+        return "indexConcessionaria";
     }
 
 }

@@ -4,104 +4,72 @@
   xmlns:h="http://xmlns.jcp.org/jsf/html"
   xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
   xmlns:f="http://java.sun.com/jsf/core"
-  xmlns:p="http://primefaces.org/ui">
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
       <h:head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Multi-Marcas</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <title> Multi-Marcas Quiosque </title>
+            <meta name="description" content="" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="stylesheet" href="../css/bootstrap.min.css" />
-        <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
-        <link rel="stylesheet" href="../css/fonts.css" />
-        <link rel="stylesheet" href="../css/main.css" />
+            <link rel="stylesheet" href="../css/bootstrap.min.css" />
+            <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+            <link rel="stylesheet" href="../css/fonts.css" />
+            <link rel="stylesheet" href="../css/main.css" />
 
-        <script src="js/modernizr.js"></script>
+            <script src="../js/modernizr.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     </h:head>
     <h:body>
+
         <div class="container">
+            
             <nav>
                 <ol class="breadcrumb">
                     <li class="mybold"><h:link outcome="index.xhtml" value="Home" /></li>
                     <li class="mybold"><h:link outcome="marcas.xhtml" value="Marcas" /></li>
-                    <li class="mybold"><h:link outcome="marcas.xhtml" value="Kits/Acessórios" /></li>
-                    <li class="mybold"><h:link outcome="concessionaria-new.xhtml" value="Concessionárias" /></li>
-                    <li class="active mybold">Cadastro</li>
+                    <li class="mybold"><h:link outcome="veiculos-fiat.xhtml" value="Veículos" /></li>
+                    <li class="mybold"><h:link outcome="acessorios.xhtml" value="Kits - Acessórios" /></li>
+                    <li class="active mybold">Cadastro cliente</li>
                 </ol>
             </nav>
+            
+            <h:form id="form-cadastro">
+                <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
 
-            <div class="jumbotron">
-                <h3><small><em>Para solicitar um orçamento, preencha o formulário abaixo:</em></small></h3>
-                <br />
-                  <h:form styleClass="form-horizontal" id="cadastro-cliente">
-                      <fieldset>
-                          <legend><em>Cadastra-se:</em></legend>
-                        <div class="form-group">
-                            <h:outputLabel styleClass="col-md-2 control-label" for="nome"><em>Nome:</em></h:outputLabel>
-                          <div class="col-md-7">
-                           <p:inputText styleClass="form-control" id="nome" pt:placeholder="Insira o nome completo" required="true" />
-                         </div>
-                            <div class="radio col-md-3">
-                                <label class="col-md-6">
-                                    <input type="radio" name="sexo" value="Masculino" checked="checked" /> <strong><em>Masculino</em></strong>
-                                </label>
-                                <label class="col-md-6">
-                                    <input type="radio" name="sexo" value="Feminino" /> <strong><em>Feminino</em></strong>
-                                </label>
-                            </div>   
-                       </div>
+                <p:panel header="Cadastro de Clientes" id="titulo-cadastro" style="margin-top: 10px;">
+                    <h:panelGrid columns="4" cellpadding="5">
 
-                       <div class="form-group">
-                           <h:outputLabel styleClass="col-md-2 control-label" for="nascimento"><em>Nascimento:</em></h:outputLabel>
-                            <div class="col-md-3">
-                                <p:inputMask styleClass="form-control" id="nascimento" pt:placeholder="Insira sua Data de Nascimento" mask="99/99/9999" required="true" />
-                           </div>
-                           <h:outputLabel styleClass="col-md-1 control-label" for="email"><em>Email:</em></h:outputLabel>
-                            <div class="col-md-6">
-                             <p:inputText styleClass="form-control" id="email" pt:placeholder="Insira seu E-mail" required="true" />
-                           </div>
-                      </div>
+                        <p:outputLabel value="Nome" for="nome"/>
+                        <p:inputText id="nome" value="#{veiculoQuiosqueBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
+                        <p:message for="nome" />
+                        <h:outputText value="#{veiculoQuiosqueBean.pessoa.nome}" />
 
-                      <div class="form-group">
-                          <h:outputLabel styleClass="col-md-2 control-label" for="cpf"><em>CPF:</em></h:outputLabel>
-                        <div class="col-md-10">
-                            <p:inputMask styleClass="form-control" id="cpf" pt:placeholder="Insira o numero do seu CPF" mask="999.999.999-99" required="true" />
-                       </div>
-                      </div>
-                          
-                      <div class="form-group">
-                        <h:outputLabel styleClass="col-md-2 control-label" for="end"><em>End:</em></h:outputLabel>
-                        <div class="col-md-7">
-                            <p:inputText styleClass="form-control" id="end" pt:placeholder="Insira o seu Endereço" required="true" />
-                       </div>
-                        <h:outputLabel styleClass="col-md-1 control-label" for="cep"><em>CEP:</em></h:outputLabel>
-                        <div class="col-md-2">
-                            <p:inputMask styleClass="form-control" id="cep" pt:placeholder="Insira o seu CEP" mask="99999-999" required="true" />
-                       </div>
-                      </div>    
+                        <p:outputLabel value="CPF" for="cpf" />
+                        <p:inputMask id="cpf" value="#{veiculoQuiosqueBean.pessoa.cpf}" required="true" mask="999.999.999-99"/>
+                        <p:message for="cpf" />
+                        <h:outputText value="#{veiculoQuiosqueBean.pessoa.cpf}" />          
 
-                      <div class="form-group">
-                            <h:outputLabel styleClass="col-md-2 control-label" for="tel"><em>Telefone:</em></h:outputLabel>
-                            <div class="col-md-4">
-                                <p:inputMask styleClass="form-control" id="tel" pt:placeholder="Insira o numero do seu Telefone" mask="(99) 9999-9999" required="true" />
-                            </div> 
-                            <h:outputLabel styleClass="col-md-1 control-label" for="cel"><em>Celular:</em></h:outputLabel>
-                            <div class="col-md-5">
-                                <p:inputMask styleClass="form-control" id="cel" pt:placeholder="Insira o numero do seu Celular" mask="(99) 99999-9999" required="true" />
-                            </div> 
-                      </div>
-                      <div class="row">
-                        <div class="col-md-offset-10 col-md-2">
-                            <p:commandButton type="submit" styleClass="btn btn-primary btn-block" value="Enviar" action="#{veiculoQuiosqueBean.gerarPrepedido()}" update="cadastro-cliente" />
-                        </div>
-                      </div> 
-                   </fieldset>
-                </h:form>
-              </div>
+                        <p:outputLabel value="Telefone" for="telefone" />
+                        <p:inputMask id="telefone" value="#{veiculoQuiosqueBean.pessoa.telefone}" required="true" mask="(99)9999-9999"/>
+                        <p:message for="telefone" />
+                        <h:outputText value="#{veiculoQuiosqueBean.pessoa.telefone}" /> 
+                        
+                        <p:outputLabel value="Celular" for="celular" />
+                        <p:inputMask id="celular" value="#{veiculoQuiosqueBean.pessoa.celular}" required="true" mask="(99)99999-9999"/>
+                        <p:message for="celular" />
+                        <h:outputText value="#{veiculoQuiosqueBean.pessoa.celular}" />                   
+                        
+                        <p:commandButton value="Enviar" action="#{veiculoQuiosqueBean.gerarPrepedido()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
+
+                    </h:panelGrid>
+
+                </p:panel>
+
+
+            </h:form>   
+
         </div>
-
-        <script src="../js/jquery-1.11.2.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-    </h:body>
+    </h:body>>    
 </html>

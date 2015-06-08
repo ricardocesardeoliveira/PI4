@@ -222,6 +222,11 @@
             <to-view-id>/quiosque/concessionaria-new.xhtml</to-view-id> 
         </navigation-case>
         
+        <navigation-case>
+            <from-outcome>preencherCadastro</from-outcome> 
+            <to-view-id>/quiosque/cadastro-cliente.xhtml</to-view-id> 
+        </navigation-case>
+        
         
         <navigation-case>
             <from-outcome>teste</from-outcome> 
@@ -231,7 +236,7 @@
         <navigation-case>
             <from-outcome>addEndereco</from-outcome> 
             <to-view-id>/cadastra-endereco.xhtml</to-view-id> 
-        </navigation-case>
+        </navigation-case>cadastro-cliente
         
     </navigation-rule>
    

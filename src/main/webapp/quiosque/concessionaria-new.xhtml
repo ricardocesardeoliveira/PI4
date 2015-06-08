@@ -54,9 +54,11 @@
                             <h:outputText value="#{concessionaria.email}" />
                         </p:column>
 
-                        <f:facet name="footer">
-                            <p:button outcome="cadastro-cliente" value="Avançar" icon="ui-icon-star" />
-                        </f:facet>
+                         <f:facet name="footer">
+                             <p:link outcome="cadastro-cliente" value="Avançar" styleClass="btn btn-primary btn-block">
+                                <f:param name="concessionarias" value="#{veiculoQuiosqueBean.listaConcessionariasSelecionadas}" />
+                            </p:link> 
+                    </f:facet>
                 </p:dataTable>
             </h:form>
           
