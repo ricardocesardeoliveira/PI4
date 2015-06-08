@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
-import javax.faces.view.ViewScoped;
+import javax.enterprise.context.SessionScoped;
 import model.Acessorio;
 import org.primefaces.event.DragDropEvent;
 
 @Named(value = "acessorioQuiosque")
-@ViewScoped
+@SessionScoped
 public class AcessorioQuiosque implements Serializable {
 
     private List<Acessorio> acessorios;

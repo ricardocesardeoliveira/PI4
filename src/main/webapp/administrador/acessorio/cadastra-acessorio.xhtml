@@ -7,6 +7,11 @@
     <h:head>
         <title>Multi-Marcas Administrador</title>
         <link rel="StyleSheet" type="text/css" href="../../css/style.css" media="screen" />
+        <script>
+            $(document).ready(function(){
+                $('.clear-input').val("");
+            });
+        </script>
     </h:head>
     <h:body>
 
@@ -19,13 +24,13 @@
                 <p:panel header="Cadastro de Acessório" id="titulo-cadastro" style="margin-top: 10px;">
                     <h:panelGrid columns="2" cellpadding="5">
                         <p:outputLabel value="Nome: "/>
-                        <p:inputText  value="#{acessorioBean.acessorio.nome}"/>
+                        <p:inputText styleClass="clear-input" value="#{acessorioBean.acessorio.nome}"/>
                         <p:outputLabel value="Preço: "/>
-                        <p:inputText  value="#{acessorioBean.acessorio.valor}"/>
+                        <p:inputText styleClass="clear-input" value="#{acessorioBean.acessorio.valor}"/>
                         <p:outputLabel value="Descrição: "/>
-                        <p:inputText  value="#{acessorioBean.acessorio.descricao}"/>
+                        <p:inputText styleClass="clear-input" value="#{acessorioBean.acessorio.descricao}"/>
                         <p:outputLabel value="Imagem: "/>
-                        <p:inputText  value="#{acessorioBean.acessorio.imagem}"/>
+                        <p:inputText styleClass="clear-input" value="#{acessorioBean.acessorio.imagem}"/>
                         <p:commandButton value="Enviar" action="#{acessorioBean.addAcessorio()}"/>
                     </h:panelGrid>
                 </p:panel>
