@@ -8,13 +8,13 @@ public class Relatorio implements Serializable {
     public Relatorio() {
     }
     
-    public Relatorio(String nomeVeiculo, String qtdeVeiculo) {
+    public Relatorio(String nomeVeiculo, Long qtdeVeiculo) {
         this.nomeVeiculo = nomeVeiculo;
         this.qtdeVeiculo = qtdeVeiculo;
     }
  
     private String nomeVeiculo;
-    private String qtdeVeiculo;
+    private Long qtdeVeiculo;
 
     public String getNomeVeiculo() {
         return nomeVeiculo;
@@ -24,11 +24,11 @@ public class Relatorio implements Serializable {
         this.nomeVeiculo = nomeVeiculo;
     }
 
-    public String getQtdeVeiculo() {
+    public Long getQtdeVeiculo() {
         return qtdeVeiculo;
     }
 
-    public void setQtdeVeiculo(String qtdeVeiculo) {
+    public void setQtdeVeiculo(Long qtdeVeiculo) {
         this.qtdeVeiculo = qtdeVeiculo;
     }
     

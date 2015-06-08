@@ -63,8 +63,8 @@ public class RelatorioDao {
                     //Display values  
                     System.out.println("veiculo: " + veiculo);
                     System.out.println("qtdeVendida: " + qtdeVendida);
-                    Relatorio relatorio = new Relatorio(rs.getString(1), rs.getString(2));
-                    veiculosMaisVendidos.add(relatorio);
+//                    Relatorio relatorio = new Relatorio(rs.getString(1), rs.getString(2));
+//                    veiculosMaisVendidos.add(relatorio);
                     
                 }}
         }catch(SQLException se){
@@ -93,6 +93,18 @@ public class RelatorioDao {
      }
         
    
+    public List<Relatorio> veiculosMaisVendidos() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        String query = "SELECT NEW model.Relatorio(MAX(V.nome), COUNT(PP.veiculo)) " +
+                        "FROM model.PrePedido PP " +
+                        "INNER JOIN PP.veiculo V " +
+                        "GROUP BY V.nome " +
+                        "ORDER BY Count(*) DESC , V.nome";
+        List<Relatorio> lista = session.createQuery(query).list();
+        t.commit();
+        return lista;
+    }
     
     
 }

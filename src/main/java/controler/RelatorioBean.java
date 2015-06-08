@@ -54,8 +54,6 @@ public class RelatorioBean  implements Serializable{
     
     
     
-    
-    
 //    private List<Car> cars;
 //         
 //    @ManagedProperty("#{carService}")
@@ -75,7 +73,7 @@ public class RelatorioBean  implements Serializable{
 //    }
 
     public List<Relatorio> getRelatorios() {
-        relatorios = new RelatorioDao().listarVeiculosMaisVendidos();
+        relatorios = new RelatorioDao().veiculosMaisVendidos();
         return relatorios;
     }
 
