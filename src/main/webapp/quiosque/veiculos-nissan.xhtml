@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -64,7 +65,8 @@
                                 <strong><h:outputLabel value="Preço"></h:outputLabel>: </strong>
                                 <h:outputText value="R$ #{veiculo.preco}"></h:outputText>
                             </p>
-                          <p><a href="#" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal" role="button">Selecionar / Customizar Veículo</a></p>
+                          <!--<p><a href="#" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal" role="button">Selecionar / Customizar Veículo</a></p>-->
+                          <p:commandButton value="Customizar Veículo" class="btn btn-primary btn-sm btn-block" action="#{veiculoQuiosqueBean.setarVeiculo(veiculo.id_veiculo)}" />
                           <div class="clearfix"></div>
                         </div>
                       </div>
@@ -73,174 +75,7 @@
                 </ui:repeat>
             </div>
             </div>
-            
-            <!-- Paginação -->
-                <!--
-                <nav>
-                    <div class="text-center">
-                      <ul class="pagination">
-                        <li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-                      </ul>
-                    </div>
-                </nav>
-                -->
         </div>
-        
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel"><em>Acessórios</em></h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <input type="checkbox" name="ch[]" id="acc01" value="180,00" class="check-acessorios" />
-                            <label for="acc01" class="label-acessorios">
-                              <div class="thumbnail"> 
-                                    <h:graphicImage value="../img/acessorios/7084075.jpg" class="img-responsive" alt="" />
-                                    <div class="caption">
-                                        <p class="text-center">Alto-falantes 6" triaxiais 40W rms</p>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <input type="checkbox" name="ch[]" id="acc02" value="90,00" class="check-acessorios" />
-                            <label for="acc02" class="label-acessorios">
-                              <div class="thumbnail"> 
-                                    <h:graphicImage value="../img/acessorios/50902365.jpg" class="img-responsive" alt="" />
-                                    <div class="caption">
-                                        <p class="text-center">Alarme antifurto</p>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <input type="checkbox" name="ch[]" id="acc03" value="150,00" class="check-acessorios" />
-                            <label for="acc03" class="label-acessorios">
-                              <div class="thumbnail"> 
-                                    <h:graphicImage value="../img/acessorios/7085712.jpg" class="img-responsive" alt="" />
-                                    <div class="caption">
-                                        <p class="text-center">Bagageiro de Teto</p>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                  </div>
-                    
-                   <div class="row">
-                        <div class="col-md-4">
-                            <input type="checkbox" name="ch[]" id="acc04" value="160,00" class="check-acessorios" />
-                            <label for="acc04" class="label-acessorios">
-                              <div class="thumbnail"> 
-                                    <h:graphicImage value="../img/acessorios/50927342.jpg" class="img-responsive" alt="" />
-                                    <div class="caption">
-                                        <p class="text-center">Câmera de Ré</p>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <input type="checkbox" name="ch[]" id="acc05" value="100,00" class="check-acessorios" />
-                            <label for="acc05" class="label-acessorios">
-                              <div class="thumbnail"> 
-                                    <h:graphicImage value="../img/acessorios/50900821.jpg" class="img-responsive" alt="" />
-                                    <div class="caption">
-                                        <p class="text-center">Porta-bicicleta de teto</p>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <input type="checkbox" name="ch[]" id="acc06" value="450,00" class="check-acessorios" />
-                            <label for="acc06" class="label-acessorios">
-                              <div class="thumbnail"> 
-                                    <h:graphicImage value="../img/acessorios/7087286.jpg" class="img-responsive" alt="" />
-                                    <div class="caption">
-                                        <p class="text-center">Rodas de liga leve 15"</p>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                  </div>
-                    
-                   <div class="row">
-                        <div class="col-md-4">
-                            <input type="checkbox" name="ch[]" id="acc07" value="180,00" class="check-acessorios" />
-                            <label for="acc07" class="label-acessorios">
-                              <div class="thumbnail"> 
-                                    <h:graphicImage value="../img/acessorios/50926388.jpg" class="img-responsive" alt="" />
-                                    <div class="caption">
-                                        <p class="text-center">Tapetes de borracha</p>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <input type="checkbox" name="ch[]" id="acc08" value="650,00" class="check-acessorios" />
-                            <label for="acc08" class="label-acessorios">
-                              <div class="thumbnail"> 
-                                    <h:graphicImage value="../img/acessorios/7088881.jpg" class="img-responsive" alt="" />
-                                    <div class="caption">
-                                        <p class="text-center">Central Multimídia</p>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <input type="checkbox" name="ch[]" id="acc09" value="220,00" class="check-acessorios" />
-                            <label for="acc09" class="label-acessorios">
-                              <div class="thumbnail"> 
-                                    <h:graphicImage value="../img/acessorios/7087182.jpg" class="img-responsive" alt="" />
-                                    <div class="caption">
-                                        <p class="text-center">Pedais Alumínio</p>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                  </div>
-                    
-                </div>
-                <div class="modal-footer">
-                    <form class="form-inline">
-                        <div class="row">
-                            <div class="col-md-12 text-right">
-                                <div class="form-group">
-                                    <label for="result">Total Acessórios:</label>
-                                    <input type="text" class="form-control" id="result" value="R$ 0,00" disabled="disabled" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <br />
-
-                        <div class="row">
-                            <div class="col-md-3 col-md-offset-6">
-                                <h:button outcome="cadastro-cliente" styleClass="btn btn-block btn-success" value="Comprar" />
-                            </div>
-                            <div class="col-md-3">
-                                <button type="button" class="btn btn-block btn-danger" data-dismiss="modal">Fechar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-              </div>
-            </div>
-      </div>
 
         <script src="../js/jquery-1.11.2.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
