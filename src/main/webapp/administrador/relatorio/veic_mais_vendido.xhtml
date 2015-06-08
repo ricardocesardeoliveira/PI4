@@ -21,7 +21,7 @@
         
         <div class="container-principal">
             <h:form>
-                 <p:dataTable id="tbl" var="car" value="#{dataExporterView.cars}"
+                <p:dataTable id="tbl" var="relatorio" value="#{relatorioBean.relatorios}"
                               paginatorTemplate=" {Exporters} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {CurrentPageReport}"
                               paginator="true" rows="10" style="margin-bottom:20px">
 
@@ -49,30 +49,16 @@
 
                      <p:column>
                          <f:facet name="header">
-                             <h:outputText value="Faixa de idade" />
-                         </f:facet>
-                         <h:outputText value="#{car.color}" />
-                     </p:column>
-
-                     <p:column>
-                         <f:facet name="header">
                              <h:outputText value="Nome do veículo" />
                          </f:facet>
-                         <h:outputText value="#{car.id}" />
+                         <h:outputText value="#{relatorio.nomeVeiculo}" />
                      </p:column>
 
                      <p:column>
                          <f:facet name="header">
                              <h:outputText value="Fabricante"/>
                          </f:facet>
-                         <h:outputText value="#{car.year}" />
-                     </p:column>
-
-                     <p:column>
-                         <f:facet name="header">
-                             <h:outputText value="Quantidade de veículos consumido" />
-                         </f:facet>
-                         <h:outputText value="#{car.brand}" />
+                         <h:outputText value="#{relatorio.qtdeVeiculo}" />
                      </p:column>
 
                  </p:dataTable>

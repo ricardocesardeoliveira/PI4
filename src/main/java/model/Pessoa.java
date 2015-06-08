@@ -34,6 +34,8 @@ public class Pessoa implements Serializable {
     private String eMail;
     @Column(name = "password")
     private String password;
+    @Column(name = "idade")
+    private Integer idade;
 
 //    @Temporal(TemporalType.DATE)
 //    private Date data_nasc;
@@ -119,4 +121,12 @@ public class Pessoa implements Serializable {
         this.password = password;
     }
 
+    public Integer getIdade() {
+        return idade;
+    }
+
+    public void setIdade(Integer idade) {
+        this.idade = idade;
+    }
+    
 }
