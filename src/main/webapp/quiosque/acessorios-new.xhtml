@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+                    <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <title> Multi-Marcas Quiosque </title>
+<!--            <meta name="description" content="" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+            <link rel="stylesheet" href="../css/bootstrap.min.css" />
+            <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+            <link rel="stylesheet" href="../css/fonts.css" />
+            <link rel="stylesheet" href="../css/main.css" />
+
+            <script src="../js/modernizr.js"></script>-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </h:head>
+    <h:body>
+        <script type="text/javascript">
+            function handleDrop(event, ui) {
+                var droppedCar = ui.draggable;
+
+                droppedCar.fadeOut('fast');
+            }
+        </script>
+
+        <h:form id="carForm">
+            <p:fieldset id="availableCarsField" legend="Available Cars">
+                <p:dataTable id="availableCars" var="acessorio" value="#{acessorioQuiosque.acessorios}">
+                    <p:column style="width:50px">
+                        <h:outputText id="dragIcon" styleClass="ui-icon ui-icon-arrow-4 ui-draggable ui-draggable-handle" />
+                        <p:draggable for="dragIcon" revert="true" helper="clone"/>
+                    </p:column>
+
+                    <p:column headerText="Id" width="50">
+                        <h:outputText value="#{acessorio.id_acessorio}" />
+                    </p:column>
+
+                    <p:column headerText="Nome">
+                        <h:outputText value="#{acessorio.nome}" />
+                    </p:column>
+
+                    <p:column headerText="Descrição">
+                        <h:outputText value="#{acessorio.descricao}" />
+                    </p:column>
+
+                    <p:column headerText="Preço">
+                        <h:outputText value="#{acessorio.valor}" />
+                    </p:column>
+                </p:dataTable>
+            </p:fieldset>
+
+            <p:fieldset id="selectedCars" legend="Acessorios selecionados" style="margin-top:20px">
+                <p:outputPanel id="dropArea">
+                    <h:outputText value="!Arraste aqui!" rendered="#{empty acessorioQuiosque.acessoriosDropados}" style="font-size:24px;" />
+                    <p:dataTable id="selectedCarsTable" var="acessorio" value="#{acessorioQuiosque.acessoriosDropados}" rendered="#{not empty acessorioQuiosque.acessoriosDropados}">
+                        <p:column headerText="Id">
+                            <h:outputText value="#{acessorio.id_acessorio}" />
+                        </p:column>
+
+                        <p:column headerText="Nome">
+                            <h:outputText value="#{acessorio.nome}" />
+                        </p:column>
+
+                        <p:column headerText="Descrição">
+                            <h:outputText value="#{acessorio.descricao}" />
+                        </p:column>
+
+                        <p:column headerText="Preço">
+                            <h:outputText value="#{acessorio.valor}" />
+                        </p:column>
+
+                        <p:column style="width:32px">
+                            <p:commandButton update=":carForm:display" oncomplete="PF('carDialog').show()" icon="ui-icon-search">
+                                <f:setPropertyActionListener value="#{acessorio}" target="#{acessorioQuiosque.acessorioSelecionado}" />
+                            </p:commandButton>
+                        </p:column>
+                    </p:dataTable>
+                </p:outputPanel>
+            </p:fieldset>
+
+            <p:droppable for="selectedCars" tolerance="touch" activeStyleClass="ui-state-highlight" datasource="availableCars" onDrop="handleDrop">
+                <p:ajax listener="#{acessorioQuiosque.onCarDrop}" update="dropArea availableCars" />
+            </p:droppable>
+
+            <p:dialog header="Car Detail" widgetVar="carDialog" resizable="false" draggable="false"
+                        showEffect="fade" hideEffect="fade" modal="true">
+
+                <p:outputPanel id="display">
+                    <h:panelGrid columns="2" cellpadding="4" rendered="#{not empty acessorioQuiosque.acessorioSelecionado}">
+                        <f:facet name="header">
+                            <p:graphicImage name="../../img/acessorios/#{acessorioQuiosque.acessorioSelecionado.imagem}"/>
+                        </f:facet>
+
+                        <h:outputText value="Id:" />
+                        <h:outputText value="#{acessorioQuiosque.acessorioSelecionado.id_acessorio}" style="font-weight:bold"/>
+
+                        <h:outputText value="Nome:" />
+                        <h:outputText value="#{acessorioQuiosque.acessorioSelecionado.nome}" style="font-weight:bold"/>
+
+                        <h:outputText value="Descrição:" />
+                        <h:outputText value="#{acessorioQuiosque.acessorioSelecionado.descricao}" style="font-weight:bold"/>
+
+                        <h:outputText value="Preço:" />
+                        <h:outputText value="#{acessorioQuiosque.acessorioSelecionado.valor}" style="font-weight:bold"/>
+                    </h:panelGrid>
+                </p:outputPanel>
+            </p:dialog>
+        </h:form>
+    </h:body>
+</html>
+

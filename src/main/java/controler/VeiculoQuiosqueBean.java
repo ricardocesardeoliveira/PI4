@@ -23,6 +23,7 @@ public class VeiculoQuiosqueBean implements Serializable {
         listaFiat = new ArrayList<>();
 //        veiculoSelecionados = new ArrayList<>();
         listaAcessorios = new ArrayList<>();
+//        listaAcessoriosSelecionados = new ArrayList<>();
     }
 
     private Veiculo veiculo;
@@ -136,8 +137,8 @@ public class VeiculoQuiosqueBean implements Serializable {
     }
     
     public String adicionarAcessorios(){
-        this.veiculo.setAcessorios(listaAcessorios);
-        return "concessionaria-new";
+        this.veiculo.setAcessorios(listaAcessoriosSelecionados);
+        return "selecionarConcessionarias";
     }
 
     public List<Acessorio> getListaAcessorios() {

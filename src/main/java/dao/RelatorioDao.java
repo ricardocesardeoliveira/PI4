@@ -63,8 +63,8 @@ public class RelatorioDao {
                     //Display values  
                     System.out.println("veiculo: " + veiculo);
                     System.out.println("qtdeVendida: " + qtdeVendida);
-                    
-                    veiculosMaisVendidos.add( new Relatorio(rs.getString(1), rs.getInt(2)) );
+                    Relatorio relatorio = new Relatorio(rs.getString(1), rs.getString(2));
+                    veiculosMaisVendidos.add(relatorio);
                     
                 }}
         }catch(SQLException se){
