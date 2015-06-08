@@ -4,13 +4,13 @@ import dao.ConcessionariaDao;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import model.Concessionaria;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class ConcessionariaBean {
     
     private Concessionaria concessionaria;

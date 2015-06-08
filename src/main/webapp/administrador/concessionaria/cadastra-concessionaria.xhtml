@@ -7,6 +7,11 @@
     <h:head>
         <title> Cadastro de Concessionaria </title>
         <link rel="StyleSheet" type="text/css" href="../../css/style.css" media="screen" />
+        <script>
+            $(document).ready(function(){
+                $('.clear-input').val("");
+            });
+        </script>
     </h:head>
     <h:body>
 
@@ -20,10 +25,10 @@
                 <p:panel header="Cadastro de Concessionarias" id="titulo-cadastro" style="margin-top: 10px;">
                     <h:panelGrid columns="2" cellpadding="5">
                         <p:outputLabel value="Concessionaria: "/>
-                        <p:inputText  value="#{concessionariaBean.concessionaria.nome}"/>
+                        <p:inputText styleClass="clear-input" value="#{concessionariaBean.concessionaria.nome}"/>
 
                         <p:outputLabel value="Região: "/>
-                        <p:inputText value="#{concessionariaBean.concessionaria.regiao}"/>
+                        <p:inputText styleClass="clear-input" value="#{concessionariaBean.concessionaria.regiao}"/>
 
                         <p:commandButton value="Enviar" action="#{concessionariaBean.addConcessionaria()}"/>
                     </h:panelGrid>
