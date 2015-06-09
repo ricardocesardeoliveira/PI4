@@ -99,7 +99,8 @@ public class PrePedidoBean  implements Serializable {
         prePedidoSelecionado.setComissao(70.0);
         PrePedidoDao dao = new PrePedidoDao();
         dao.update(prePedidoSelecionado);
-        return "indexConcessionaria";
+        return "listarPrepedidos";
     }
 
+    
 }

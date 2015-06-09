@@ -14,11 +14,14 @@ public class PrePedidoDao {
         Transaction t = session.beginTransaction();
         session.save(prePedido);
         t.commit();
+        session.close();
     }
 
     public PrePedido getPrePedido(long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        return (PrePedido) session.load(PrePedido.class, id);
+        PrePedido prePedido = (PrePedido) session.load(PrePedido.class, id);
+        session.close();
+        return prePedido;
     }
 
     public List<PrePedido> list() {
@@ -26,6 +29,7 @@ public class PrePedidoDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from TAB_PRE_PEDIDO").list();
         t.commit();
+        session.close();
         return lista;
     }
 
@@ -34,6 +38,7 @@ public class PrePedidoDao {
         Transaction t = session.beginTransaction();
         session.delete(prePedido);
         t.commit();
+        session.close();
     }
 
     public void update(PrePedido prePedido) {
@@ -41,6 +46,7 @@ public class PrePedidoDao {
         Transaction t = session.beginTransaction();
         session.update(prePedido);
         t.commit();
+        session.close();
     }
 
 }

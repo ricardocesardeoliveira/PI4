@@ -15,11 +15,14 @@ public class VeiculoDao {
         Transaction t = session.beginTransaction();
         session.save(veiculo);
         t.commit();
+        session.close();
     }
 
     public Veiculo getVeiculo(long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        return (Veiculo) session.load(Veiculo.class, id);
+        Veiculo veiculo = (Veiculo) session.load(Veiculo.class, id);
+        session.close();
+        return veiculo; 
     }
 
     public List<Veiculo> listVeiculosFiat() {
@@ -27,6 +30,7 @@ public class VeiculoDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from TAB_VEICULO where id_marca = 1").list();
         t.commit();
+        session.close();
         return lista;
     }
     
@@ -37,6 +41,7 @@ public class VeiculoDao {
         query.setParameter("nome", nome);
         List lista = query.list();
         t.commit();
+        session.close();
         return lista;
     }
     
@@ -45,6 +50,7 @@ public class VeiculoDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from TAB_VEICULO where id_marca = 2").list();
         t.commit();
+        session.close();
         return lista;
     }
     
@@ -53,6 +59,7 @@ public class VeiculoDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from TAB_VEICULO where id_marca = 3").list();
         t.commit();
+        session.close();
         return lista;
     }
     
@@ -61,6 +68,7 @@ public class VeiculoDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from TAB_VEICULO where id_marca = 4").list();
         t.commit();
+        session.close();
         return lista;
     }
     
@@ -69,6 +77,7 @@ public class VeiculoDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from TAB_VEICULO where id_marca = 5").list();
         t.commit();
+        session.close();
         return lista;
     }
     
@@ -77,6 +86,7 @@ public class VeiculoDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from TAB_VEICULO").list();
         t.commit();
+        session.close();
         return lista;
     }
 
@@ -85,6 +95,7 @@ public class VeiculoDao {
         Transaction t = session.beginTransaction();
         session.delete(veiculo);
         t.commit();
+        session.close();
     }
 
     public void update(Veiculo veiculo) {
@@ -92,6 +103,7 @@ public class VeiculoDao {
         Transaction t = session.beginTransaction();
         session.update(veiculo);
         t.commit();
+        session.close();
     }
     
 }
