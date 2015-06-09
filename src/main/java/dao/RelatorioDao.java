@@ -137,5 +137,61 @@ public class RelatorioDao {
         return listaRetorno;
     }
     
+    public List<RelatorioFaixaIdade> veiculosMaisVendidosPorSexo() {
+        List<RelatorioFaixaIdade> listaTemp = new ArrayList<>();
+        List<RelatorioFaixaIdade> listaRetorno = new ArrayList<>();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        String[] sexos = {"Masculino", "Feminino"};
+        
+        for (String sexo : sexos) {
+            String query = "SELECT NEW model.RelatorioFaixaIdade(V.nome, M.nome, Count(*)) " +
+                           "FROM model.PrePedido PP " +
+                           "INNER JOIN PP.veiculo V " +
+                           "INNER JOIN PP.pessoa P " +
+                           "INNER JOIN V.marca M " +
+                           "WHERE P.sexo LIKE '" + sexo + 
+                           "' GROUP BY V.nome, M.nome " +
+                           "ORDER BY Count(*) DESC , V.nome";
+            listaTemp = session.createQuery(query).setMaxResults(1).list();
+            if (!listaTemp.isEmpty()) {
+                listaTemp.get(0).setFaixaIdade(sexo);
+                listaRetorno.add(listaTemp.get(0));
+            }
+            
+        }
+        t.commit();
+        return listaRetorno;
+    }
+    
+    public List<RelatorioFaixaIdade> veiculosMaisVendidosRegiao() {
+        List<RelatorioFaixaIdade> listaTemp = new ArrayList<>();
+        List<RelatorioFaixaIdade> listaRetorno = new ArrayList<>();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        String[] regioesTexto = {"Norte", "Nordeste", "Centro-Oeste", "Sudeste", "Sul"};
+        int indexIdadesTexto = 0;
+        
+        for (String regiao : regioesTexto) {
+            String query = "SELECT NEW model.RelatorioFaixaIdade(V.nome, M.nome, Count(*)) " +
+                           "FROM model.PrePedido PP " +
+                           "INNER JOIN PP.veiculo V " +
+                           "INNER JOIN V.marca M " +
+                           "INNER JOIN PP.pessoa P " +
+                           "INNER JOIN P.endereco E " +
+                           "WHERE E.regiao LIKE '" + regiao + 
+                           "' GROUP BY V.nome, M.nome " +
+                           "ORDER BY Count(*) DESC , V.nome";
+            listaTemp = session.createQuery(query).setMaxResults(1).list();
+            if (!listaTemp.isEmpty()) {
+                listaTemp.get(0).setFaixaIdade(regioesTexto[indexIdadesTexto]);
+                listaRetorno.add(listaTemp.get(0));
+                indexIdadesTexto ++;
+            }
+            
+        }
+        t.commit();
+        return listaRetorno;
+    }
     
 }

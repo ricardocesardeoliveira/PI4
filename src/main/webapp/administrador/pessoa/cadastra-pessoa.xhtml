@@ -90,8 +90,11 @@
                         <p:inputText id="cidade" styleClass="clear-input" value="#{pessoaBean.endereco.cidade}"  />  
 
                         <p:outputLabel for="numero" value="Número" />   
-                        <p:inputText id="numero" styleClass="clear-input" value="#{pessoaBean.endereco.numero}" style="width:40px"/>  
-
+                        <p:inputText id="numero" styleClass="clear-input" value="#{pessoaBean.endereco.numero}" style="width:40px"/>
+                        
+                        <p:outputLabel for="regiao" value="Região" />   
+                        <p:inputText id="regiao" styleClass="clear-input" value="#{pessoaBean.endereco.regiao}" placeholder="Ex.: Centro-Oeste, Norte, Nordeste, Sudeste e Sul." />
+                        
                         <p:commandButton value="CEP" icon="ui-icon-search">
                             <f:ajax listener="#{pessoaBean.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
                         </p:commandButton>

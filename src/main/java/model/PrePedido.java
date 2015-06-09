@@ -28,6 +28,8 @@ public class PrePedido implements Serializable {
     private String preco;
     @Column(name = "status")
     private String status;
+    @Column(name = "regiao")
+    private String regiao;
     @Column(name = "comissao")
     private Double comissao;
     @ManyToOne
@@ -112,6 +114,14 @@ public class PrePedido implements Serializable {
 
     public void setConcessionarias(List<Concessionaria> concessionarias) {
         this.concessionarias = concessionarias;
+    }
+
+    public String getRegiao() {
+        return regiao;
+    }
+
+    public void setRegiao(String regiao) {
+        this.regiao = regiao;
     }
     
 }

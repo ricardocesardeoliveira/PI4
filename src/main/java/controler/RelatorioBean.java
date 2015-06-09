@@ -30,10 +30,14 @@ public class RelatorioBean  implements Serializable{
     
     private List<Relatorio> relatorioVeiculosMaisVendidos;
     private List<RelatorioFaixaIdade> relatorioVeiculosMaisVendidosFaixaIdade;
+    private List<RelatorioFaixaIdade> relatorioVeiculosMaisVendidosSexo;
+    private List<RelatorioFaixaIdade> relatorioVeiculosMaisVendidosRegiao;
     
     public RelatorioBean() {
         this.relatorioVeiculosMaisVendidos = new ArrayList<>();
         this.relatorioVeiculosMaisVendidosFaixaIdade = new ArrayList<>();
+        this.relatorioVeiculosMaisVendidosSexo = new ArrayList<>();
+        this.relatorioVeiculosMaisVendidosRegiao = new ArrayList<>();
     }
     
     public List<Relatorio> getRelatorio18a28() {
@@ -91,6 +95,24 @@ public class RelatorioBean  implements Serializable{
 
     public void setRelatorioVeiculosMaisVendidosFaixaIdade(List<RelatorioFaixaIdade> relatorioVeiculosMaisVendidosFaixaIdade) {
         this.relatorioVeiculosMaisVendidosFaixaIdade = relatorioVeiculosMaisVendidosFaixaIdade;
+    }
+
+    public List<RelatorioFaixaIdade> getRelatorioVeiculosMaisVendidosSexo() {
+        relatorioVeiculosMaisVendidosSexo = new RelatorioDao().veiculosMaisVendidosPorSexo();
+        return relatorioVeiculosMaisVendidosSexo;
+    }
+
+    public void setRelatorioVeiculosMaisVendidosSexo(List<RelatorioFaixaIdade> relatorioVeiculosMaisVendidosSexo) {
+        this.relatorioVeiculosMaisVendidosSexo = relatorioVeiculosMaisVendidosSexo;
+    }
+
+    public List<RelatorioFaixaIdade> getRelatorioVeiculosMaisVendidosRegiao() {
+        relatorioVeiculosMaisVendidosRegiao = new RelatorioDao().veiculosMaisVendidosRegiao();
+        return relatorioVeiculosMaisVendidosRegiao;
+    }
+
+    public void setRelatorioVeiculosMaisVendidosRegiao(List<RelatorioFaixaIdade> relatorioVeiculosMaisVendidosRegiao) {
+        this.relatorioVeiculosMaisVendidosRegiao = relatorioVeiculosMaisVendidosRegiao;
     }
     
 }

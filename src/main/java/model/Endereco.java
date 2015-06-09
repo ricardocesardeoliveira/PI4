@@ -48,6 +48,18 @@ public class Endereco implements Serializable {
         this.complemento = complemento;
     }
     
+    public Endereco(Long id_endereco, String logradouro, String bairro, String cep, String cidade, String estado, String numero, String complemento, String regiao) {
+        this.id_endereco = id_endereco;
+        this.logradouro = logradouro;
+        this.bairro = bairro;
+        this.cep = cep;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.regiao = regiao;
+    }
+    
         public void encontraCEP() {
         CepWebService cepWebService = new CepWebService(getCep());
 
