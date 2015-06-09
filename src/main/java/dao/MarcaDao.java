@@ -13,6 +13,7 @@ public class MarcaDao {
         Transaction t = session.beginTransaction();
         session.save(marca);
         t.commit();
+        session.close();
     }
     
     public List<Marca> list() {
@@ -20,6 +21,7 @@ public class MarcaDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from tab_marca").list();
         t.commit();
+        session.close();
         return lista;
     }
     
@@ -28,6 +30,7 @@ public class MarcaDao {
         Transaction t = session.beginTransaction();
         session.delete(marca);
         t.commit();
+        session.close();
     }
     
     public void update(Marca marca) {
@@ -35,6 +38,7 @@ public class MarcaDao {
         Transaction t = session.beginTransaction();
         session.update(marca);
         t.commit();
+        session.close();
     }
     
 }

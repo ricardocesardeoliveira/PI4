@@ -13,11 +13,14 @@ public class ConcessionariaDao {
         Transaction t = session.beginTransaction();
         session.save(concessionaria);
         t.commit();
+        session.close();
     }
 
     public Concessionaria getConcessionaria(long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        return (Concessionaria) session.load(Concessionaria.class, id);
+        Concessionaria concessionaria = (Concessionaria) session.load(Concessionaria.class, id);
+        session.close();
+        return concessionaria;
     }
 
     public List<Concessionaria> list() {
@@ -25,6 +28,7 @@ public class ConcessionariaDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from tab_concessionaria").list();
         t.commit();
+        session.close();
         return lista;
     }
 
@@ -33,6 +37,7 @@ public class ConcessionariaDao {
         Transaction t = session.beginTransaction();
         session.delete(concessionaria);
         t.commit();
+        session.close();
     }
 
     public void update(Concessionaria concessionaria) {
@@ -40,6 +45,7 @@ public class ConcessionariaDao {
         Transaction t = session.beginTransaction();
         session.update(concessionaria);
         t.commit();
+        session.close();
     }
 
 }

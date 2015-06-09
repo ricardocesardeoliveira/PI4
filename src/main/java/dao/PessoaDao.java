@@ -13,11 +13,14 @@ public class PessoaDao {
         Transaction t = session.beginTransaction();
         session.save(pessoa);
         t.commit();
+        session.close();
     }
 
     public Pessoa getPessoa(long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        return (Pessoa) session.load(Pessoa.class, id);
+        Pessoa pessoa = (Pessoa) session.load(Pessoa.class, id);
+        session.close();
+        return pessoa;
     }
 
     public List<Pessoa> list() {
@@ -25,6 +28,7 @@ public class PessoaDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from tab_pessoa").list();
         t.commit();
+        session.close();
         return lista;
     }
 
@@ -33,6 +37,7 @@ public class PessoaDao {
         Transaction t = session.beginTransaction();
         session.delete(pessoa);
         t.commit();
+        session.close();
     }
 
     public void update(Pessoa pessoa) {
@@ -40,6 +45,7 @@ public class PessoaDao {
         Transaction t = session.beginTransaction();
         session.update(pessoa);
         t.commit();
+        session.close();
     }
 
 }

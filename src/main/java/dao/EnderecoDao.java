@@ -14,11 +14,14 @@ public class EnderecoDao {
         Transaction t = session.beginTransaction();
         session.save(endereco);
         t.commit();
+        session.close();
     }
     
     public Endereco getEndereco(long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        return (Endereco) session.load(Endereco.class, id);
+        Endereco endereco = (Endereco) session.load(Endereco.class, id);
+        session.close();
+        return endereco;
     }
 
     public List<Endereco> list() {
@@ -26,6 +29,7 @@ public class EnderecoDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from tab_endereco").list();
         t.commit();
+        session.close();
         return lista;
     }
 
@@ -34,6 +38,7 @@ public class EnderecoDao {
         Transaction t = session.beginTransaction();
         session.delete(endereco);
         t.commit();
+        session.close();
     }
 
     public void update(Endereco endereco) {
@@ -41,6 +46,7 @@ public class EnderecoDao {
         Transaction t = session.beginTransaction();
         session.update(endereco);
         t.commit();
+        session.close();
     }
     
 }

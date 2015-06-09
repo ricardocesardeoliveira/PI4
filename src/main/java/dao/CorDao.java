@@ -14,6 +14,7 @@ public class CorDao {
         Transaction t = session.beginTransaction();
         session.save(cor);
         t.commit();
+        session.close();
     }
     
     public List<Cor> list() {
@@ -21,6 +22,7 @@ public class CorDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from tab_cor").list();
         t.commit();
+        session.close();
         return lista;
     }
     
@@ -29,6 +31,7 @@ public class CorDao {
         Transaction t = session.beginTransaction();
         session.delete(cor);
         t.commit();
+        session.close();
     }
     
     public void update(Cor cor) {
@@ -36,6 +39,7 @@ public class CorDao {
         Transaction t = session.beginTransaction();
         session.update(cor);
         t.commit();
+        session.close();
     }
     
 }

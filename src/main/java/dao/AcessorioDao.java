@@ -13,11 +13,14 @@ public class AcessorioDao {
         Transaction t = session.beginTransaction();
         session.save(acessorio);
         t.commit();
+        session.close();
     }
 
     public Acessorio getAcessorio(long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        return (Acessorio) session.load(Acessorio.class, id);
+        Acessorio acessorio = (Acessorio) session.load(Acessorio.class, id);
+        session.close();
+        return acessorio;
     }
 
     public List<Acessorio> list() {
@@ -25,6 +28,7 @@ public class AcessorioDao {
         Transaction t = session.beginTransaction();
         List lista = session.createQuery("from tab_acessorio").list();
         t.commit();
+        session.close();
         return lista;
     }
 
@@ -33,6 +37,7 @@ public class AcessorioDao {
         Transaction t = session.beginTransaction();
         session.delete(acessorio);
         t.commit();
+        session.close();
     }
 
     public void update(Acessorio acessorio) {
@@ -40,6 +45,7 @@ public class AcessorioDao {
         Transaction t = session.beginTransaction();
         session.update(acessorio);
         t.commit();
+        session.close();
     }
 
 }
