@@ -14,12 +14,12 @@ import model.Pessoa;
 import org.primefaces.context.RequestContext;
 
 @ManagedBean
-public class LoginAdministradorBean implements Serializable {
+public class LoginAdministradorBean {
 
     private Pessoa pessoa;
     
     public LoginAdministradorBean() {
-        this.pessoa = new Pessoa();
+        pessoa = new Pessoa();
     }
     
     public Pessoa getPessoa() {
@@ -34,7 +34,7 @@ public class LoginAdministradorBean implements Serializable {
         List<Pessoa> lista = new PessoaDao().list();
         String retorno = "loginAdministrador";
         for (Pessoa pessoa : lista) {
-            if( (pessoa.getCpf().equals(pessoa.getCpf()) && (pessoa.getPassword().equals(pessoa.getPassword())))) {
+            if( (this.pessoa.getCpf().equals(pessoa.getCpf()) && (this.pessoa.getPassword().equals(pessoa.getPassword())))) {
                 HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
                 session.setAttribute("userAdministrador", pessoa.getCpf());
                 retorno = "indexAdministrador";
