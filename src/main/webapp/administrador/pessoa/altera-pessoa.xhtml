@@ -25,7 +25,7 @@
                         <p:inputText value="#{pessoaBean.pessoa.nome}" id="nome"/>
 
                         <p:outputLabel value="RG:" for="rg" />
-                        <p:inputText value="#{pessoaBean.pessoa.rg}" id="rg"/>
+                        <p:inputMask value="#{pessoaBean.pessoa.rg}" id="rg" mask="99.999.999-9" />
 
                         <p:outputLabel value="CPF:" for="cpf" />
                         <p:inputMask value="#{pessoaBean.pessoa.cpf}" id="cpf" mask="999.999.999-99"/>
