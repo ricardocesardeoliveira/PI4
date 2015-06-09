@@ -25,31 +25,32 @@
                 <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
 
                 <p:panel header="Cadastro de Clientes" id="titulo-cadastro" style="margin-top: 10px;">
-                    <h:panelGrid columns="4" cellpadding="5">
-
+                    <h:panelGrid columns="4" cellpadding="5" >
+                        
                         <p:outputLabel value="Nome" for="nome"/>
-                        <p:inputText id="nome" styleClass="clear-input" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
+                        <p:inputText id="nome" style="width: 500px" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!" />
                         <p:message for="nome" />
                         <h:outputText value="#{pessoaBean.pessoa.nome}" />
 
                         <p:outputLabel value="RG" for="rg" />
-                        <p:inputText id="rg" styleClass="clear-input" value="#{pessoaBean.pessoa.rg}" required="true" />
+                        <p:inputMask id="rg" style="width:165px" value="#{pessoaBean.pessoa.rg}" required="true" mask="99.999.999-9" />
                         <p:message for="rg" />
                         <h:outputText value="#{pessoaBean.pessoa.rg}" />
 
                         <p:outputLabel value="CPF" for="cpf" />
-                        <p:inputMask id="cpf" styleClass="clear-input" value="#{pessoaBean.pessoa.cpf}" required="true" mask="999.999.999-99"/>
+                        <p:inputMask id="cpf" style="width:165px" value="#{pessoaBean.pessoa.cpf}" required="true" mask="999.999.999-99"/>
                         <p:message for="cpf" />
                         <h:outputText value="#{pessoaBean.pessoa.cpf}" />          
 
                         <p:outputLabel value="Password" for="password" />
-                        <p:inputText id="password" styleClass="clear-input" value="#{pessoaBean.pessoa.password}" required="true" />
+                        <p:password id="password" maxlength="12" style="width:165px" value="#{pessoaBean.pessoa.password}" required="true" feedback="true" weakLabel="Senha fraca"
+                    goodLabel="Senha normal" strongLabel="Senha forte" promptLabel="Digite uma senha"/>
                         <p:message for="password" />
                         <h:outputText value="#{pessoaBean.pessoa.password}" />
                         
                         <p:outputLabel value="Sexo" for="sexo" />
-                        <p:selectOneMenu id="sexo" value="#{pessoaBean.pessoa.sexo}" style="width:130px">
-                            <f:selectItem itemLabel="" noSelectionOption="true" />
+                        <p:selectOneMenu id="sexo" value="#{pessoaBean.pessoa.sexo}" style="width:170px">
+                            <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
                             <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
                             <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
                         </p:selectOneMenu>
@@ -73,32 +74,28 @@
 
                     <h:panelGrid columns="2" cellpadding="5"> 
                         <h:outputText value="CEP:"/>
-                        <p:inputMask id="cep" styleClass="clear-input" mask="99999-999" style="width:70px" value="#{pessoaBean.endereco.cep}" >
+                        <p:inputMask id="cep" style="width:165px" mask="99999-999"  value="#{pessoaBean.endereco.cep}" >
                             <f:ajax listener="#{pessoaBean.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
                         </p:inputMask>
                             
                         <p:outputLabel for="logradouro" value="Logradouro" />   
-                        <p:inputText id="logradouro" styleClass="clear-input" value="#{pessoaBean.endereco.logradouro}"/>  
+                        <p:inputText id="logradouro" style="width:500px" value="#{pessoaBean.endereco.logradouro}"/>  
 
                         <p:outputLabel for="bairro" value="Bairro" />   
-                        <p:inputText id="bairro" styleClass="clear-input" value="#{pessoaBean.endereco.bairro}" />  
+                        <p:inputText id="bairro" style="width:500px" value="#{pessoaBean.endereco.bairro}" />  
 
                         <p:outputLabel for="uf" value="UF"  />   
                         <p:inputMask id="uf" styleClass="clear-input" style="width:50px" mask="a*" value="#{pessoaBean.endereco.estado}" />  
 
                         <p:outputLabel for="cidade" value="Cidade" />   
-                        <p:inputText id="cidade" styleClass="clear-input" value="#{pessoaBean.endereco.cidade}"  />  
+                        <p:inputText id="cidade" style="width:500px" value="#{pessoaBean.endereco.cidade}"  />  
 
                         <p:outputLabel for="numero" value="Número" />   
-                        <p:inputText id="numero" styleClass="clear-input" value="#{pessoaBean.endereco.numero}" style="width:40px"/>
+                        <p:inputText id="numero" style="width:90px" value="#{pessoaBean.endereco.numero}" />
                         
                         <p:outputLabel for="regiao" value="Região" />   
-                        <p:inputText id="regiao" styleClass="clear-input" value="#{pessoaBean.endereco.regiao}" placeholder="Ex.: Centro-Oeste, Norte, Nordeste, Sudeste e Sul." />
+                        <p:inputText id="regiao" style="width:165px" value="#{pessoaBean.endereco.regiao}" placeholder="Ex.: Centro-Oeste, Norte, Nordeste, Sudeste e Sul." />
                         
-                        <p:commandButton value="CEP" icon="ui-icon-search">
-                            <f:ajax listener="#{pessoaBean.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
-                        </p:commandButton>
-
                         <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
                     </h:panelGrid>  
 

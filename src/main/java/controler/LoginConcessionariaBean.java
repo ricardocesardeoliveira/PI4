@@ -6,6 +6,7 @@ import dao.PessoaDao;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import model.Concessionaria;
 import model.Pessoa;
@@ -39,4 +40,9 @@ public class LoginConcessionariaBean {
         }
         return retorno;
     }
+     
+     
+     public void efetuarLogout() {
+         FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+     }
 }
