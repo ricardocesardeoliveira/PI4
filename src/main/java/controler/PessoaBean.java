@@ -6,12 +6,12 @@ import java.util.List;
 import model.Endereco;
 import model.Pessoa;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class PessoaBean  implements Serializable {
 
     private Pessoa pessoa;

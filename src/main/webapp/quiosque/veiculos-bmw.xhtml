@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -63,7 +64,8 @@
                                 <strong><h:outputLabel value="Preço"></h:outputLabel>: </strong>
                                 <h:outputText value="R$ #{veiculo.preco}"></h:outputText>
                             </p>
-                          <p><a href="#" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal" role="button">Selecionar / Customizar Veículo</a></p>
+                          <!--<p><a href="#" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal" role="button">Selecionar / Customizar Veículo</a></p>-->
+                          <p:commandButton value="Customizar Veículo" class="btn btn-primary btn-sm btn-block" action="#{veiculoQuiosqueBean.setarVeiculo(veiculo.id_veiculo)}" />
                           <div class="clearfix"></div>
                         </div>
                       </div>
