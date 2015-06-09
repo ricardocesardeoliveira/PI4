@@ -50,6 +50,6 @@ body {
     background: #F2F2F2;
 }
 
-.ui-widget-header img {
+.ui-panelgrid-header .ui-widget-header img {
     width: 300px;
 }
