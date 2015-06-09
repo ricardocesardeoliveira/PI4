@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.PrePedido;
 import model.Relatorio;
+import model.RelatorioFaixaIdade;
 import model.Veiculo;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -104,6 +105,36 @@ public class RelatorioDao {
         List<Relatorio> lista = session.createQuery(query).list();
         t.commit();
         return lista;
+    }
+    
+    public List<RelatorioFaixaIdade> veiculosMaisVendidosFaixaIdade() {
+        List<RelatorioFaixaIdade> listaTemp = new ArrayList<>();
+        List<RelatorioFaixaIdade> listaRetorno = new ArrayList<>();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction t = session.beginTransaction();
+        String[] idades = {"18 AND 28", "29 AND 39", "40 AND 50", "51 AND 200"};
+        String[] idadesTexto = {"De 18 à 28 anos", "De 29 à 39 anos", "De 40 à 50 anos", "Maiores que 51 anos"};
+        int indexIdadesTexto = 0;
+        
+        for (String idade : idades) {
+            String query = "SELECT NEW model.RelatorioFaixaIdade(V.nome, M.nome, Count(*)) " +
+                           "FROM model.PrePedido PP " +
+                           "INNER JOIN PP.veiculo V " +
+                           "INNER JOIN PP.pessoa P " +
+                           "INNER JOIN V.marca M " +
+                           "WHERE P.idade BETWEEN " + idade + 
+                           " GROUP BY V.nome, M.nome " +
+                           "ORDER BY Count(*) DESC , V.nome";
+            listaTemp = session.createQuery(query).setMaxResults(1).list();
+            if (!listaTemp.isEmpty()) {
+                listaTemp.get(0).setFaixaIdade(idadesTexto[indexIdadesTexto]);
+                listaRetorno.add(listaTemp.get(0));
+                indexIdadesTexto ++;
+            }
+            
+        }
+        t.commit();
+        return listaRetorno;
     }
     
     

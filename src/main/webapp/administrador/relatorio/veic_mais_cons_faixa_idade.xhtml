@@ -21,7 +21,7 @@
         
         <div class="container-principal">
             <h:form>
-                <p:dataTable id="tbl" var="relatorio" value="#{relatorioBean.lista}"
+                <p:dataTable id="tbl" var="relatorio" value="#{relatorioBean.relatorioVeiculosMaisVendidosFaixaIdade}"
                           paginatorTemplate=" {Exporters} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {CurrentPageReport}"
                           paginator="true" rows="10" style="margin-bottom:20px">
 
@@ -45,14 +45,15 @@
                          <p:graphicImage value="../../img/logo/xml.png" width="24"/>
                          <p:dataExporter type="xml" target="tbl" fileName="cars" />
                      </h:commandLink>
+                     
                  </f:facet>
-
-                 <p:column>
+                    
+                <p:column>
                      <f:facet name="header">
                          <h:outputText value="Faixa de idade" />
                      </f:facet>
-                     <h:outputText value="#18 - 28" />
-                 </p:column>
+                    <h:outputText value="#{relatorio.faixaIdade}" />
+                 </p:column>    
 
                  <p:column>
                      <f:facet name="header">
@@ -60,15 +61,15 @@
                      </f:facet>
                      <h:outputText value="#{relatorio.nomeVeiculo}" />
                  </p:column>
-
-                 <p:column>
-                     <f:facet name="header">
-                         <h:outputText value="Fabricante"/>
-                     </f:facet>
-                     <h:outputText value="#{relatorio.nomeVeiculo}" />
+                    
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nome do fabricante" />
+                    </f:facet>
+                    <h:outputText value="#{relatorio.nomeFabricante}" />
                  </p:column>
 
-                 <p:column>
+                <p:column style="text-align: center;">
                      <f:facet name="header">
                          <h:outputText value="Quantidade de veículos consumido" />
                      </f:facet>

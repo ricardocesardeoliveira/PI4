@@ -21,7 +21,7 @@
         
         <div class="container-principal">
             <h:form>
-                <p:dataTable id="tbl" var="relatorio" value="#{relatorioBean.relatorios}"
+                <p:dataTable id="tbl" var="relatorio" value="#{relatorioBean.relatorioVeiculosMaisVendidos}"
                               paginatorTemplate=" {Exporters} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {CurrentPageReport}"
                               paginator="true" rows="10" style="margin-bottom:20px">
 
@@ -54,7 +54,7 @@
                          <h:outputText value="#{relatorio.nomeVeiculo}" />
                      </p:column>
 
-                     <p:column>
+                    <p:column style="text-align: center;">
                          <f:facet name="header">
                              <h:outputText value="Quantidade vendida"/>
                          </f:facet>

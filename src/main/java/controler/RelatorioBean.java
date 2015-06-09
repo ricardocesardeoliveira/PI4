@@ -21,16 +21,19 @@ import javax.faces.model.ListDataModel;
 import model.Pessoa;
 import model.PrePedido;
 import model.Relatorio;
+import model.RelatorioFaixaIdade;
 import model.Veiculo;
 
 @Named(value = "relatorioBean")
 @RequestScoped
 public class RelatorioBean  implements Serializable{
     
-    private List<Relatorio> relatorios;
+    private List<Relatorio> relatorioVeiculosMaisVendidos;
+    private List<RelatorioFaixaIdade> relatorioVeiculosMaisVendidosFaixaIdade;
     
     public RelatorioBean() {
-        this.relatorios = new ArrayList<>();
+        this.relatorioVeiculosMaisVendidos = new ArrayList<>();
+        this.relatorioVeiculosMaisVendidosFaixaIdade = new ArrayList<>();
     }
     
     public List<Relatorio> getRelatorio18a28() {
@@ -72,15 +75,22 @@ public class RelatorioBean  implements Serializable{
 //        this.service = service;
 //    }
 
-    public List<Relatorio> getRelatorios() {
-        relatorios = new RelatorioDao().veiculosMaisVendidos();
-        return relatorios;
+    public List<Relatorio> getRelatorioVeiculosMaisVendidos() {
+        relatorioVeiculosMaisVendidos = new RelatorioDao().veiculosMaisVendidos();
+        return relatorioVeiculosMaisVendidos;
     }
 
-    public void setRelatorios(List<Relatorio> relatorios) {
-        this.relatorios = relatorios;
+    public void setRelatorioVeiculosMaisVendidos(List<Relatorio> relatorios) {
+        this.relatorioVeiculosMaisVendidos = relatorios;
     }
-    
-    
+
+    public List<RelatorioFaixaIdade> getRelatorioVeiculosMaisVendidosFaixaIdade() {
+        relatorioVeiculosMaisVendidosFaixaIdade = new RelatorioDao().veiculosMaisVendidosFaixaIdade();
+        return relatorioVeiculosMaisVendidosFaixaIdade;
+    }
+
+    public void setRelatorioVeiculosMaisVendidosFaixaIdade(List<RelatorioFaixaIdade> relatorioVeiculosMaisVendidosFaixaIdade) {
+        this.relatorioVeiculosMaisVendidosFaixaIdade = relatorioVeiculosMaisVendidosFaixaIdade;
+    }
     
 }
