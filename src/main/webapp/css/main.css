@@ -82,11 +82,13 @@ body{
     width: 20px;
 }
 
+/*
 .ui-paginator-top, 
 .ui-datatable-footer,
 .ui-paginator-bottom{
     background: #F5F5F5;
 }
+*/
 
 .ui-column-title {
     font-size: 13px;
@@ -94,4 +96,12 @@ body{
 
 th .ui-state-default {
     border: 0;
+}
+
+#form-cadastro .ui-widget-content {
+    background: #F5F5F5;
+}
+
+#form-cadastro .ui-panel-title {
+    text-transform: uppercase;
 }

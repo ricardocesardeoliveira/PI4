@@ -1,30 +1,29 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:h="http://xmlns.jcp.org/jsf/html"
-  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-  xmlns:f="http://java.sun.com/jsf/core"
-  xmlns:p="http://primefaces.org/ui"
-  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-      <h:head>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
         <meta charset="utf-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <title> Multi-Marcas Quiosque </title>
-            <meta name="description" content="" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title> Multi-Marcas Quiosque </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            <link rel="stylesheet" href="../css/bootstrap.min.css" />
-            <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
-            <link rel="stylesheet" href="../css/fonts.css" />
-            <link rel="stylesheet" href="../css/main.css" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/main.css" />
 
-            <script src="../js/modernizr.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="../js/modernizr.js"></script>
     </h:head>
     <h:body>
 
         <div class="container">
-            
+
             <nav>
                 <ol class="breadcrumb">
                     <li class="mybold"><h:link outcome="index.xhtml" value="Home" /></li>
@@ -34,42 +33,50 @@
                     <li class="active mybold">Cadastro cliente</li>
                 </ol>
             </nav>
-            
-            <h:form id="form-cadastro">
+
+            <h:form id="form-cadastro" styleClass="form-horizontal">
                 <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
 
                 <p:panel header="Cadastro de Clientes" id="titulo-cadastro" style="margin-top: 10px;">
-                    <h:panelGrid columns="4" cellpadding="5">
 
-                        <p:outputLabel value="Nome" for="nome"/>
-                        <p:inputText id="nome" value="#{veiculoQuiosqueBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
-                        <p:message for="nome" />
-                        <h:outputText value="#{veiculoQuiosqueBean.pessoa.nome}" />
+                    <div class="form-group">
+                        <h:outputLabel class="col-md-1 control-label" value="Nome*:" for="nome"/>
+                        <div class="col-md-11">
+                            <h:inputText class="form-control clear-input" id="nome" pt:placeholder="Insira seu Nome" value="#{veiculoQuiosqueBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!"/>
+                        </div>
+                    </div>
 
-                        <p:outputLabel value="CPF" for="cpf" />
-                        <p:inputMask id="cpf" value="#{veiculoQuiosqueBean.pessoa.cpf}" required="true" mask="999.999.999-99"/>
-                        <p:message for="cpf" />
-                        <h:outputText value="#{veiculoQuiosqueBean.pessoa.cpf}" />          
+                    <div class="form-group">
+                        <h:outputLabel class="col-md-1 control-label" value="CPF*:" for="cpf" />
+                        <div class="col-md-11">
+                            <h:inputText class="form-control clear-input cpf" id="cpf" value="#{veiculoQuiosqueBean.pessoa.cpf}" pt:placeholder="999.999.999-99" required="true" />
+                        </div>
+                    </div>
 
-                        <p:outputLabel value="Telefone" for="telefone" />
-                        <p:inputMask id="telefone" value="#{veiculoQuiosqueBean.pessoa.telefone}" required="true" mask="(99)9999-9999"/>
-                        <p:message for="telefone" />
-                        <h:outputText value="#{veiculoQuiosqueBean.pessoa.telefone}" /> 
-                        
-                        <p:outputLabel value="Celular" for="celular" />
-                        <p:inputMask id="celular" value="#{veiculoQuiosqueBean.pessoa.celular}" required="true" mask="(99)99999-9999"/>
-                        <p:message for="celular" />
-                        <h:outputText value="#{veiculoQuiosqueBean.pessoa.celular}" />                   
-                        
-                        <p:commandButton value="Enviar" action="#{veiculoQuiosqueBean.gerarPrepedido()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
+                    <div class="form-group">
+                        <h:outputLabel class="col-md-1 control-label" value="Telefone*:" for="telefone" />
+                        <div class="col-md-11">
+                            <h:inputText class="form-control clear-input telefone" id="telefone" value="#{veiculoQuiosqueBean.pessoa.telefone}" pt:placeholder="(99) 9999-9999" required="true" />
+                        </div>
+                    </div>
 
-                    </h:panelGrid>
+                    <div class="form-group">
+                        <h:outputLabel class="col-md-1 control-label" value="Celular*:" for="celular" />
+                        <div class="col-md-11">
+                            <h:inputText class="form-control clear-input celular" id="celular" value="#{veiculoQuiosqueBean.pessoa.celular}" pt:placeholder="(99) 99999-9999" required="true" />
+                        </div>
+                    </div>
+
+                    <p:commandButton styleClass="btn btn-default btn-block" value="Enviar" action="#{veiculoQuiosqueBean.gerarPrepedido()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
 
                 </p:panel>
-
-
             </h:form>   
 
         </div>
-    </h:body>>    
+
+        <script src="../js/jquery-1.11.2.min.js"></script>
+        <script src="../js/maskedinput.min.js"></script>
+        <script src="../js/functions.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </h:body>    
 </html>
