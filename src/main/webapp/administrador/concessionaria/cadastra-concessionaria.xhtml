@@ -35,10 +35,9 @@
                         <p:inputText styleClass="clear-input" value="#{concessionariaBean.concessionaria.email}"/>
                         
                         <p:outputLabel value="Telefone: "/>
-                        <p:inputText styleClass="clear-input" value="#{concessionariaBean.concessionaria.telefone}"/>
-                        
+                        <p:inputMask styleClass="clear-input" id="telefone" style="width:165px" value="#{concessionariaBean.concessionaria.telefone}" required="true" mask="(99) 9999-9999" />
                         <p:outputLabel value="Fax: "/>
-                        <p:inputText styleClass="clear-input" value="#{concessionariaBean.concessionaria.fax}"/>
+                        <p:inputMask styleClass="clear-input" id="fax" style="width:165px" value="#{concessionariaBean.concessionaria.fax}" required="true" mask="(99) 9999-9999" />
                         
                         <p:outputLabel value="Password" for="password" />
                         <p:password styleClass="clear-input" id="password" maxlength="12" style="width:165px" value="#{concessionariaBean.concessionaria.password}" required="true" feedback="true" weakLabel="Senha fraca"
