@@ -68,6 +68,13 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <h:outputLabel class="col-md-1 control-label" value="Região*:" for="regiao" />
+                        <div class="col-md-11">
+                            <h:inputText class="form-control clear-input celular" id="celular" value="#{veiculoQuiosqueBean.prePedido.regiao}" pt:placeholder="(99) 99999-9999" required="true" />
+                        </div>
+                    </div>
+                    
                     <p:commandButton styleClass="btn btn-default btn-block" value="Enviar" action="#{veiculoQuiosqueBean.gerarPrepedido()}" icon="ui-icon-check" validateClient="true" ajax="false" onclick="alert('Pré-pedido finalizado com sucesso!')"/>
 
                 </p:panel>
