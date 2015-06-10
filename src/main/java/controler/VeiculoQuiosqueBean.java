@@ -216,6 +216,8 @@ public class VeiculoQuiosqueBean implements Serializable {
         PrePedidoDao prePedidoDao = new PrePedidoDao();
         prePedidoDao.save(this.prePedido);
         this.prePedido = new PrePedido();
+        this.listaAcessoriosSelecionados = new ArrayList<>();
+        this.listaConcessionariasSelecionadas = new ArrayList<>();
         
         return "indexQuiosque";
     } 
