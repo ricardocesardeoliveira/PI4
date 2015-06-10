@@ -9,6 +9,7 @@ import model.Marca;
 import model.Pessoa;
 import model.PrePedido;
 import model.Veiculo;
+import model.VeiculoAcessorio;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
@@ -33,6 +34,7 @@ public class HibernateUtil {
                 ac.addAnnotatedClass(Acessorio.class);
                 ac.addAnnotatedClass(PrePedido.class);
                 ac.addAnnotatedClass(Kit.class);
+                ac.addAnnotatedClass(VeiculoAcessorio.class);
                 sessionFactory = ac.configure().buildSessionFactory();
             } catch (Throwable ex) {
                 System.err.println("Initial SessionFactory creation failed." + ex);

@@ -189,7 +189,7 @@ public class VeiculoQuiosqueBean implements Serializable {
     public String gerarPrepedido() {
         
         PessoaDao pessoaDAO = new PessoaDao();
-        pessoa.setEndereco(endereco);
+//        pessoa.setEndereco(endereco);
         pessoaDAO.save(pessoa);
         
         double total = 0;
