@@ -2,6 +2,7 @@
 package model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ public class Acessorio implements Serializable {
     @Column(name = "nome")
     private String nome;
     @Column(name = "valor")
-    private double valor;
+    private BigDecimal valor;
     @Column(name = "descricao")
     private String descricao;
     @Column(name = "imagem")
@@ -40,11 +41,11 @@ public class Acessorio implements Serializable {
         this.nome = nome;
     }
 
-    public double getValor() {
+    public BigDecimal getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
 

@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
@@ -32,7 +33,7 @@ public class Veiculo implements Serializable  {
     @Column(name = "CATEGORIA")
     private String categoria;
     @Column(name = "PRECO")
-    private String preco;
+    private BigDecimal preco;
     @Column(name = "MOTOR")
     private String motor;
     
@@ -91,11 +92,11 @@ public class Veiculo implements Serializable  {
         this.categoria = categoria;
     }
 
-    public String getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 

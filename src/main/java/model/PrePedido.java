@@ -2,6 +2,7 @@
 package model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
@@ -25,7 +26,7 @@ public class PrePedido implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dia;
     @Column(name = "preco")
-    private String preco;
+    private BigDecimal preco;
     @Column(name = "status")
     private String status;
     @Column(name = "regiao")
@@ -76,11 +77,11 @@ public class PrePedido implements Serializable {
         this.pessoa = pessoa;
     }
 
-    public String getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
