@@ -24,7 +24,7 @@
             <h:form>
                 <p:dataTable id="tbl" var="relatorio" value="#{relatorioBean.relatorioVeiculosMaisVendidosFaixaIdade}"
                           paginatorTemplate=" {Exporters} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {CurrentPageReport}"
-                          paginator="true" rows="10" style="margin-bottom:20px">
+                          paginator="true" rows="10" style="margin-bottom:20px" emptyMessage="Não existe nenhum relatório disponível.">
 
                  <f:facet name="{Exporters}">
                      <h:commandLink>

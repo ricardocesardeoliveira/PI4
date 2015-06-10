@@ -54,12 +54,12 @@
                         <p:column headerText="E-mail">
                             <h:outputText value="#{concessionaria.email}" />
                         </p:column>
+                        
+                        <f:facet name="footer">
+                            <p:commandButton value="Avançar" styleClass="btn btn-default btn-block" action="#{veiculoQuiosqueBean.adicionarConcessionarias()}" />
+                        </f:facet>
 
-                         <f:facet name="footer">
-                             <p:link outcome="cadastro-cliente" value="Avançar" styleClass="btn btn-primary btn-block">
-                                <f:param name="concessionarias" value="#{veiculoQuiosqueBean.listaConcessionariasSelecionadas}" />
-                            </p:link> 
-                    </f:facet>
+                         
                 </p:dataTable>
             </h:form>
           

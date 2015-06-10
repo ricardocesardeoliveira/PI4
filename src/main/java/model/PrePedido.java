@@ -32,18 +32,22 @@ public class PrePedido implements Serializable {
     @Column(name = "regiao")
     private String regiao;
     @Column(name = "comissao")
-    private Double comissao;
+    private BigDecimal comissao;
     @ManyToOne
     @JoinColumn(name = "id_veiculo")
     private Veiculo veiculo;
     @ManyToOne
     @JoinColumn(name = "id_pessoa")
     private Pessoa pessoa;
-    @ManyToMany
-    @JoinTable(name="TAB_PrePedido_Concessionaria", joinColumns=
-    {@JoinColumn(name="id_pre_pedido")}, inverseJoinColumns=
-    {@JoinColumn(name="id_concessionaria")})
-    private List<Concessionaria> concessionarias;
+    @ManyToOne
+    @JoinColumn(name = "id_concessionaria1")
+    private Concessionaria concessionaria1;
+    @ManyToOne
+    @JoinColumn(name = "id_concessionaria2")
+    private Concessionaria concessionaria2;
+    @ManyToOne
+    @JoinColumn(name = "id_concessionaria3")
+    private Concessionaria concessionaria4;
 
     public Long getId() {
         return id_pre_pedido;
@@ -101,20 +105,12 @@ public class PrePedido implements Serializable {
         this.status = status;
     }
 
-    public Double getComissao() {
+    public BigDecimal getComissao() {
         return comissao;
     }
 
-    public void setComissao(Double comissao) {
+    public void setComissao(BigDecimal comissao) {
         this.comissao = comissao;
-    }
-
-    public List<Concessionaria> getConcessionarias() {
-        return concessionarias;
-    }
-
-    public void setConcessionarias(List<Concessionaria> concessionarias) {
-        this.concessionarias = concessionarias;
     }
 
     public String getRegiao() {
@@ -123,6 +119,30 @@ public class PrePedido implements Serializable {
 
     public void setRegiao(String regiao) {
         this.regiao = regiao;
+    }
+
+    public Concessionaria getConcessionaria1() {
+        return concessionaria1;
+    }
+
+    public void setConcessionaria1(Concessionaria concessionaria1) {
+        this.concessionaria1 = concessionaria1;
+    }
+
+    public Concessionaria getConcessionaria2() {
+        return concessionaria2;
+    }
+
+    public void setConcessionaria2(Concessionaria concessionaria2) {
+        this.concessionaria2 = concessionaria2;
+    }
+
+    public Concessionaria getConcessionaria4() {
+        return concessionaria4;
+    }
+
+    public void setConcessionaria4(Concessionaria concessionaria4) {
+        this.concessionaria4 = concessionaria4;
     }
     
 }

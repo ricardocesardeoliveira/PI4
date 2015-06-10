@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import model.Acessorio;
 import model.Concessionaria;
 import model.Endereco;
+import model.Kit;
 import model.Marca;
 import model.Pessoa;
 import model.PrePedido;
@@ -155,7 +156,7 @@ public class VeiculoQuiosqueBean implements Serializable {
     }
     
     public String adicionarConcessionarias(){
-//        this.veiculo.setAcessorios(listaAcessoriosSelecionados);
+//        this.prePedido.setConcessionaria1(listaConcessionariasSelecionadas.get(0));
         return "preencherCadastro";
     }
 
@@ -195,8 +196,12 @@ public class VeiculoQuiosqueBean implements Serializable {
         this.prePedido.setPessoa(this.pessoa);
         this.prePedido.setStatus("Aberto");
         this.prePedido.setPreco(this.veiculo.getPreco());
+        this.prePedido.setConcessionaria1(this.listaConcessionariasSelecionadas.get(0));
+        this.prePedido.setConcessionaria1(this.listaConcessionariasSelecionadas.get(1));
+        this.prePedido.setConcessionaria1(this.listaConcessionariasSelecionadas.get(2));
         PrePedidoDao prePedidoDao = new PrePedidoDao();
         prePedidoDao.save(this.prePedido);
+        this.prePedido = new PrePedido();
         return "indexQuiosque";
     } 
 

@@ -5,6 +5,7 @@ import dao.CorDao;
 import dao.PrePedidoDao;
 import java.awt.event.ActionEvent;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -14,6 +15,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Scope;
+import model.Acessorio;
 import model.PrePedido;
 
 @Named(value = "prePedidoBean")
@@ -96,7 +98,13 @@ public class PrePedidoBean  implements Serializable {
     
     public String finalizarPrePedido() {
         prePedidoSelecionado.setStatus("Fechado");
-        prePedidoSelecionado.setComissao(70.0);
+//        double valorTotalAcessorios = 0;
+//        for (Acessorio acessorio : prePedidoSelecionado.getVeiculo().getAcessorios()) {
+//            valorTotalAcessorios += acessorio.getValor().doubleValue();
+//        }
+        prePedidoSelecionado.setComissao( BigDecimal.valueOf((prePedidoSelecionado.getVeiculo().getPreco().doubleValue() * 4) / 100) );
+//      zprePedido.setPreco( BigDecimal.valueOf(prePedidoSelecionado.getVeiculo().getPreco().doubleValue() + valorTotalAcessorios) );
+        prePedido.setPreco(prePedidoSelecionado.getVeiculo().getPreco());
         PrePedidoDao dao = new PrePedidoDao();
         dao.update(prePedidoSelecionado);
         return "indexConcessionaria";
