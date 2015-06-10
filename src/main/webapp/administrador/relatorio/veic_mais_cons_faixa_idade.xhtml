@@ -14,18 +14,18 @@
         <div id="topo">  
             <ui:include src="../menu.xhtml"/>  
         </div>
-        <center>
-            <br/><br/><br/>
-            <p:outputLabel value="Veículos mais consultados por faixa de idade" />
-            <br/><br/><br/><br/>
-        </center>
-        
+
         <div class="container-principal">
             <h:form>
                 <p:dataTable id="tbl" var="relatorio" value="#{relatorioBean.relatorioVeiculosMaisVendidosFaixaIdade}"
                           paginatorTemplate=" {Exporters} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {CurrentPageReport}"
                           paginator="true" rows="10" style="margin-bottom:20px" emptyMessage="Não existe nenhum relatório disponível.">
 
+                
+                    <f:facet name="header">
+                        Veículos mais consultados por faixa de idade
+                    </f:facet>    
+                    
                  <f:facet name="{Exporters}">
                      <h:commandLink>
                          <p:graphicImage value="../../img/logo/excel.png" width="24"/>
@@ -78,8 +78,6 @@
                  </p:column>
 
              </p:dataTable>
-
-                    <br/><br/>
 
              <center>
                  <p:outputLabel value="Exportar apenas os registros da primeira página" />

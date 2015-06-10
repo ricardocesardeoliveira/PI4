@@ -25,31 +25,31 @@
             <h:form id="form-cadastro">
                 <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
 
-                <p:panel header="Cadastro de Clientes" id="titulo-cadastro" style="margin-top: 10px;">
+                <p:panel header="Cadastro de Usuário" id="titulo-cadastro" style="margin-top: 10px;">
                     <h:panelGrid columns="4" cellpadding="5" >
                         
-                        <p:outputLabel value="Nome" for="nome"/>
+                        <p:outputLabel value="Nome: " for="nome"/>
                         <p:inputText styleClass="clear-input" id="nome" style="width: 500px" value="#{pessoaBean.pessoa.nome}" required="true" label="Nome" requiredMessage="Campo nome é obrigatorio!" />
                         <p:message for="nome" />
                         <!--<h:outputText value="#{pessoaBean.pessoa.nome}" /> -->
 
-                        <p:outputLabel value="RG" for="rg" />
+                        <p:outputLabel value="RG: " for="rg" />
                         <p:inputMask styleClass="clear-input" id="rg" style="width:165px" value="#{pessoaBean.pessoa.rg}" required="true" mask="99.999.999-9" />
                         <p:message for="rg" />
                         <!--<h:outputText value="#{pessoaBean.pessoa.rg}" /> -->
 
-                        <p:outputLabel value="CPF" for="cpf" />
+                        <p:outputLabel value="CPF: " for="cpf" />
                         <p:inputMask styleClass="clear-input" id="cpf" style="width:165px" value="#{pessoaBean.pessoa.cpf}" required="true" mask="999.999.999-99"/>
                         <p:message for="cpf" />
                         <!--<h:outputText value="#{pessoaBean.pessoa.cpf}" /> -->         
 
-                        <p:outputLabel value="Password" for="password" />
+                        <p:outputLabel value="Password: " for="password" />
                         <p:password styleClass="clear-input" id="password" maxlength="12" style="width:165px" value="#{pessoaBean.pessoa.password}" required="true" feedback="true" weakLabel="Senha fraca"
                     goodLabel="Senha normal" strongLabel="Senha forte" promptLabel="Digite uma senha"/>
                         <p:message for="password" />
                         <!--<h:outputText value="#{pessoaBean.pessoa.password}" /> -->
                         
-                        <p:outputLabel value="Sexo" for="sexo" />
+                        <p:outputLabel value="Sexo: " for="sexo" />
                         <p:selectOneMenu id="sexo" value="#{pessoaBean.pessoa.sexo}" style="width:170px">
                             <f:selectItem itemLabel="Selecione" noSelectionOption="true" />
                             <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
@@ -58,7 +58,7 @@
                         <p:message for="sexo" />
                         <!--<h:outputText value="#{pessoaBean.pessoa.sexo}" /> -->
                         
-                        <p:outputLabel for="popup" value="Data Nascimento:" />
+                        <p:outputLabel for="popup" value="Data Nascimento: " />
                         <p:calendar id="popup" value="#{pessoaBean.pessoa.data_nasc}" pattern="dd-MM-yyyy" mask="true" pages="1" />
 
                     </h:panelGrid>
@@ -68,28 +68,28 @@
                 <p:panel header="Endereço">  
 
                     <h:panelGrid columns="2" cellpadding="5"> 
-                        <h:outputText value="CEP:"/>
+                        <h:outputText value="CEP: "/>
                         <p:inputMask id="cep" style="width:165px" mask="99999-999"  value="#{pessoaBean.endereco.cep}" >
                             <f:ajax listener="#{pessoaBean.endereco.encontraCEP()}" execute="form-cadastro:cep" render="form-cadastro:cidade logradouro bairro uf" event="click"/>
                         </p:inputMask>
                             
-                        <p:outputLabel for="logradouro" value="Logradouro" />   
+                        <p:outputLabel for="logradouro" value="Logradouro: " />   
                         <p:inputText styleClass="clear-input" id="logradouro" style="width:500px" value="#{pessoaBean.endereco.logradouro}"/>  
 
-                        <p:outputLabel for="bairro" value="Bairro" />   
+                        <p:outputLabel for="bairro" value="Bairro: " />   
                         <p:inputText styleClass="clear-input" id="bairro" style="width:500px" value="#{pessoaBean.endereco.bairro}" />  
 
-                        <p:outputLabel for="uf" value="UF"  />   
+                        <p:outputLabel for="uf" value="UF: "  />   
                         <p:inputMask styleClass="clear-input" id="uf" style="width:50px" mask="a*" value="#{pessoaBean.endereco.estado}" />  
 
-                        <p:outputLabel for="cidade" value="Cidade" />   
+                        <p:outputLabel for="cidade" value="Cidade: " />   
                         <p:inputText styleClass="clear-input" id="cidade" style="width:500px" value="#{pessoaBean.endereco.cidade}"  />  
 
-                        <p:outputLabel for="numero" value="Número" />   
+                        <p:outputLabel for="numero" value="Número: " />   
                         <p:inputText styleClass="clear-input" id="numero" style="width:90px" value="#{pessoaBean.endereco.numero}" />
                         
-                        <p:outputLabel for="regiao" value="Região" />   
-                        <p:inputText styleClass="clear-input" id="regiao" style="width:165px" value="#{pessoaBean.endereco.regiao}" placeholder="Ex.: Centro-Oeste, Norte, Nordeste, Sudeste e Sul." />
+                        <p:outputLabel for="regiao" value="Região: " />   
+                        <p:inputText styleClass="clear-input" id="regiao" style="width:165px" value="#{pessoaBean.endereco.regiao}" />
                         
                         <p:commandButton value="Enviar" action="#{pessoaBean.addPessoa()}" icon="ui-icon-check" validateClient="true" ajax="false"/>
                     </h:panelGrid>  

@@ -23,14 +23,27 @@
         <div class="container-principal">
 
             <h:form id="form-cadastro">
-                <p:panel header="Cadastro de Concessionarias" id="titulo-cadastro" style="margin-top: 10px;">
+                <p:panel header="Cadastro de Concessionária" id="titulo-cadastro" style="margin-top: 10px;">
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:outputLabel value="Concessionaria: "/>
+                        <p:outputLabel value="Concessionária: "/>
                         <p:inputText styleClass="clear-input" value="#{concessionariaBean.concessionaria.nome}"/>
 
                         <p:outputLabel value="Região: "/>
                         <p:inputText styleClass="clear-input" value="#{concessionariaBean.concessionaria.regiao}"/>
 
+                        <p:outputLabel value="E-mail: "/>
+                        <p:inputText styleClass="clear-input" value="#{concessionariaBean.concessionaria.email}"/>
+                        
+                        <p:outputLabel value="Telefone: "/>
+                        <p:inputText styleClass="clear-input" value="#{concessionariaBean.concessionaria.telefone}"/>
+                        
+                        <p:outputLabel value="Fax: "/>
+                        <p:inputText styleClass="clear-input" value="#{concessionariaBean.concessionaria.fax}"/>
+                        
+                        <p:outputLabel value="Password" for="password" />
+                        <p:password styleClass="clear-input" id="password" maxlength="12" style="width:165px" value="#{concessionariaBean.concessionaria.password}" required="true" feedback="true" weakLabel="Senha fraca"
+                                    goodLabel="Senha normal" strongLabel="Senha forte" promptLabel="Digite uma senha"/>
+                        
                         <p:commandButton value="Enviar" action="#{concessionariaBean.addConcessionaria()}"/>
                     </h:panelGrid>
                 </p:panel>

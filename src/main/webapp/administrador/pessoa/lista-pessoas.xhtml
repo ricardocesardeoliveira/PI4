@@ -23,7 +23,7 @@
             <h:form> 
                 <p:dataTable id="pessoas" var="pessoa" value="#{pessoaBean.listarPessoas()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhuma pessoa cadastrada.">
                     <f:facet name="header">
-                        Lista de Pessoas
+                        Lista de Usuários
                     </f:facet>
                     <p:column headerText="ID" style="width:50px; text-align: center;">
                         <h:outputText value="#{pessoa.id_pessoa}" />

@@ -21,16 +21,16 @@
             <p:dataTable id="marcasconcessionarias" var="concessionaria" value="#{concessionariaBean.listarConcessionarias()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhuma concessionaria cadastrada.">
 
                 <f:facet name="header">
-                    Lista de concessionarias
+                    Lista de concessionárias
                 </f:facet>
 
                 <p:column headerText="ID" style="width:50px; text-align: center;">
                     <h:outputText value="#{concessionaria.id_concessionaria}" />
                 </p:column>
-                <p:column headerText="Nome da concessionaria">
+                <p:column headerText="Nome da concessionária">
                     <h:outputText value="#{concessionaria.nome}" />
                 </p:column>
-                <p:column headerText="Região da concessionaria">
+                <p:column headerText="Região da concessionária">
                     <h:outputText value="#{concessionaria.regiao}" />
                 </p:column>
                 

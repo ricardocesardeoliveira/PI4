@@ -18,7 +18,9 @@
         <div class="container-principal">
             <h:form id="form">
                 <p:dataTable var="prePedido"  selectionMode="single" value="#{prePedidoBean.lista}" paginator="true" rows="10" selection="#{prePedidoBean.prePedidoSelecionado}" rowKey="#{prePedido.id}" emptyMessage="Não existe nenhum pré-pedido cadastrado.">
-
+                    <f:facet name="header">
+                        Lista de Pré-pedidos
+                    </f:facet>
                     <p:column headerText="CPF" sortBy="#{prePedido.pessoa.cpf}" filterBy="#{prePedido.pessoa.cpf}">
                         <h:outputText value="#{prePedido.pessoa.cpf}" />
                     </p:column>

@@ -21,13 +21,13 @@
                 <p:dataTable id="marcas" var="marca" value="#{marcaBean.listarMarcas()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhuma marca cadastrada.">
 
                 <f:facet name="header">
-                    Lista de Cadastros de Marcas
+                    Lista de Marcas
                 </f:facet>
 
                 <p:column headerText="ID" style="width:50px; text-align: center;">
                     <h:outputText value="#{marca.id_marca}" />
                 </p:column>
-                <p:column headerText="Nome">
+                <p:column headerText="Marca">
                     <h:outputText value="#{marca.nome}" />
                 </p:column>
 

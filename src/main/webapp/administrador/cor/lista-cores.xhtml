@@ -21,13 +21,13 @@
                 <p:dataTable id="cores" var="cor" value="#{corBean.listarCores()}" style="margin-top: 10px;" paginator="true" rows="10" emptyMessage="Não existe nenhuma cor cadastrada.">
 
                 <f:facet name="header">
-                    Lista de Cadastros de Cores
+                    Lista de Cores
                 </f:facet>
 
                 <p:column headerText="ID" style="width:50px; text-align: center;">
                     <h:outputText value="#{cor.idCor}" />
                 </p:column>
-                <p:column headerText="Nome">
+                <p:column headerText="Cor">
                     <h:outputText value="#{cor.nome}" />
                 </p:column>
 
