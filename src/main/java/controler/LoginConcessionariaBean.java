@@ -42,7 +42,9 @@ public class LoginConcessionariaBean {
     }
      
      
-     public void efetuarLogout() {
-         FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-     }
+    public String efetuarLogout() {
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+        session.invalidate();
+        return "loginConcessionaria";
+    }
 }

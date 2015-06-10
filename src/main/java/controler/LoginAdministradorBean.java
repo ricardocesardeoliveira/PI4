@@ -42,6 +42,12 @@ public class LoginAdministradorBean {
         }
         return retorno;
     }
+    
+    public String efetuarLogout() {
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+        session.invalidate();
+        return "loginAdministrador";
+    }
 
 
 }
