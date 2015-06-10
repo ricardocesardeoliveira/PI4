@@ -210,7 +210,7 @@ public class VeiculoQuiosqueBean implements Serializable {
             this.prePedido.setConcessionaria2(this.listaConcessionariasSelecionadas.get(1));
         }
         if (this.listaConcessionariasSelecionadas.get(2) != null) {
-            this.prePedido.setConcessionaria1(this.listaConcessionariasSelecionadas.get(2));
+            this.prePedido.setConcessionaria3(this.listaConcessionariasSelecionadas.get(2));
         }
 
         PrePedidoDao prePedidoDao = new PrePedidoDao();
