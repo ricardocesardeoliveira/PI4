@@ -8,6 +8,7 @@ import dao.VeiculoDao;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -191,17 +192,31 @@ public class VeiculoQuiosqueBean implements Serializable {
         pessoa.setEndereco(endereco);
         pessoaDAO.save(pessoa);
         
+        double total = 0;
+        for (Acessorio acessorio : listaAcessoriosSelecionados) {
+            total += acessorio.getValor().doubleValue();
+        }
+        
         this.prePedido.setDia(new Date());
         this.prePedido.setVeiculo(this.veiculo);
         this.prePedido.setPessoa(this.pessoa);
         this.prePedido.setStatus("Aberto");
-        this.prePedido.setPreco(this.veiculo.getPreco());
-        this.prePedido.setConcessionaria1(this.listaConcessionariasSelecionadas.get(0));
-        this.prePedido.setConcessionaria1(this.listaConcessionariasSelecionadas.get(1));
-        this.prePedido.setConcessionaria1(this.listaConcessionariasSelecionadas.get(2));
+        this.prePedido.setPreco( (this.veiculo.getPreco().add(BigDecimal.valueOf(total))) );
+        
+        if (this.listaConcessionariasSelecionadas.get(0) != null) {
+            this.prePedido.setConcessionaria1(this.listaConcessionariasSelecionadas.get(0));
+        }
+        if (this.listaConcessionariasSelecionadas.get(1) != null) {
+            this.prePedido.setConcessionaria2(this.listaConcessionariasSelecionadas.get(1));
+        }
+        if (this.listaConcessionariasSelecionadas.get(2) != null) {
+            this.prePedido.setConcessionaria1(this.listaConcessionariasSelecionadas.get(2));
+        }
+
         PrePedidoDao prePedidoDao = new PrePedidoDao();
         prePedidoDao.save(this.prePedido);
         this.prePedido = new PrePedido();
+        
         return "indexQuiosque";
     } 
 

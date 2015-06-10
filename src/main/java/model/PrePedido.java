@@ -47,7 +47,7 @@ public class PrePedido implements Serializable {
     private Concessionaria concessionaria2;
     @ManyToOne
     @JoinColumn(name = "id_concessionaria3")
-    private Concessionaria concessionaria4;
+    private Concessionaria concessionaria3;
 
     public Long getId() {
         return id_pre_pedido;
@@ -137,12 +137,12 @@ public class PrePedido implements Serializable {
         this.concessionaria2 = concessionaria2;
     }
 
-    public Concessionaria getConcessionaria4() {
-        return concessionaria4;
+    public Concessionaria getConcessionaria3() {
+        return concessionaria3;
     }
 
-    public void setConcessionaria4(Concessionaria concessionaria4) {
-        this.concessionaria4 = concessionaria4;
+    public void setConcessionaria3(Concessionaria concessionaria3) {
+        this.concessionaria3 = concessionaria3;
     }
     
 }
